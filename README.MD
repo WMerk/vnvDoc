@@ -3,8 +3,6 @@ VNV PROJECT
 Discription
 
 
-
-
 INTRODUCTION
 ------------
 
