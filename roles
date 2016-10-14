@@ -1,11 +1,28 @@
-Rollenverteilung
-Waldemar
-Gabriel
-<<<<<<< bd588b7091a9cbc82f9d1e3a74617a570442f8dc
-Patrick Frontend-Developer
+Roles:
 
-=======
-Patrick
-Test
->>>>>>> Email geändert
+    Project Manager: Patrick
+    Tool Specialist: Waldemar
+    Deployment Manager: Waldemar, (Gabriel)
+    Configuration Manager: Gabriel
+    Change Control Manager: Gabriel
+    Implementation:
+        Frontend-Developer: Patrick
+        Backend-Developer: Waldemar, Gabriel
+    Test Manager: Waldemar
+    Tester: Waldemar, Patrick, Gabriel
+    Blogposts: Gabriel
+    Blog-Reviews: Waldemar, Patrick
+
+
+
+Tools & Co:
+
+    Java, Spring
+    IntelliJ
+    AngularJS / Bootstrap
+    (WebStorm)
+    YouTrack
+    GitHub
+    Microsoft Project
+
 
