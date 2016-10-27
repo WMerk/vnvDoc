@@ -35,7 +35,7 @@ The Server Backend application will be written in Java using the Spring Framewor
 #### 3.1.1	AAI
 ##### 3.1.1.1	Register
 The user can register by providing an username, password and email address. Optionally the possibility to register with Google or Facebook may be provided.
-##### 3.1.1.2	Activate Account
+##### <a name="AA"></a>3.1.1.2	Activate Account
 An email should be send to the users email address to confirm the address.
 ##### 3.1.1.3	Login
 The user can log in to the service by providing his username and password.
@@ -70,7 +70,7 @@ An email notification could be possible. User could be informed about the status
 
 #### 3.1.4	settings
 ##### 3.1.4.1	Change email address
-The user can change his email address. the new address has to be confirmed again. (See Activate Account)
+The user can change his email address. the new address has to be confirmed again. ([See Activate Account](#AA))
 ##### 3.1.4.2	Show help
 An help on how to use the service may be provided.
 	
