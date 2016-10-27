@@ -120,7 +120,7 @@ n/a
 The user interface is the Web-portal. Functionality is described in Functionality.
 
 #### 3.9.2	Hardware Interfaces
-	n/a
+n/a
 
 #### 3.9.3	Software Interfaces
 n/a
