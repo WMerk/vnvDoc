@@ -28,7 +28,7 @@ The third chapter, the Requirements Specification section, provides an more deta
 vnv will be a web portal, where users can connect with their friends to borrow items from them, give things they don’t use anymore to a friend looking for exact that one or users can check if one of their mates can help them with a problem (e.g. if one needs help with his network).
 The Server Backend application will be written in Java using the Spring Framework. The Frontend will be using AngularJS.
 
-![https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png?raw=true][]
+![UCD][]
 
 ## 3.	Specific Requirements 
 ### 3.1	Functionality
@@ -36,31 +36,31 @@ The Server Backend application will be written in Java using the Spring Framewor
 ##### 3.1.1.1	Register
 The user can register by providing an username, password and email address. Optionally the possibility to register with Google or Facebook may be provided.
 ##### 3.1.1.2	Activate Account
-	An email should be send to the users email address to confirm the address.
+An email should be send to the users email address to confirm the address.
 ##### 3.1.1.3	Login
-	The user can log in to the service by providing his username and password.
+The user can log in to the service by providing his username and password.
 ##### 3.1.1.4	Logout
-	The user can log out.
+The user can log out.
 ##### 3.1.1.5	Change password
-	When logged in the user can change his password by providing the old and new password.
+When logged in the user can change his password by providing the old and new password.
 ##### 3.1.1.6	Reset password
-	If the user forgot his password he can request to reset his password. An email should be send to his address.
+If the user forgot his password he can request to reset his password. An email should be send to his address.
 
 #### 3.1.2	Social Interaction
 ##### 3.1.2.1	Search for friends
-	The user can search for his friends.
+The user can search for his friends.
 ##### 3.1.2.2	Add friend
-	The user can add another user as a friend.
+The user can add another user as a friend.
 ##### 3.1.2.3	Write message
-	The user can write messages to his friends to organise details.
+The user can write messages to his friends to organise details.
 ##### 3.1.2.4	Read message
-	The user can read the conversations with his friends.
+The user can read the conversations with his friends.
 
 #### 3.1.3	vnv core
 ##### 3.1.3.1	Create new offer or request
-	The user can create new offers and requests.
+The user can create new offers and requests.
 ##### 3.1.3.2	Search for offers / requests
-	The user can search for offers and requests.
+The user can search for offers and requests.
 ##### 3.1.3.3	Show history
 Displays the history of the users requests and offers with their status (verliehen, zurückgegeben, verschenkt, …)
 ##### 3.1.3.4	Edit status of offer / request
@@ -70,9 +70,9 @@ An email notification could be possible. User could be informed about the status
 
 #### 3.1.4	settings
 ##### 3.1.4.1	Change email address
-	The user can change his email address. the new address has to be confirmed again. (See Activate Account)
+The user can change his email address. the new address has to be confirmed again. (See Activate Account)
 ##### 3.1.4.2	Show help
-	An help on how to use the service may be provided.
+An help on how to use the service may be provided.
 	
 ### 3.2	Usability 
 #### 3.2.1	Training time
@@ -100,14 +100,14 @@ the system should be capable to manage thousands of registered users and up to h
 
 ### 3.5	Supportability
 #### 3.5.1	Conventions
-	The code should follow the Java Naming Conventions and using speaking variable and function names
+The code should follow the Java Naming Conventions and using speaking variable and function names
 
 ### 3.6	Design Constraints
 #### 3.6.1	Git
-	Git is used for version control.
+Git is used for version control.
 
 #### 3.6.2	YouTrack
-	YouTrack is used as issue tracker.
+YouTrack is used as issue tracker.
 
 ### 3.7	Online User Documentation and Help System Requirements
 The design of the website should be intuitive. An online help may be provided
@@ -138,4 +138,8 @@ n/a
 n/a
 
 ## 4.	Supporting Information
-	n/a
+n/a
+
+
+<!-- Picture-Links: -->
+[UCD]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/SRS.png "Overall Use Case Diagram"
