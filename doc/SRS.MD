@@ -4,19 +4,19 @@
 The purpose of this document is to present a detailed description of the vnv project. It will explain the purpose and features of the system, the interfaces of the system, what the system will do, the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers of the system.
 
 ### 1.2	Scope
-This SRS applies to the entire vnv project. ‘vnv’ is a social platform to lend or comp goods or  services. This project will be realized as an Web-Application. The overview of the features and subsystems are documented in the Use-Case model shown in Overall Description.
+This SRS applies to the entire vnv project. ‘vnv’ is a social platform to lend or comp goods or  services. This project will be realized as an Web-Application. The overview of the features and subsystems are documented in the Use-Case model shown in [Overall Description](#OD).
 
 ### 1.3	Definitions, Acronyms, and Abbreviations
-SRS	Software Requirements Specification
-vnv	verleihen, Dienstleistungen, verschenken
-n/a	not applicable
-tbd	to be determined
-AAI	Authentication and Authorization Infrastructure
+- **SRS**	Software Requirements Specification
+- **vnv**	verleihen, Dienstleistungen, verschenken
+- **n/a**	not applicable
+- **tbd**	to be determined
+- **AAI**	Authentication and Authorization Infrastructure
 
 ### 1.4	References
-[GitHub](https://github.com/WMerk/VnVProject)
-[Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
-[Blog](https://vnvproject.wordpress.com/)
+- [GitHub](https://github.com/WMerk/VnVProject)
+- [Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
+- [Blog](https://vnvproject.wordpress.com/)
 
 ### 1.5	Overview
 The remainder of this document is structured in the following way:
@@ -24,7 +24,7 @@ The next chapter, the Overall Description section, gives an overview of the func
 The third chapter, the Requirements Specification section, provides an more detailed description of the requirements.
  
 
-## 2.	Overall Description
+## <a name="OD"></a>2. Overall Description
 vnv will be a web portal, where users can connect with their friends to borrow items from them, give things they don’t use anymore to a friend looking for exact that one or users can check if one of their mates can help them with a problem (e.g. if one needs help with his network).
 The Server Backend application will be written in Java using the Spring Framework. The Frontend will be using AngularJS.
 
