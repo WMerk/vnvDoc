@@ -30,9 +30,9 @@ To add a new friend, a search for his name or mail address has to be done. After
 ## 5. Postconditions
 ### 5.1 Save request
 The system needs to save the friend request in the database. 
-### 5.1 Notificate requested friend 
+### 5.2 Notificate requested friend 
 The requested user will achieve a notification about the new friend request. He then has the options to accept or refuse the request.
-### 5.1 Update status
+### 5.3 Update status
 When the requested user has accepted the request, both users will appear in the friends list of each other. After that they are able to see the requests and offers of their new friend.
 If the request is refused, it will be removed from the database.
 
