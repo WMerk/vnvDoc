@@ -30,5 +30,5 @@ The database must save the new offer. The new offer must be reachable for the ot
 ## 6. Extension Points
 n/a
 
-<!-- picture links --!>
-[UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verleihen).png UML Diagram
+<!-- picture links -->
+[UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verleihen).png "UML Diagram"
