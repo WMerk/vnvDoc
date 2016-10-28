@@ -40,4 +40,4 @@ If the request is refused, it will be removed from the database.
 n/a
 
 <!-- picture links -->
-[UML]: 
+[UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20add%20friend.png "UML Diagram"
