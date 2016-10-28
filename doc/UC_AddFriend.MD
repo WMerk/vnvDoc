@@ -11,9 +11,11 @@ If the request is accepted, they are able to interact with each other.
 ## 2. Flow of Events
 ### 2.1 Basic Flow 
 UML Diagram: 
+
 ![UML][]
 
 Mock-Up:
+
 tbd
 
 
