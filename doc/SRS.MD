@@ -45,6 +45,8 @@ The user can log out.
 When logged in the user can change his password by providing the old and new password.
 ##### 3.1.1.6	Reset password
 If the user forgot his password he can request to reset his password. An email should be send to his address.
+##### 3.1.1.7 Delete Account
+The user can delete his account. In this case all data connected to his account should be deleted.
 
 #### 3.1.2	Social Interaction
 ##### 3.1.2.1	Search for friends
