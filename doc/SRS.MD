@@ -17,8 +17,8 @@ This SRS applies to the entire vnv project. ‘vnv’ is a social platform to lend o
 - [GitHub](https://github.com/WMerk/VnVProject)
 - [Blog](https://vnvproject.wordpress.com/)
 - [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
-- [UC Add friend](../UC_AddFriend.MD)
-- [UC Create new offer](../UC_CreateNewOffer.MD)
+- [UC Add friend](UC_AddFriend.MD)
+- [UC Create new offer](UC_CreateNewOffer.MD)
 
 ### 1.5	Overview
 The remainder of this document is structured in the following way:
