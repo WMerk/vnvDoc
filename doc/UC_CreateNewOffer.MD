@@ -1,4 +1,4 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
+#vnv â€“ Verleihen, Dienstleistungen, verschenken
 #Use-Case Specification: Create new offer
 
 
@@ -9,8 +9,14 @@ The use case allows the user to create a new offer. He can name it, choose a cat
 
 ## 2. Flow of Events
 ### 2.1 Basic Flow 
-UML Diagram: 
-![UML][]
+#### 2.1.1 Verleihen
+![UML1][]
+
+#### 2.1.2 Verschenken
+![UML2][]
+
+#### 2.1.3 Dienstleistungen
+![UML3][]
 
 Mock-Up:
 tbd
@@ -31,4 +37,6 @@ The database must save the new offer. The new offer must be reachable for the ot
 n/a
 
 <!-- picture links -->
-[UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verleihen).png "UML Diagram"
+[UML1]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verleihen).png "UML Diagram"
+[UML2]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verschenken).png "UML Diagram"
+[UML3]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(dienstleistungen).png "UML Diagram"
