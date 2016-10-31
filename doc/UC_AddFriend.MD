@@ -14,9 +14,10 @@ UML Diagram:
 
 ![UML][]
 
+### 2.2 Mock-Up
 Mock-Up:
 
-tbd
+![Mock][]
 
 
 ## 3. Special Requirements
@@ -43,3 +44,4 @@ n/a
 
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20add%20friend.png "UML Diagram"
+[Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/AddFriend/Mockup_AddFriend.png "Mock-Up"

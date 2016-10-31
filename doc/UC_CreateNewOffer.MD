@@ -18,8 +18,15 @@ The use case allows the user to create a new offer. He can name it, choose a cat
 #### 2.1.3 Dienstleistungen
 ![UML3][]
 
-Mock-Up:
-tbd
+### 2.2 Mock-Ups
+#### 2.2.1 Verleihen
+![Mock1][]
+
+#### 2.2.2 Verschenken
+![Mock2][]
+
+#### 2.2.3 Dienstleistungen
+![Mock3][]
 
 
 ## 3. Special Requirements
@@ -40,3 +47,6 @@ n/a
 [UML1]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verleihen).png "UML Diagram"
 [UML2]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(verschenken).png "UML Diagram"
 [UML3]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20create%20new%20offer%20(dienstleistungen).png "UML Diagram"
+[Mock1]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewOffer/Mockup_Verleihen.png "Mock-Up"
+[Mock2]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewOffer/Mockup_Verschenken.png "Mock-Up"
+[Mock3]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewOffer/Mockup_Dienstleistung.png "Mock-Up"
