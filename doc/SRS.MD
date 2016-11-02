@@ -113,6 +113,16 @@ Git is used for version control.
 #### 3.6.2	YouTrack
 YouTrack is used as issue tracker.
 
+### 3.6.3 	Database
+We decided to use two diffrent databases for our data.
+
+#### 3.6.3.1	neo4j
+We use Neo4j, a graph database, to store relations between users. Friend requests and friend relations are stored in this database.
+
+#### 3.6.3.2	redis
+We use redis to store everything except of relations stored in neo4j (e.g. user data, messages, offers, etc.). 
+redis is a key-value store; but there can be stored objects too. We use JOhm (Java Object hash mapping) to easily store objects in redis.
+
 ### 3.7	Online User Documentation and Help System Requirements
 The design of the website should be intuitive. An online help may be provided
 
