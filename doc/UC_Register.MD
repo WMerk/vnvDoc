@@ -1,4 +1,4 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
+#vnv â€“ Verleihen, Dienstleistungen, verschenken
 #Use-Case Specification: Register
 
 
@@ -21,7 +21,7 @@ Mock-Up:
 
 
 ## 3. Special Requirements
-### 3.1 Both users are registered
+### 3.1 Email address
 The user needs an email address to register for vnv.
 
 ## 4. Preconditions
