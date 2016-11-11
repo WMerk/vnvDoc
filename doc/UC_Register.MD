@@ -33,6 +33,8 @@ The user has to be on the vnv website.
 The system needs to save the new user in the database. 
 ### 5.2 Send confirmation mail 
 To confirm the user's mail address an email shall be send to the provided address. This is a seperate use case, which will be implemented later.
+### 5.3 Redirect
+After succesfull registration the user is automatically logged in and is redirected to the Main page of the application.
 
 ## 6. Extension Points
 n/a

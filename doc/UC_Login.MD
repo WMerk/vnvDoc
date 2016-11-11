@@ -32,6 +32,8 @@ The user has to be on the vnv website.
 ## 5. Postconditions
 ### 5.1 Save session
 The system needs to save the sessionId in the database. 
+### 5.2 Redirect
+After a succesfull login the user is redirected to the main page of the application.
 
 ## 6. Extension Points
 n/a
