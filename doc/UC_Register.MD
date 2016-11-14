@@ -21,9 +21,7 @@ Mock-Up:
 
 ### 2.3 .feature file
 
-'''
 ![feature][]
-'''
 
 ## 3. Special Requirements
 ### 3.1 Email address
@@ -47,4 +45,4 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20register.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/Register/Mockup_Register.png "Mock-Up"
-[feature]: https://raw.githubusercontent.com/WMerk/vnv/master/src/test/features/login.feature "Feature file"
+[feature]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/feature/register.feature "Feature file"

@@ -20,6 +20,9 @@ Mock-Up:
 
 ![Mock][]
 
+### 2.3 .feature file
+
+![feature][]
 
 ## 3. Special Requirements
 ### 3.1 User has to be registered
@@ -41,3 +44,4 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20login.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVDoc/master/doc/mockups/Login/Mockup_Login.png "Mock-Up"
+[feature]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/feature/register.feature "Feature file"
