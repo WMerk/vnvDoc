@@ -1,11 +1,11 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
+#vnv â€“ Verleihen, Dienstleistungen, verschenken
 #Use-Case Specification: Delete account
 
 
 ## 1. Use-Case Name 
 ### 1.1 Brief Description
 The use case allows the user to delete his account. To operate this use case, the user first has to be logged in. 
-Afterwards he can navigate to 'Profil' than to 'Einstellungen' and 'Account löschen'. Here he can click a button to delete his account from the database.
+Afterwards he can navigate to 'Profil' than to 'Einstellungen' and 'Account lÃ¶schen'. Here he can click a button to delete his account from the database.
 
 ## 2. Flow of Events
 ### 2.1 Basic Flow 
@@ -37,4 +37,4 @@ n/a
 
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20delete%20account.png "UML Diagram"
-[Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/AddFriend/Mockup_AddFriend.png "Mock-Up"
+[Mock]: "Mock-Up"
