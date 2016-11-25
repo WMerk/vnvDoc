@@ -13,14 +13,14 @@ The scope of this SAD is to show the architecture of the vnv project. Affected a
 
 ### 1.3 References
 
-### 1.4 Overview
+
 
 ## 2. Architectural Representation
-vnv uses an extended MVC-Pattern.
+vnv uses the MVVM-Pattern for its architecture design.
 
-MVC Diagram: 
+MVVM Diagram: 
 
-![MVC][]
+![MVVM][]
 
 ## 3.Architectural Goals and Constraints 
 We decided to use Spring for the back-end and AngularJs for the front-end of the web-project. 
@@ -57,7 +57,7 @@ n/a
 
 
 <!-- picture links -->
-[MVC]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/RUP/mvc.png "MVC Diagram"
+[MVVM]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/RUP/mvvm.png "MVVM Diagram"
 [Architecture]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/RUP/ArchitectureDiagramm.png "Architecture"
 [Overview]:  "Class Overview"
 [DesignPackages]:  "Design Packages"
