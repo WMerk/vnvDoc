@@ -1,4 +1,4 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
+#vnv â€“ Verleihen, Dienstleistungen, verschenken
 #Software Architecture Document
 
 
@@ -9,6 +9,7 @@ using a number of different architectural views to depict different aspects of t
 It is intended to capture and convey the significant architectural decisions which have been made on the system.
 
 ### 1.2 Scope
+The scope of this SAD is to show the architecture of the vnv project. Affected are the class structure, the use cases and the data representation.
 
 ### 1.3 References
 
@@ -16,6 +17,7 @@ It is intended to capture and convey the significant architectural decisions whi
 
 ## 2. Architectural Representation
 vnv uses an extended MVC-Pattern.
+
 MVC Diagram: 
 
 ![MVC][]
