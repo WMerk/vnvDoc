@@ -4,7 +4,7 @@
 The purpose of this document is to present a detailed description of the vnv project. It will explain the purpose and features of the system, the interfaces of the system, what the system will do, the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers of the system.
 
 ### 1.2	Scope
-This SRS applies to the entire vnv project. ëvnví is a social platform to lend or comp goods or  services. This project will be realized as an Web-Application. The overview of the features and subsystems are documented in the Use-Case model shown in [Overall Description](#OD).
+This SRS applies to the entire vnv project. ‚Äòvnv‚Äô is a social platform to lend or comp goods or  services. This project will be realized as an Web-Application. The overview of the features and subsystems are documented in the Use-Case model shown in [Overall Description](#OD).
 
 ### 1.3	Definitions, Acronyms, and Abbreviations
 - **SRS**	Software Requirements Specification
@@ -17,8 +17,14 @@ This SRS applies to the entire vnv project. ëvnví is a social platform to lend o
 - [GitHub](https://github.com/WMerk/VnVProject)
 - [Blog](https://vnvproject.wordpress.com/)
 - [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
+- [Software Architecture Document](SAD.MD)
 - [UC Add friend](UC_AddFriend.MD)
+- [UC_ChangePassword](UC_ChangePassword.MD)
 - [UC Create new offer](UC_CreateNewOffer.MD)
+- [UC_DeleteAccount](UC_DeleteAccount.MD)
+- [UC_EditProfile](UC_EditProfile.MD)
+- [UC_Login](UC_Login.MD)
+- [UC_Register](UC_Register.MD)
 
 ### 1.5	Overview
 The remainder of this document is structured in the following way:
@@ -27,7 +33,7 @@ The third chapter, the Requirements Specification section, provides an more deta
  
 
 ## <a name="OD"></a>2. Overall Description
-vnv will be a web portal, where users can connect with their friends to borrow items from them, give things they donít use anymore to a friend looking for exact that one or users can check if one of their mates can help them with a problem (e.g. if one needs help with his network).
+vnv will be a web portal, where users can connect with their friends to borrow items from them, give things they don‚Äôt use anymore to a friend looking for exact that one or users can check if one of their mates can help them with a problem (e.g. if one needs help with his network).
 The Server Backend application will be written in Java using the Spring Framework. The Frontend will be using AngularJS.
 
 ![UCD][]
@@ -66,9 +72,9 @@ The user can create new offers and requests.
 ##### 3.1.3.2	Search for offers / requests
 The user can search for offers and requests.
 ##### 3.1.3.3	Show history
-Displays the history of the users requests and offers with their status (verliehen, zur¸ckgegeben, verschenkt, Ö)
+Displays the history of the users requests and offers with their status (verliehen, zur√ºckgegeben, verschenkt, ‚Ä¶)
 ##### 3.1.3.4	Edit status of offer / request
-The user can change the status of an request / offer. E.g. from ìverliehenî to ìzur¸ckgegebenî.
+The user can change the status of an request / offer. E.g. from ‚Äúverliehen‚Äù to ‚Äúzur√ºckgegeben‚Äù.
 ##### 3.1.3.5	Email notification
 An email notification could be possible. User could be informed about the status of his offers / requests or if someone requests something the user is capable of providing. Also notification via Telegram / Whatsapp could be possible.
 

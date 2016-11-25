@@ -12,8 +12,17 @@ It is intended to capture and convey the significant architectural decisions whi
 The scope of this SAD is to show the architecture of the vnv project. Affected are the class structure, the use cases and the data representation.
 
 ### 1.3 References
-
-
+- [GitHub](https://github.com/WMerk/VnVProject)
+- [Blog](https://vnvproject.wordpress.com/)
+- [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
+- [Software Requirements Specification](SRS.MD)
+- [UC Add friend](UC_AddFriend.MD)
+- [UC_ChangePassword](UC_ChangePassword.MD)
+- [UC Create new offer](UC_CreateNewOffer.MD)
+- [UC_DeleteAccount](UC_DeleteAccount.MD)
+- [UC_EditProfile](UC_EditProfile.MD)
+- [UC_Login](UC_Login.MD)
+- [UC_Register](UC_Register.MD)
 
 ## 2. Architectural Representation
 vnv uses the MVVM-Pattern for its architecture design.
