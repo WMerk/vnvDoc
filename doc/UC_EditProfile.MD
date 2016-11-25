@@ -24,7 +24,7 @@ Mock-Up:
 
 ## 3. Special Requirements
 ### 3.1 Email address
-The user needs an email address to register for vnv.
+The user needs an email address to be able to change it.
 
 ## 4. Preconditions
 ### 4.1 vnv website 

@@ -58,6 +58,6 @@ n/a
 
 <!-- picture links -->
 [MVVM]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/RUP/mvvm.png "MVVM Diagram"
-[Architecture]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/RUP/ArchitectureDiagramm.png "Architecture"
+[Architecture]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/ArchitectureDiagramm.png "Architecture"
 [Overview]:  https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/UML/classdiagram_dep_marked.png "Class Overview"
 [DesignPackages]:  "Design Packages"
