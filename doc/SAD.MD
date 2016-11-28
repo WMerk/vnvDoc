@@ -43,12 +43,9 @@ Architecture:
 n/a
 
 ## 5. Logical View
-### 5.1 Overview
 
 ![Overview][]
 
-### 5.2	Architecturally Significant Design Packages
-![DesignPackages][]
 
 ## 6. Process View
 n/a
@@ -69,4 +66,3 @@ n/a
 [MVVM]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/mvvm.png "MVVM Diagram"
 [Architecture]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/ArchitectureDiagramm.png "Architecture"
 [Overview]:  https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/UML/classdiagram_dep_marked.png "Class Overview"
-[DesignPackages]:  "Design Packages"
