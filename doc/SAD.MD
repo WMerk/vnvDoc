@@ -55,12 +55,19 @@ n/a
 ## 8. Implementation View
 n/a
 
-## 9. Data View (optional)
+## 9. Data View
+We're using two NoSQL databases to store our data. 
+For friend-relations and friendrequests between users we use a graph database (Neo4j).
+For all other data (e.g. Users, Posts, etc.) we use Redis. 
+We simply store objects of the Entity class using [JOHM](https://github.com/agrison/johm).
+Therefore we don't have a database schema, but a quick look on our Entities should be enough.
+You can find our Entities [here](https://github.com/WMerk/vnv/tree/master/src/main/java/com/vnv/Entity).
 
 ## 10. Size and Performance
+tbd
 
 ## 11. Quality
-
+tbd
 
 <!-- picture links -->
 [MVVM]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/mvvm.png "MVVM Diagram"
