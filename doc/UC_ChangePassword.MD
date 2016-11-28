@@ -41,4 +41,4 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20change%20password.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/ChangePassword/Mockup_Passwort_aendern.png "Mock-Up"
-[feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/register.PNG "Feature file"
+[feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/changePassword.PNG "Feature file"

@@ -28,6 +28,15 @@ The use case allows the user to create a new offer. He can name it, choose a cat
 #### 2.2.3 Dienstleistungen
 ![Mock3][]
 
+### 2.3 .feature files
+#### 2.3.1 Verleihen
+![feature1][]
+
+#### 2.3.2 Verschenken
+![feature2][]
+
+#### 2.3.3 Dienstleistungen
+![feature3][]
 
 ## 3. Special Requirements
 ### 3.1 Existing Social Network
@@ -50,3 +59,6 @@ n/a
 [Mock1]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewOffer/Mockup_Verleihen.png "Mock-Up"
 [Mock2]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewOffer/Mockup_Verschenken.png "Mock-Up"
 [Mock3]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewOffer/Mockup_Dienstleistung.png "Mock-Up"
+[feature1]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/offerVerleihen.PNG "Feature file"
+[feature2]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/offerVerschenken.PNG "Feature file"
+[feature3]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/offerDienstleistung.PNG "Feature file"
