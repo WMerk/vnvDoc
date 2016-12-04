@@ -1,0 +1,237 @@
+Nr;Vorgangsmodus;Name;Dauer;Geplante_Dauer;Ende;Vorgänger;Ressourcennamen;Gliederungsebene
+1;Automatisch geplant;Meilenstein 1;60 Tage;0 Tage?;Don 22.12.16;;;1
+2;Automatisch geplant;"3.Sprint";7 Tage;0 Tage?;24.10.2016 07:04:03;;;2
+3;Automatisch geplant;"";7 Tage;0 Tage?;24.10.2016 07:04:03;;;3
+4;Manuell geplant;"UML";;"?";24.10.2016 06:44:37;;"gzachmann";4
+5;Manuell geplant;"change github description";;"?";24.10.2016 07:04:03;;"waldemar";4
+6;Automatisch geplant;"";7 Tage;0 Tage?;24.10.2016 07:04:03;;;3
+7;Manuell geplant;"UML";;"?";24.10.2016 06:44:37;;"gzachmann";4
+8;Manuell geplant;"change github description";;"?";24.10.2016 07:04:03;;"waldemar";4
+9;Automatisch geplant;"4. Sprint";7 Tage;0 Tage?;31.10.2016 12:42:16;;;2
+10;Automatisch geplant;"";7 Tage;0 Tage?;31.10.2016 12:42:11;;;3
+11;Manuell geplant;"comment other blog entry 1";;"?";01.11.2016 20:14:58;;"waldemar";4
+12;Manuell geplant;"Split Use case - create new offer or request";;"?";27.10.2016 09:04:39;;"gzachmann";4
+13;Manuell geplant;"create general Use-case Diagram";;"?";27.10.2016 13:09:16;;"gzachmann";4
+14;Manuell geplant;"UML - create new offer 'verleihen'";;"?";28.10.2016 08:31:52;;"waldemar";4
+15;Manuell geplant;"UML - create new offer 'verschenken'";;"?";28.10.2016 09:04:34;;"waldemar";4
+16;Manuell geplant;"UML - create new offer 'Dienstleistungen'";;"?";28.10.2016 09:06:51;;"waldemar";4
+17;Manuell geplant;"change docx files to md";;"?";28.10.2016 10:49:11;;"gzachmann";4
+18;Manuell geplant;"blog entry";;"?";31.10.2016 12:42:11;;"gzachmann";4
+19;Automatisch geplant;"";7 Tage;0 Tage?;31.10.2016 12:42:11;;;3
+20;Manuell geplant;"comment other blog entry 1";;"?";01.11.2016 20:14:58;;"waldemar";4
+21;Manuell geplant;"Split Use case - create new offer or request";;"?";27.10.2016 09:04:39;;"gzachmann";4
+22;Manuell geplant;"create general Use-case Diagram";;"?";27.10.2016 13:09:16;;"gzachmann";4
+23;Manuell geplant;"UML - create new offer 'verleihen'";;"?";28.10.2016 08:31:52;;"waldemar";4
+24;Manuell geplant;"UML - create new offer 'verschenken'";;"?";28.10.2016 09:04:34;;"waldemar";4
+25;Manuell geplant;"UML - create new offer 'Dienstleistungen'";;"?";28.10.2016 09:06:51;;"waldemar";4
+26;Manuell geplant;"change docx files to md";;"?";28.10.2016 10:49:11;;"gzachmann";4
+27;Manuell geplant;"blog entry";;"?";31.10.2016 12:42:11;;"gzachmann";4
+28;Automatisch geplant;"Constr #1";7 Tage;0 Tage?;23.11.2016 10:00:21;;;2
+29;Automatisch geplant;"Configuration and Change,Implementation";7 Tage;0 Tage?;19.11.2016 18:43:42;;;3
+30;Manuell geplant;"save user in cookies to prevent data loss on page refresh";60min;"2h";19.11.2016 17:16:44;;"ptreyer";4
+31;Manuell geplant;"check if '#' can be removed from url";45min;"1h";19.11.2016 18:43:42;;"ptreyer";4
+32;Automatisch geplant;"Configuration and Change,Implementation";7 Tage;0 Tage?;19.11.2016 18:43:42;;;3
+33;Manuell geplant;"save user in cookies to prevent data loss on page refresh";60min;"2h";19.11.2016 17:16:44;;"ptreyer";4
+34;Manuell geplant;"check if '#' can be removed from url";45min;"1h";19.11.2016 18:43:42;;"ptreyer";4
+35;Automatisch geplant;"Deployment,Documentation";7 Tage;0 Tage?;21.11.2016 09:14:50;;;3
+36;Manuell geplant;"create UML diagramm";90min;"2h";21.11.2016 09:14:50;;"gzachmann,waldemar";4
+37;Automatisch geplant;"Design";7 Tage;0 Tage?;18.11.2016 15:28:13;;;3
+38;Manuell geplant;"cut logo";10min;"15min";18.11.2016 15:28:13;;"gzachmann";4
+39;Automatisch geplant;"Design,Documentation";7 Tage;0 Tage?;23.11.2016 08:37:11;;;3
+40;Manuell geplant;"UCD Mockup for Delete account";;"?";23.11.2016 08:37:11;;"waldemar";4
+41;Automatisch geplant;"Design,Implementation";7 Tage;0 Tage?;22.11.2016 17:02:06;;;3
+42;Manuell geplant;"implement navigation bar on front end ";120min;"2h";18.11.2016 23:27:58;;"ptreyer";4
+43;Manuell geplant;"implement templates to create all 3 different offers";120min;"3h";22.11.2016 17:02:06;;"ptreyer";4
+44;Automatisch geplant;"Design,Project management,Configuration and Change";7 Tage;0 Tage?;17.11.2016 13:26:35;;;3
+45;Manuell geplant;"Expand project structure";70min;"?";17.11.2016 13:26:35;;"gzachmann";4
+46;Automatisch geplant;"Documentation";7 Tage;0 Tage?;22.11.2016 17:01:22;;;3
+47;Manuell geplant;"write blog entry";35min;"30min";21.11.2016 16:47:11;;"gzachmann";4
+48;Manuell geplant;"comment other blog";20min;"30min";22.11.2016 09:47:08;;"waldemar";4
+49;Manuell geplant;"comment other blog";30min;"30min";22.11.2016 17:01:22;;"ptreyer";4
+50;Automatisch geplant;"Environment,Configuration and Change";7 Tage;0 Tage?;17.11.2016 07:27:02;;;3
+51;Manuell geplant;"generate UMLs in Intellij";60min;"2h";17.11.2016 07:27:02;;"waldemar";4
+52;Automatisch geplant;"Global Modeling,Documentation";7 Tage;0 Tage?;21.11.2016 22:07:24;;;3
+53;Manuell geplant;"Write UCD for delete user";40min;"40min";21.11.2016 22:07:24;;"waldemar";4
+54;Automatisch geplant;"Global Modeling,Requirements,Design,Project management,Configuration and Change";7 Tage;0 Tage?;16.11.2016 11:40:30;;;3
+55;Manuell geplant;"team meeting";90min;"1h30min";16.11.2016 11:40:30;;"gzachmann,ptreyer,waldemar";4
+56;Automatisch geplant;"Implementation";7 Tage;0 Tage?;23.11.2016 08:37:08;;;3
+57;Manuell geplant;"Implement delete on backend";180min;"3h";16.11.2016 12:01:46;;"gzachmann";4
+58;Manuell geplant;"implement delete user on frontend";60min;"1h";19.11.2016 18:11:09;;"ptreyer";4
+59;Manuell geplant;"display message after successful deletion";20min;"30min";19.11.2016 18:11:09;;"ptreyer";4
+60;Manuell geplant;"implement create offer on backend";120min;"3h";19.11.2016 21:25:43;;"gzachmann";4
+61;Manuell geplant;"implement category list on backend";293min;"3h30min";20.11.2016 19:01:23;;"gzachmann";4
+62;Manuell geplant;"implement category as entity";233min;"2h30min";20.11.2016 19:01:23;;"gzachmann";4
+63;Manuell geplant;"create new offer frontend";180min;"4h";22.11.2016 19:53:12;;"ptreyer";4
+64;Manuell geplant;"New Offer";1778min;"1d7h";22.11.2016 19:53:42;;"gzachmann,ptreyer";4
+65;Manuell geplant;"implement header for website ";60min;"2h";23.11.2016 08:37:08;;"waldemar";4
+66;Automatisch geplant;"Project management,Configuration and Change,Implementation";7 Tage;0 Tage?;19.11.2016 20:23:57;;;3
+67;Manuell geplant;"extends list of categories";30min;"30min";19.11.2016 20:23:57;;"gzachmann";4
+68;Automatisch geplant;"Test";7 Tage;0 Tage?;19.11.2016 21:09:56;;;3
+69;Manuell geplant;"fix the tests!";20min;"30min";19.11.2016 21:09:56;;"waldemar";4
+70;Automatisch geplant;"Test,Configuration and Change";7 Tage;0 Tage?;17.11.2016 09:40:08;;;3
+71;Manuell geplant;"implement cucumbertests in testenvironement";120min;"4h";17.11.2016 09:40:08;;"waldemar";4
+72;Automatisch geplant;"Constr #2";7 Tage;0 Tage?;28.11.2016 20:36:24;;;2
+73;Automatisch geplant;"Design,Deployment,Implementation";7 Tage;0 Tage?;25.11.2016 20:39:48;;;3
+74;Manuell geplant;"ensure category order";20min;"1h";25.11.2016 20:39:48;;"ptreyer";4
+75;Automatisch geplant;"Design,Deployment,Implementation";7 Tage;0 Tage?;25.11.2016 20:39:48;;;3
+76;Manuell geplant;"ensure category order";20min;"1h";25.11.2016 20:39:48;;"ptreyer";4
+77;Automatisch geplant;"Design,Documentation";7 Tage;0 Tage?;25.11.2016 19:11:32;;;3
+78;Manuell geplant;"UCD Edit Profile MockUp";10min;"10min";25.11.2016 19:11:32;;"waldemar";4
+79;Automatisch geplant;"Design,Implementation";7 Tage;0 Tage?;25.11.2016 23:22:30;;;3
+80;Manuell geplant;"Check how to costumize favicon";30min;"1h";23.11.2016 08:14:39;;"gzachmann";4
+81;Manuell geplant;"notification header should disappear at ssome point";10min;"30min";25.11.2016 23:22:30;;"ptreyer";4
+82;Automatisch geplant;"Documentation";7 Tage;0 Tage?;28.11.2016 20:36:24;;;3
+83;Manuell geplant;"create Architecture Diagramm";50min;"1h";25.11.2016 20:03:15;;"waldemar";4
+84;Manuell geplant;"finalize muckup change password";10min;"10min";25.11.2016 22:20:24;;"ptreyer";4
+85;Manuell geplant;"finalize mockup edit profile";10min;"10min";25.11.2016 22:20:24;;"ptreyer";4
+86;Manuell geplant;"create SAD";170min;"3h";26.11.2016 21:48:12;;"waldemar";4
+87;Manuell geplant;"draw class diagramm for SAD";120min;"2h";26.11.2016 21:48:12;;"gzachmann,waldemar";4
+88;Manuell geplant;"comment other blog";30min;"30min";28.11.2016 18:23:03;;"waldemar";4
+89;Manuell geplant;"add featurefile to UC change password";10min;"10min";28.11.2016 19:08:55;;"gzachmann";4
+90;Manuell geplant;"add featurefile to UC edit profile";10min;"10min";28.11.2016 19:09:05;;"gzachmann";4
+91;Manuell geplant;"write blog entry";15min;"30min";28.11.2016 19:09:32;;"gzachmann";4
+92;Manuell geplant;"comment other blog";20min;"30min";28.11.2016 20:36:24;;"ptreyer";4
+93;Automatisch geplant;"Global Modeling,Documentation";7 Tage;0 Tage?;25.11.2016 20:03:01;;;3
+94;Manuell geplant;"Write UCD ffor change password";30min;"30min";25.11.2016 20:02:55;;"waldemar";4
+95;Manuell geplant;"Write UCD for edit profile";30min;"30min";25.11.2016 20:03:01;;"waldemar";4
+96;Automatisch geplant;"Implementation";7 Tage;0 Tage?;28.11.2016 01:04:22;;;3
+97;Manuell geplant;"error messages for create new offer are displayed briefly while entering the page";30min;"30min";25.11.2016 23:22:48;;"ptreyer";4
+98;Manuell geplant;"implement change password on frontend";60min;"1h";27.11.2016 10:48:09;;"ptreyer";4
+99;Manuell geplant;"logout works only when access from /Main";15min;"30min";27.11.2016 10:58:04;;"ptreyer";4
+100;Manuell geplant;"send password in field 'password' instead of 'hashedPw'";;"30min";27.11.2016 11:09:19;;"ptreyer";4
+101;Manuell geplant;"update References in DB";90min;"1h30min";27.11.2016 11:09:55;;"gzachmann,ptreyer";4
+102;Manuell geplant;"send user object instead of uids to backend";30min;"30min";27.11.2016 11:09:55;;"ptreyer";4
+103;Manuell geplant;"implement change password on backend";45min;"1h";27.11.2016 12:18:32;;"gzachmann";4
+104;Manuell geplant;"UC: Delete user";290min;"5h";27.11.2016 12:46:12;;"gzachmann,ptreyer";4
+105;Manuell geplant;"Account deletion should be confirmed with password";50min;"1h";27.11.2016 12:46:12;;"gzachmann,ptreyer";4
+106;Manuell geplant;"implement edit profile on frontend";60min;"1h";27.11.2016 12:48:12;;"ptreyer";4
+107;Manuell geplant;"UC Edit profile";235min;"4h10min";28.11.2016 01:03:54;;"gzachmann,ptreyer";4
+108;Manuell geplant;"UC: change password";235min;"4h10min";28.11.2016 01:04:22;;"gzachmann,ptreyer,waldemar";4
+109;Automatisch geplant;"Star,Design,Documentation";7 Tage;0 Tage?;25.11.2016 20:04:08;;;3
+110;Manuell geplant;"UCD Mockup for Change password";10min;"10min";25.11.2016 20:04:08;;"waldemar";4
+111;Automatisch geplant;"Test";7 Tage;0 Tage?;28.11.2016 18:23:58;;;3
+112;Manuell geplant;"unitttests for change password";30min;"30min";26.11.2016 21:49:27;;"gzachmann";4
+113;Manuell geplant;"fix cucumbertest delete account";20min;"20min";27.11.2016 23:42:10;;"waldemar";4
+114;Manuell geplant;"implement cucumbertest for editprofile";60min;"1h";28.11.2016 01:03:54;;"waldemar";4
+115;Manuell geplant;"implement cucumbertest change password";60min;"1h";28.11.2016 01:04:22;;"waldemar";4
+116;Manuell geplant;"refactor cucumber tests";120min;"2h";28.11.2016 18:23:58;;"waldemar";4
+117;Automatisch geplant;"Constr #3";7 Tage;0 Tage?;30.11.2016 12:46:45;;;2
+118;Automatisch geplant;"Documentation";7 Tage;0 Tage?;;;;3
+119;Manuell geplant;"Write blog post";;"30min";;;"gzachmann";4
+120;Automatisch geplant;"Documentation";7 Tage;0 Tage?;;;;3
+121;Manuell geplant;"Write blog post";;"30min";;;"gzachmann";4
+122;Automatisch geplant;"Implementation";7 Tage;0 Tage?;30.11.2016 12:46:45;;;3
+123;Manuell geplant;"Datepicker should be german";;"30min";;;"ptreyer";4
+124;Manuell geplant;"UC_Search user";180min;"4h";;;"Unassigned";4
+125;Manuell geplant;"implement search user on backend";180min;"4h";;;"gzachmann";4
+126;Manuell geplant;"UC Add friend";;"?";;;"Unassigned";4
+127;Manuell geplant;"implement add friend on frontend";;"?";;;"ptreyer";4
+128;Manuell geplant;"implement add friend on backend";;"?";;;"gzachmann";4
+129;Manuell geplant;"implement search user on frontend";;"?";;;"ptreyer";4
+130;Manuell geplant;"Errormessage in Firefox";20min;"30min";30.11.2016 12:46:45;;"ptreyer";4
+131;Automatisch geplant;"Elab #1";7 Tage;0 Tage?;09.11.2016 07:56:00;;;2
+132;Automatisch geplant;"";7 Tage;0 Tage?;06.11.2016 10:54:43;;;3
+133;Manuell geplant;"Update vnv-Project in YouTrack for correct time tracking ";120min;"4h";02.11.2016 08:48:36;;"waldemar";4
+134;Manuell geplant;"UML - add friend";;"?";02.11.2016 11:08:45;;"gzachmann";4
+135;Manuell geplant;"refresh knowledge about AngularJS and Bootstrap";300min;"1d";06.11.2016 10:54:43;;"ptreyer";4
+136;Automatisch geplant;"";7 Tage;0 Tage?;06.11.2016 10:54:43;;;3
+137;Manuell geplant;"Update vnv-Project in YouTrack for correct time tracking ";120min;"4h";02.11.2016 08:48:36;;"waldemar";4
+138;Manuell geplant;"UML - add friend";;"?";02.11.2016 11:08:45;;"gzachmann";4
+139;Manuell geplant;"refresh knowledge about AngularJS and Bootstrap";300min;"1d";06.11.2016 10:54:43;;"ptreyer";4
+140;Automatisch geplant;"Configuration and Change";7 Tage;0 Tage?;08.11.2016 17:14:04;;;3
+141;Manuell geplant;"Create labels";60min;"1h";02.11.2016 11:49:56;;"waldemar";4
+142;Manuell geplant;"Discuss projectfolder architecture";45min;"1h";04.11.2016 11:31:32;;"gzachmann,ptreyer,waldemar";4
+143;Manuell geplant;"make tags visible for all users";10min;"10min";08.11.2016 17:14:04;;"waldemar";4
+144;Automatisch geplant;"Configuration and Change,Documentation";7 Tage;0 Tage?;07.11.2016 13:16:15;;;3
+145;Manuell geplant;"Improve dashboard for guests ";60min;"1h";07.11.2016 13:16:15;;"waldemar";4
+146;Automatisch geplant;"Deployment";7 Tage;0 Tage?;08.11.2016 10:04:31;;;3
+147;Manuell geplant;"deploy first version on server";90min;"2h";08.11.2016 10:04:31;;"gzachmann";4
+148;Automatisch geplant;"Deployment,Configuration and Change";7 Tage;0 Tage?;08.11.2016 08:04:42;;;3
+149;Manuell geplant;"build jar with intellij";60min;"1h";08.11.2016 08:04:42;;"waldemar";4
+150;Automatisch geplant;"Deployment,Implementation";7 Tage;0 Tage?;09.11.2016 00:04:49;;;3
+151;Manuell geplant;"database prototype";300min;"5h";03.11.2016 17:16:33;;"gzachmann";4
+152;Manuell geplant;"Deactivate submit before inputfields are valid set";120min;"2h";08.11.2016 19:07:07;;"ptreyer";4
+153;Manuell geplant;"Confirm Password Validation in AngularJS";60min;"1h";09.11.2016 00:04:49;;"ptreyer";4
+154;Automatisch geplant;"Design,Documentation";7 Tage;0 Tage?;03.11.2016 13:49:09;;;3
+155;Manuell geplant;"update mockup 'Add Friend'";60min;"1h";03.11.2016 13:49:09;;"ptreyer";4
+156;Automatisch geplant;"Design,Project management,Configuration and Change";7 Tage;0 Tage?;03.11.2016 16:14:26;;;3
+157;Manuell geplant;"check out - Spring Boot";240min;"4h";03.11.2016 16:14:26;;"waldemar";4
+158;Automatisch geplant;"Documentation";7 Tage;0 Tage?;09.11.2016 07:56:00;;;3
+159;Manuell geplant;"create blog entry for 5th sprint";30min;"1h";03.11.2016 08:27:47;;"gzachmann";4
+160;Manuell geplant;"update Links on blog";30min;"30min";03.11.2016 15:08:37;;"ptreyer";4
+161;Manuell geplant;"comment other blog entry 2";67min;"1h";08.11.2016 17:28:32;;"waldemar";4
+162;Manuell geplant;"comment other blog entry 1";60min;"1h";08.11.2016 19:46:43;;"ptreyer";4
+163;Manuell geplant;"update READMEs";30min;"1h";08.11.2016 20:00:56;;"gzachmann";4
+164;Manuell geplant;"Link Burndown from Agile Board to Blog";5min;"5min";09.11.2016 07:56:00;;"gzachmann";4
+165;Automatisch geplant;"Environment,Requirements,Deployment,Configuration and Change";7 Tage;0 Tage?;08.11.2016 10:04:31;;;3
+166;Manuell geplant;"install java8 on server";30min;"1h";08.11.2016 10:04:31;;"gzachmann";4
+167;Automatisch geplant;"Global Modeling";7 Tage;0 Tage?;02.11.2016 11:07:29;;;3
+168;Manuell geplant;"fix UML create new offer ";60min;"1h";02.11.2016 11:07:29;;"waldemar";4
+169;Automatisch geplant;"Implementation";7 Tage;0 Tage?;08.11.2016 14:05:22;;;3
+170;Manuell geplant;"project setup";240min;"4h";03.11.2016 12:19:34;;"waldemar";4
+171;Manuell geplant;"password hashing";120min;"2h";04.11.2016 21:21:52;;"gzachmann";4
+172;Manuell geplant;"implement check mail";60min;"?";08.11.2016 14:05:22;;"gzachmann";4
+173;Automatisch geplant;"Project management";7 Tage;0 Tage?;03.11.2016 10:54:33;;;3
+174;Manuell geplant;"Introduce intellij - YouTrack connection to the Team";60min;"1h";03.11.2016 10:54:33;;"waldemar";4
+175;Automatisch geplant;"Project management,Configuration and Change";7 Tage;0 Tage?;04.11.2016 12:46:36;;;3
+176;Manuell geplant;"youtrack intellij integration";;"?";02.11.2016 12:14:17;;"waldemar";4
+177;Manuell geplant;"seperate repositories";60min;"1h";03.11.2016 08:16:13;;"waldemar";4
+178;Manuell geplant;"add initial code structure for frontend implementation";60min;"1h";04.11.2016 12:46:36;;"ptreyer";4
+179;Automatisch geplant;"Requirements,Implementation";7 Tage;0 Tage?;05.11.2016 11:53:50;;;3
+180;Manuell geplant;"provide sample REST-Service";;"30min";05.11.2016 11:53:50;;"ptreyer";4
+181;Automatisch geplant;"Star,Deployment";7 Tage;0 Tage?;02.11.2016 14:13:14;;;3
+182;Manuell geplant;"redis";60min;"2h";02.11.2016 14:13:14;;"gzachmann";4
+183;Automatisch geplant;"Elab #2";7 Tage;0 Tage?;15.11.2016 19:54:56;;;2
+184;Automatisch geplant;"Deployment";7 Tage;0 Tage?;11.11.2016 11:46:26;;;3
+185;Manuell geplant;"deploy on server";15min;"15min";11.11.2016 09:23:48;;"gzachmann";4
+186;Manuell geplant;"After successfull registration pops up a infobox";0min;"30min";11.11.2016 11:46:26;;"ptreyer";4
+187;Automatisch geplant;"Deployment";7 Tage;0 Tage?;11.11.2016 11:46:26;;;3
+188;Manuell geplant;"deploy on server";15min;"15min";11.11.2016 09:23:48;;"gzachmann";4
+189;Manuell geplant;"After successfull registration pops up a infobox";0min;"30min";11.11.2016 11:46:26;;"ptreyer";4
+190;Automatisch geplant;"Design";7 Tage;0 Tage?;09.11.2016 12:15:54;;;3
+191;Manuell geplant;"translate text elements to german";10min;"15min";09.11.2016 12:15:54;;"ptreyer";4
+192;Automatisch geplant;"Design,Deployment,Project management,Configuration and Change,Implementation";7 Tage;0 Tage?;15.11.2016 12:53:02;;;3
+193;Manuell geplant;"production - debug version";30min;"2h";15.11.2016 12:53:02;;"gzachmann,waldemar";4
+194;Automatisch geplant;"Design,Documentation";7 Tage;0 Tage?;14.11.2016 08:17:45;;;3
+195;Manuell geplant;"Mock up Login";;"15min";14.11.2016 08:17:45;;"ptreyer";4
+196;Automatisch geplant;"Design,Implementation";7 Tage;0 Tage?;14.11.2016 13:48:56;;;3
+197;Manuell geplant;"translate errormessages in german";5min;"5min";14.11.2016 13:48:56;;"ptreyer";4
+198;Automatisch geplant;"Documentation";7 Tage;0 Tage?;14.11.2016 14:23:30;;;3
+199;Manuell geplant;"writing blog entry";45min;"1h";14.11.2016 14:23:30;;"gzachmann";4
+200;Automatisch geplant;"Global Modeling,Configuration and Change,Implementation";7 Tage;0 Tage?;11.11.2016 00:05:10;;;3
+201;Manuell geplant;"Cucumber";1500min;"1d";11.11.2016 00:05:10;;"waldemar";4
+202;Automatisch geplant;"Global Modeling,Design";7 Tage;0 Tage?;14.11.2016 08:08:28;;;3
+203;Manuell geplant;"cut logo";30min;"30min";14.11.2016 08:08:28;;"gzachmann";4
+204;Automatisch geplant;"Global Modeling,Design,Documentation";7 Tage;0 Tage?;11.11.2016 12:49:00;;;3
+205;Manuell geplant;"Create Mockup for register";20min;"30min";10.11.2016 13:42:29;;"ptreyer";4
+206;Manuell geplant;"create mockup for login";;"15min";11.11.2016 12:49:00;;"ptreyer";4
+207;Automatisch geplant;"Global Modeling,Documentation";7 Tage;0 Tage?;14.11.2016 13:41:23;;;3
+208;Manuell geplant;"Write Use Case Description for Register";60min;"1h";10.11.2016 13:42:29;;"gzachmann";4
+209;Manuell geplant;"Write Use Case Login";45min;"1h";14.11.2016 08:17:59;;"gzachmann";4
+210;Manuell geplant;"Create UML Login";30min;"45min";14.11.2016 08:17:59;;"gzachmann";4
+211;Manuell geplant;"create YouTube account";60min;"2h";14.11.2016 13:41:23;;"gzachmann";4
+212;Automatisch geplant;"Implementation";7 Tage;0 Tage?;15.11.2016 15:03:34;;;3
+213;Manuell geplant;"login form";120min;"2h";10.11.2016 07:57:35;;"ptreyer";4
+214;Manuell geplant;"implement login on backend";120min;"2h";10.11.2016 20:58:08;;"gzachmann";4
+215;Manuell geplant;"login";375min;"1d15min";11.11.2016 09:25:23;;"gzachmann,ptreyer";4
+216;Manuell geplant;"implement login on front end";120min;"4h";11.11.2016 09:25:23;;"ptreyer";4
+217;Manuell geplant;"Create node in neoj when register";90min;"1h30min";14.11.2016 08:09:09;;"gzachmann";4
+218;Manuell geplant;"implement logout on front end";60min;"2h";15.11.2016 15:03:34;;"ptreyer";4
+219;Automatisch geplant;"Project management,Documentation";7 Tage;0 Tage?;15.11.2016 19:54:56;;;3
+220;Manuell geplant;"comment other blog 2";30min;"1h";15.11.2016 18:55:52;;"waldemar";4
+221;Manuell geplant;"comment other blog 1";20min;"1h";15.11.2016 19:54:56;;"ptreyer";4
+222;Automatisch geplant;"Test";7 Tage;0 Tage?;15.11.2016 10:03:45;;;3
+223;Manuell geplant;"fix cucumber login tests";5min;"5min";15.11.2016 10:03:45;;"waldemar";4
+224;Automatisch geplant;"Test,Global Modeling,Documentation";7 Tage;0 Tage?;14.11.2016 09:47:03;;;3
+225;Manuell geplant;"html-Repot for tests";30min;"1h";14.11.2016 09:47:03;;"waldemar";4
+226;Automatisch geplant;"First sprint";7 Tage;0 Tage?;13.10.2016 07:34:40;;;2
+227;Automatisch geplant;"";7 Tage;0 Tage?;13.10.2016 07:34:40;;;3
+228;Manuell geplant;"roles";;"?";13.10.2016 07:34:40;;"waldemar";4
+229;Automatisch geplant;"Second Sprint";7 Tage;0 Tage?;19.10.2016 09:48:36;;;2
+230;Automatisch geplant;"";7 Tage;0 Tage?;19.10.2016 09:48:36;;;3
+231;Manuell geplant;"WebServer";;"?";19.10.2016 09:48:25;;"gzachmann";4
+232;Manuell geplant;"YouTrack auf eigenem Server";;"?";19.10.2016 09:48:32;;"waldemar";4
+233;Manuell geplant;"Tools";1440min;"1d";19.10.2016 09:48:36;;"ptreyer";4
+234;Automatisch geplant;"Sprints";7 Tage;0 Tage?;;;;2
+235;Automatisch geplant;"Tags";7 Tage;0 Tage?;;;;3
+236;Manuell geplant;"Summary";Spent timine;"Estimination";;;"Assignee";4
