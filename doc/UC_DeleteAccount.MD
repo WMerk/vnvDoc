@@ -42,4 +42,4 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20delete%20account.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/DeleteAccount/Mockup_Account_loeschen.png "Mock-Up"
-[feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/deleteAccount.PNG "Feature file"
+[feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/deleteUser.PNG "Feature file"
