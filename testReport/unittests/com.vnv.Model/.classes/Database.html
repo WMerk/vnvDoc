@@ -1,0 +1,139 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Database</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.vnv.Model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Database (com.vnv.Model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Database</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+<i>4</i>&nbsp;import org.neo4j.driver.v1.AuthTokens;
+<i>5</i>&nbsp;import org.neo4j.driver.v1.Driver;
+<i>6</i>&nbsp;import org.neo4j.driver.v1.GraphDatabase;
+<i>7</i>&nbsp;import org.neo4j.driver.v1.Session;
+<i>8</i>&nbsp;import org.slf4j.Logger;
+<i>9</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>10</i>&nbsp;import org.springframework.beans.factory.annotation.Value;
+<i>11</i>&nbsp;import org.springframework.context.annotation.Profile;
+<i>12</i>&nbsp;import org.springframework.stereotype.Component;
+<i>13</i>&nbsp;import redis.clients.jedis.JedisPool;
+<i>14</i>&nbsp;import redis.clients.johm.JOhm;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;import javax.annotation.PostConstruct;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;@Profile(&quot;prod&quot;)
+<i>19</i>&nbsp;@Component
+<b class="nc"><i>20</i>&nbsp;public class Database {</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;    private static Logger log = LoggerFactory.getLogger(Database.class);</b>
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;    public static Session neo4j = null;</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    private static final String host = &quot;dhbw-projekt.data.kit.edu&quot;;
+<i>27</i>&nbsp;    private static final int redisPort = 6379;
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    @Value(&quot;${database.redis.password}&quot;)
+<i>30</i>&nbsp;    private String redisPassword;
+<i>31</i>&nbsp;    @Value(&quot;${database.neo4j.password}&quot;)
+<i>32</i>&nbsp;    private String neo4jPassword;
+<i>33</i>&nbsp;    @Value(&quot;${database.neo4j.user}&quot;)
+<i>34</i>&nbsp;    private String neo4jUser;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    @PostConstruct
+<i>37</i>&nbsp;    public void init() {
+<b class="nc"><i>38</i>&nbsp;        log.debug(&quot;init DB&quot;);</b>
+<b class="nc"><i>39</i>&nbsp;        initRedis();</b>
+<b class="nc"><i>40</i>&nbsp;        initNeo4j();</b>
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    private void initRedis() {
+<b class="nc"><i>44</i>&nbsp;        log.debug(&quot;init Redis&quot;);</b>
+<b class="nc"><i>45</i>&nbsp;        JedisPool jedisPool = new JedisPool(new GenericObjectPoolConfig(), host, redisPort,</b>
+<i>46</i>&nbsp;                redis.clients.jedis.Protocol.DEFAULT_TIMEOUT, redisPassword);
+<b class="nc"><i>47</i>&nbsp;        JOhm.setPool(jedisPool);</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    private void initNeo4j() {
+<b class="nc"><i>51</i>&nbsp;        log.debug(&quot;init Neo4j&quot;);</b>
+<b class="nc"><i>52</i>&nbsp;        Driver driver = GraphDatabase.driver( &quot;bolt://&quot;+host, AuthTokens.basic( neo4jUser, neo4jPassword ) );</b>
+<b class="nc"><i>53</i>&nbsp;        neo4j = driver.session();</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;}
+<i>56</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2016-12-09 20:22</div>
+</div>
+</body>
+</html>
