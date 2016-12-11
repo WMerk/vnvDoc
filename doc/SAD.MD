@@ -35,10 +35,6 @@ MVVM Diagram:
 We decided to use Spring for the back-end and AngularJs for the front-end of the web-project. 
 Both components are coupled by the Rest-API. 
 
-Architecture: 
-![Architecture][]
-
-
 ## 4. Use-Case View 
 n/a
 
@@ -51,7 +47,9 @@ n/a
 n/a
 
 ## 7. Deployment View
-n/a
+
+![Architecture][]
+
 ## 8. Implementation View
 n/a
 
