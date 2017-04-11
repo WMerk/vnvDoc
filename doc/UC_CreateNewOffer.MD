@@ -1,5 +1,5 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
-#Use-Case Specification: Create new offer
+# vnv – Verleihen, Dienstleistungen, verschenken
+# Use-Case Specification: Create new offer
 
 
 ## 1. Use-Case Name 

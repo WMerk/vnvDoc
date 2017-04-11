@@ -1,5 +1,5 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
-#Use-Case Specification: Register
+# vnv – Verleihen, Dienstleistungen, verschenken
+# Use-Case Specification: Register
 
 
 ## 1. Use-Case Name 

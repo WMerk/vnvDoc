@@ -1,5 +1,5 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
-#Use-Case Specification: Delete account
+# vnv – Verleihen, Dienstleistungen, verschenken
+# Use-Case Specification: Delete account
 
 
 ## 1. Use-Case Name 

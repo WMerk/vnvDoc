@@ -1,5 +1,5 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
-#Software Architecture Document
+# vnv – Verleihen, Dienstleistungen, verschenken
+# Software Architecture Document
 
 
 ## 1. Introduction 

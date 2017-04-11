@@ -1,5 +1,5 @@
-#vnv – Verleihen, Dienstleistungen, verschenken
-#Use-Case Specification: Change Password
+# vnv – Verleihen, Dienstleistungen, verschenken
+# Use-Case Specification: Change Password
 
 
 ## 1. Use-Case Name 
