@@ -4,7 +4,7 @@
 
 ## 1. Use-Case Name 
 ### 1.1 Brief Description
-The use case allows the user accept it's received friend requests. To operate this use case, the user has to be logged in and list his requests (see [UC List received friend requests] (UC_ListReceivedFriendRequests.MD)). 
+The use case allows the user accept it's received friend requests. To operate this use case, the user has to be logged in and list his requests (see [UC List received friend requests](UC_ListReceivedFriendRequests.MD)). 
 Afterwards he can click a button and accept the received requests.
 
 ## 2. Flow of Events
@@ -25,7 +25,7 @@ Both users have to be registered in vnv.
 
 ## 4. Preconditions
 ### 4.1 Successful login 
-The user has to be logged in to be able to add a friend. It also has to list his received friend requests first. This use case is descripted [here] (UC_ListReceivedFriendRequests.MD).
+The user has to be logged in to be able to add a friend. It also has to list his received friend requests first. This use case is descripted [here](UC_ListReceivedFriendRequests.MD).
 
 ## 5. Postconditions
 ### 5.1 Save Acceptance
