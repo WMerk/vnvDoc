@@ -19,13 +19,16 @@ This SRS applies to the entire vnv project. ‘vnv’ is a social platform to le
 - [Blog](https://vnvproject.wordpress.com/)
 - [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
 - [Software Architecture Document](SAD.MD)
+- [UC Accept friend requests] (UC_AcceptFriendRequest.MD)
+- [UC List received friend requests] (UC_ListReceivedFriendRequests.MD)
+- [UC List sent friend requests] (UC_ListSentFriendRequests.MD)
 - [UC Add friend](UC_AddFriend.MD)
-- [UC_ChangePassword](UC_ChangePassword.MD)
+- [UC ChangePassword](UC_ChangePassword.MD)
 - [UC Create new offer](UC_CreateNewOffer.MD)
-- [UC_DeleteAccount](UC_DeleteAccount.MD)
-- [UC_EditProfile](UC_EditProfile.MD)
-- [UC_Login](UC_Login.MD)
-- [UC_Register](UC_Register.MD)
+- [UC DeleteAccount](UC_DeleteAccount.MD)
+- [UC EditProfile](UC_EditProfile.MD)
+- [UC Login](UC_Login.MD)
+- [UC Register](UC_Register.MD)
 
 ### 1.5	Overview
 The remainder of this document is structured in the following way:
