@@ -19,11 +19,6 @@ Mock-Up:
 
 ![Mock][]
 
-### 2.3 .feature file
-
-![feature][]
-
-
 ## 3. Special Requirements
 ### 3.1 Both users are registered
 A new friend can only be added if both users are registered to the system. If not, a registered user can invite his friend to become a user of vnv.
@@ -49,4 +44,3 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20add%20friend.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/AddFriend/Mockup_AddFriend.png "Mock-Up"
-[feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/addFriend.PNG "Feature file"

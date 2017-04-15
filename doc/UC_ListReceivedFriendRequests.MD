@@ -34,5 +34,5 @@ This use case only descripes the listing of requests; no update of the data has 
 n/a
 
 <!-- picture links -->
-[UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20ReceivedFriendRequests.png "UML Diagram"
+[UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20display%20list%20of%20received%20friend%20request.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/ReceivedFriendRequests/Mockup_ReceivedFriendRequests.png "Mock-Up"

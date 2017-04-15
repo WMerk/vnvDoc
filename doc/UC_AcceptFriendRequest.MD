@@ -37,5 +37,5 @@ The user who sent the request might be notified about this acceptance.
 n/a
 
 <!-- picture links -->
-[UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20AcceptFriendRequests.png "UML Diagram"
+[UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20accept%20friend%20request.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/AcceptFriendRequests/Mockup_AcceptFriendRequests.png "Mock-Up"
