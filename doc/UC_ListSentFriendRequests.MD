@@ -5,7 +5,7 @@
 ## 1. Use-Case Name 
 ### 1.1 Brief Description
 The use case allows the user list it's sent friend requests. To operate this use case, the user has to be logged in. 
-Afterwards he can click a button and list the sent requests. There he can also accept or decline them (see XXXX and XXX).
+Afterwards he can click a button and list the sent requests. There he can also accept or decline them (see [UC Accept friend requests] (UC_AcceptFriendRequests.MD) and XXX).
 
 ## 2. Flow of Events
 ### 2.1 Basic Flow 
