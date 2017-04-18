@@ -25,7 +25,7 @@ The user has to be registered in vnv.
 
 ## 4. Preconditions
 ### 4.1 Successful login 
-The user has to be logged in to be able to add a friend.
+The user has to be logged in to be able to list offers.
 
 ## 5. Postconditions
 This use case only descripes the listing of offers; no update of the data has to be done.
