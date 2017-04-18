@@ -27,11 +27,12 @@ The scope of this SAD is to show the architecture of the vnv project. Affected a
 - [UC List requests](UC_ListRequests.MD)
 - [UC List offers](UC_ListOffers.MD)
 - [UC Search for offers or requests](UC_SearchOffersRequests.MD)
-- [UC Edit status of offer / request](UC_EditStatus)
+- [UC Edit status of offer / request](UC_EditStatus.MD)
 - [UC DeleteAccount](UC_DeleteAccount.MD)
 - [UC EditProfile](UC_EditProfile.MD)
 - [UC Login](UC_Login.MD)
 - [UC Register](UC_Register.MD)
+- [UC Register/Login with Google](UC_RegisterLoginGoogle.MD)
 
 ## 2. Architectural Representation
 vnv uses the MVVM-Pattern for its architecture design.

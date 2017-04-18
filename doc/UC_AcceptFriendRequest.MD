@@ -1,5 +1,5 @@
 # vnv – Verleihen, Dienstleistungen, verschenken
-# Use-Case Specification: List received friend requests
+# Use-Case Specification: Accept friend request
 
 
 ## 1. Use-Case Name 

@@ -30,11 +30,12 @@ This SRS applies to the entire vnv project. ‘vnv’ is a social platform to le
 - [UC List requests](UC_ListRequests.MD)
 - [UC List offers](UC_ListOffers.MD)
 - [UC Search for offers or requests](UC_SearchOffersRequests.MD)
-- [UC Edit status of offer / request](UC_EditStatus)
+- [UC Edit status of offer / request](UC_EditStatus.MD)
 - [UC DeleteAccount](UC_DeleteAccount.MD)
 - [UC EditProfile](UC_EditProfile.MD)
 - [UC Login](UC_Login.MD)
 - [UC Register](UC_Register.MD)
+- [UC Register/Login with Google](UC_RegisterLoginGoogle.MD)
 
 ### 1.5	Overview
 The remainder of this document is structured in the following way:
