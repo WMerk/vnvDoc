@@ -27,6 +27,8 @@ This SRS applies to the entire vnv project. ‘vnv’ is a social platform to le
 - [UC ChangePassword](UC_ChangePassword.MD)
 - [UC Create new request](UC_CreateNewRequest.MD)
 - [UC Create new offer](UC_CreateNewOffer.MD)
+- [UC List requests](UC_ListRequests.MD)
+- [UC List offers](UC_ListOffers.MD)
 - [UC DeleteAccount](UC_DeleteAccount.MD)
 - [UC EditProfile](UC_EditProfile.MD)
 - [UC Login](UC_Login.MD)
