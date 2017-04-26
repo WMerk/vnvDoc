@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+# vnv â€“ Verleihen, Dienstleistungen, verschenken
 # Use-Case Specification: Search for offers and requests
 
 
@@ -11,6 +11,7 @@ The use case allows the user to search for offers and requests. To operate this 
 UML Diagram: 
 
 ![UML][]
+![UML1][]
 
 ### 2.2 Mock-Up
 Mock-Up:
@@ -33,5 +34,6 @@ This use case only descripes the search for offers and requests; no update of th
 n/a
 
 <!-- picture links -->
-[UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20search%20offers%20requests.png "UML Diagram"
+[UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20Search%20offers.png "UML Diagram"
+[UML1]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20Search%20request.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/SearchOffersRequests/Mockup_SearchOffersRequests.png "Mock-Up"
