@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Http</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.vnv.Model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Http (com.vnv.Model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Http</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 33)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import org.apache.commons.io.IOUtils;
+<i>5</i>&nbsp;import org.apache.http.Header;
+<i>6</i>&nbsp;import org.apache.http.HttpEntity;
+<i>7</i>&nbsp;import org.apache.http.HttpResponse;
+<i>8</i>&nbsp;import org.apache.http.NameValuePair;
+<i>9</i>&nbsp;import org.apache.http.client.HttpClient;
+<i>10</i>&nbsp;import org.apache.http.client.entity.UrlEncodedFormEntity;
+<i>11</i>&nbsp;import org.apache.http.client.methods.HttpGet;
+<i>12</i>&nbsp;import org.apache.http.client.methods.HttpPost;
+<i>13</i>&nbsp;import org.apache.http.impl.client.HttpClients;
+<i>14</i>&nbsp;import org.json.JSONObject;
+<i>15</i>&nbsp;import org.slf4j.Logger;
+<i>16</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import java.io.IOException;
+<i>19</i>&nbsp;import java.io.InputStream;
+<i>20</i>&nbsp;import java.util.List;
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;public class Http {</b>
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;    private static Logger log = LoggerFactory.getLogger(Http.class);</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public static JSONObject post(String url, List&lt;NameValuePair&gt; params) throws IOException {
+<b class="nc"><i>27</i>&nbsp;        HttpClient httpclient = HttpClients.createDefault();</b>
+<b class="nc"><i>28</i>&nbsp;        HttpPost httppost = new HttpPost(url);</b>
+<i>29</i>&nbsp;
+<b class="nc"><i>30</i>&nbsp;        httppost.setEntity(new UrlEncodedFormEntity(params, &quot;UTF-8&quot;));</b>
+<i>31</i>&nbsp;
+<b class="nc"><i>32</i>&nbsp;        log.debug(httppost.getURI().toString());</b>
+<b class="nc"><i>33</i>&nbsp;        HttpResponse response = httpclient.execute(httppost);</b>
+<b class="nc"><i>34</i>&nbsp;        HttpEntity entity = response.getEntity();</b>
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;        if (entity != null) {</b>
+<b class="nc"><i>37</i>&nbsp;            InputStream instream = entity.getContent();</b>
+<i>38</i>&nbsp;            try {
+<b class="nc"><i>39</i>&nbsp;                JSONObject json = new JSONObject(IOUtils.toString(instream, &quot;UTF-8&quot;));</b>
+<b class="nc"><i>40</i>&nbsp;                log.debug(json.toString());</b>
+<b class="nc"><i>41</i>&nbsp;                return json;</b>
+<i>42</i>&nbsp;            } finally {
+<b class="nc"><i>43</i>&nbsp;                instream.close();</b>
+<i>44</i>&nbsp;            }
+<i>45</i>&nbsp;        }
+<b class="nc"><i>46</i>&nbsp;        return null;</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    public static String get(String url, Header header) throws IOException {
+<b class="nc"><i>50</i>&nbsp;        HttpClient httpclient = HttpClients.createDefault();</b>
+<b class="nc"><i>51</i>&nbsp;        HttpGet get = new HttpGet(url);</b>
+<b class="nc"><i>52</i>&nbsp;        get.setHeader(header);</b>
+<i>53</i>&nbsp;
+<b class="nc"><i>54</i>&nbsp;        HttpResponse response = httpclient.execute(get);</b>
+<b class="nc"><i>55</i>&nbsp;        return responseToString(response);</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    public static String get(String url) throws IOException {
+<b class="nc"><i>59</i>&nbsp;        log.debug(url);</b>
+<b class="nc"><i>60</i>&nbsp;        HttpClient httpclient = HttpClients.createDefault();</b>
+<b class="nc"><i>61</i>&nbsp;        HttpGet get = new HttpGet(url);</b>
+<i>62</i>&nbsp;
+<b class="nc"><i>63</i>&nbsp;        HttpResponse response = httpclient.execute(get);</b>
+<b class="nc"><i>64</i>&nbsp;        return responseToString(response);</b>
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    private static String responseToString(HttpResponse response) throws IOException {
+<b class="nc"><i>68</i>&nbsp;        HttpEntity entity = response.getEntity();</b>
+<b class="nc"><i>69</i>&nbsp;        if (entity != null) {</b>
+<b class="nc"><i>70</i>&nbsp;            InputStream instream = entity.getContent();</b>
+<i>71</i>&nbsp;            try {
+<b class="nc"><i>72</i>&nbsp;                String responseString = IOUtils.toString(instream, &quot;UTF-8&quot;);</b>
+<b class="nc"><i>73</i>&nbsp;                log.debug(responseString);</b>
+<b class="nc"><i>74</i>&nbsp;                return responseString;</b>
+<i>75</i>&nbsp;            } finally {
+<b class="nc"><i>76</i>&nbsp;                instream.close();</b>
+<i>77</i>&nbsp;            }
+<i>78</i>&nbsp;        }
+<b class="nc"><i>79</i>&nbsp;        return null;</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-04-29 14:28</div>
+</div>
+</body>
+</html>

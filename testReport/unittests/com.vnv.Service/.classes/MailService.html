@@ -1,0 +1,140 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MailService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.vnv.Service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MailService (com.vnv.Service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MailService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/ 22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.slf4j.Logger;
+<i>4</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>5</i>&nbsp;import org.springframework.beans.factory.annotation.Value;
+<i>6</i>&nbsp;import org.springframework.stereotype.Service;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import javax.mail.Message;
+<i>9</i>&nbsp;import javax.mail.MessagingException;
+<i>10</i>&nbsp;import javax.mail.Session;
+<i>11</i>&nbsp;import javax.mail.Transport;
+<i>12</i>&nbsp;import javax.mail.internet.AddressException;
+<i>13</i>&nbsp;import javax.mail.internet.InternetAddress;
+<i>14</i>&nbsp;import javax.mail.internet.MimeMessage;
+<i>15</i>&nbsp;import java.util.Properties;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;@Service
+<b class="fc"><i>18</i>&nbsp;public class MailService {</b>
+<i>19</i>&nbsp;
+<b class="fc"><i>20</i>&nbsp;    private Logger log = LoggerFactory.getLogger(MailService.class);</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;        Properties mailServerProperties;
+<i>23</i>&nbsp;        Session getMailSession;
+<i>24</i>&nbsp;        MimeMessage generateMailMessage;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;        @Value(&quot;${mail.google.mail}&quot;)
+<i>27</i>&nbsp;        private String gmail;
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;        @Value(&quot;${mail.google.password}&quot;)
+<i>30</i>&nbsp;        private String gPw;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;        public void sendEmail(String mail, String subject, String message) throws AddressException, MessagingException {
+<b class="fc"><i>33</i>&nbsp;            log.debug(&quot;Setup Mail Server Properties&quot;);</b>
+<b class="fc"><i>34</i>&nbsp;            mailServerProperties = System.getProperties();</b>
+<b class="fc"><i>35</i>&nbsp;            mailServerProperties.put(&quot;mail.smtp.port&quot;, &quot;587&quot;);</b>
+<b class="fc"><i>36</i>&nbsp;            mailServerProperties.put(&quot;mail.smtp.auth&quot;, &quot;true&quot;);</b>
+<b class="fc"><i>37</i>&nbsp;            mailServerProperties.put(&quot;mail.smtp.starttls.enable&quot;, &quot;true&quot;);</b>
+<b class="fc"><i>38</i>&nbsp;            log.debug(&quot;Mail Server Properties have been setup successfully..&quot;);</b>
+<i>39</i>&nbsp;
+<b class="fc"><i>40</i>&nbsp;            log.debug(&quot;Get Mail Session&quot;);</b>
+<b class="fc"><i>41</i>&nbsp;            getMailSession = Session.getDefaultInstance(mailServerProperties, null);</b>
+<b class="fc"><i>42</i>&nbsp;            generateMailMessage = new MimeMessage(getMailSession);</b>
+<b class="fc"><i>43</i>&nbsp;            generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(mail));</b>
+<i>44</i>&nbsp;            // generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(&quot;&quot;));
+<b class="fc"><i>45</i>&nbsp;            generateMailMessage.setSubject(subject);</b>
+<b class="fc"><i>46</i>&nbsp;            generateMailMessage.setContent(message, &quot;text/html&quot;);</b>
+<b class="fc"><i>47</i>&nbsp;            log.debug(&quot;Mail Session has been created successfully..&quot;);</b>
+<i>48</i>&nbsp;
+<b class="fc"><i>49</i>&nbsp;            log.debug(&quot;Session and Send mail&quot;);</b>
+<b class="fc"><i>50</i>&nbsp;            Transport transport = getMailSession.getTransport(&quot;smtp&quot;);</b>
+<i>51</i>&nbsp;
+<b class="fc"><i>52</i>&nbsp;            transport.connect(&quot;smtp.gmail.com&quot;, gmail, gPw);</b>
+<b class="fc"><i>53</i>&nbsp;            transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());</b>
+<b class="fc"><i>54</i>&nbsp;            transport.close();</b>
+<b class="fc"><i>55</i>&nbsp;            log.debug(&quot;Mail has been sent&quot;);</b>
+<b class="fc"><i>56</i>&nbsp;        }</b>
+<i>57</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-04-29 14:28</div>
+</div>
+</body>
+</html>

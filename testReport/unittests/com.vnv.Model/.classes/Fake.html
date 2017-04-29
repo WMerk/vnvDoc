@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 42)
+    (0/ 43)
   </span>
 </td>
 </tr>
@@ -102,67 +102,68 @@
 <b class="nc"><i>28</i>&nbsp;        User u = new User();</b>
 <b class="nc"><i>29</i>&nbsp;        u.setLastName(faker.name().lastName());</b>
 <b class="nc"><i>30</i>&nbsp;        u.setFirstName(faker.name().firstName());</b>
-<b class="nc"><i>31</i>&nbsp;        u.setPassword(faker.internet().password());</b>
-<b class="nc"><i>32</i>&nbsp;        u.setSessionId(faker.beer().yeast());</b>
-<b class="nc"><i>33</i>&nbsp;        u.setMail(faker.internet().emailAddress(u.getFirstName()+&quot;.&quot;+u.getLastName()));</b>
-<b class="nc"><i>34</i>&nbsp;        u.setPhone(faker.phoneNumber().cellPhone());</b>
-<b class="nc"><i>35</i>&nbsp;        return u;</b>
-<i>36</i>&nbsp;    }
-<i>37</i>&nbsp;
-<i>38</i>&nbsp;    private static Post getFakePost(User user) {
-<b class="nc"><i>39</i>&nbsp;        Post p = new Post();</b>
-<b class="nc"><i>40</i>&nbsp;        p.setUser(user);</b>
-<b class="nc"><i>41</i>&nbsp;        p.setFlavour(flavours[random.nextInt(3)]);</b>
-<b class="nc"><i>42</i>&nbsp;        Category c = new Category();</b>
-<b class="nc"><i>43</i>&nbsp;        c.setId(0L);c.setName(&quot;TestCategory&quot;);</b>
-<b class="nc"><i>44</i>&nbsp;        p.setCategory(c);</b>
-<b class="nc"><i>45</i>&nbsp;        p.setDescription(faker.lorem().paragraph());</b>
-<b class="nc"><i>46</i>&nbsp;        p.setPostName(faker.lorem().word());</b>
-<b class="nc"><i>47</i>&nbsp;        return p;</b>
-<i>48</i>&nbsp;    }
-<i>49</i>&nbsp;
-<i>50</i>&nbsp;    public static Post getFakeOffer(User user) {
-<b class="nc"><i>51</i>&nbsp;        Post p = getFakePost(user);</b>
-<b class="nc"><i>52</i>&nbsp;        p.setType(&quot;offer&quot;);</b>
-<b class="nc"><i>53</i>&nbsp;        return p;</b>
-<i>54</i>&nbsp;    }
-<i>55</i>&nbsp;
-<i>56</i>&nbsp;    public static Post getFakeRequest(User user) {
-<b class="nc"><i>57</i>&nbsp;        Post p = getFakePost(user);</b>
-<b class="nc"><i>58</i>&nbsp;        p.setType(&quot;request&quot;);</b>
-<b class="nc"><i>59</i>&nbsp;        return p;</b>
-<i>60</i>&nbsp;    }
-<i>61</i>&nbsp;
-<i>62</i>&nbsp;    @Profile(&quot;debug&quot;)
-<i>63</i>&nbsp;    public void makeFakeDbEntries(int number) {
-<b class="nc"><i>64</i>&nbsp;        UserRelDao userRelDao = new FakeUserRelDaoImpl();</b>
-<b class="nc"><i>65</i>&nbsp;        UserDao userDao = new FakeUserDaoImp();</b>
-<i>66</i>&nbsp;
-<b class="nc"><i>67</i>&nbsp;        User tester = userDao.getUserByMail(&quot;test@test.de&quot;);</b>
-<b class="nc"><i>68</i>&nbsp;        for (int i=0; i&lt;number; i++) {</b>
-<b class="nc"><i>69</i>&nbsp;            User u = getFakeUser();</b>
-<b class="nc"><i>70</i>&nbsp;            userDao.insertUserToDb(u);</b>
-<b class="nc"><i>71</i>&nbsp;            userRelDao.addUser(u);</b>
-<b class="nc"><i>72</i>&nbsp;            if (random.nextBoolean()) {</b>
-<i>73</i>&nbsp;                // a random relationship will be inserted
-<b class="nc"><i>74</i>&nbsp;                int rand = random.nextInt(4);</b>
-<b class="nc"><i>75</i>&nbsp;                if (rand==1)</b>
-<b class="nc"><i>76</i>&nbsp;                    userRelDao.addFriend(u, tester);</b>
-<b class="nc"><i>77</i>&nbsp;                if (rand==2)</b>
-<b class="nc"><i>78</i>&nbsp;                    userRelDao.addRequest(u, tester);</b>
-<b class="nc"><i>79</i>&nbsp;                if (rand==3)</b>
-<b class="nc"><i>80</i>&nbsp;                    userRelDao.addRequest(tester, u);</b>
-<i>81</i>&nbsp;            }
-<i>82</i>&nbsp;        }
-<i>83</i>&nbsp;    }
-<i>84</i>&nbsp;
-<i>85</i>&nbsp;}
+<b class="nc"><i>31</i>&nbsp;        u.setName(u.getFirstName()+&quot; &quot;+u.getLastName());</b>
+<b class="nc"><i>32</i>&nbsp;        u.setPassword(faker.internet().password());</b>
+<b class="nc"><i>33</i>&nbsp;        u.setSessionId(faker.internet().password(25,26,true,true));</b>
+<b class="nc"><i>34</i>&nbsp;        u.setMail(faker.internet().emailAddress(u.getFirstName()+&quot;.&quot;+u.getLastName()));</b>
+<b class="nc"><i>35</i>&nbsp;        u.setPhone(faker.phoneNumber().cellPhone());</b>
+<b class="nc"><i>36</i>&nbsp;        return u;</b>
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    private static Post getFakePost(User user) {
+<b class="nc"><i>40</i>&nbsp;        Post p = new Post();</b>
+<b class="nc"><i>41</i>&nbsp;        p.setUser(user);</b>
+<b class="nc"><i>42</i>&nbsp;        p.setFlavour(flavours[random.nextInt(3)]);</b>
+<b class="nc"><i>43</i>&nbsp;        Category c = new Category();</b>
+<b class="nc"><i>44</i>&nbsp;        c.setId(0L);c.setName(&quot;TestCategory&quot;);</b>
+<b class="nc"><i>45</i>&nbsp;        p.setCategory(c);</b>
+<b class="nc"><i>46</i>&nbsp;        p.setDescription(faker.lorem().paragraph());</b>
+<b class="nc"><i>47</i>&nbsp;        p.setPostName(faker.lorem().word());</b>
+<b class="nc"><i>48</i>&nbsp;        return p;</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    public static Post getFakeOffer(User user) {
+<b class="nc"><i>52</i>&nbsp;        Post p = getFakePost(user);</b>
+<b class="nc"><i>53</i>&nbsp;        p.setType(&quot;offer&quot;);</b>
+<b class="nc"><i>54</i>&nbsp;        return p;</b>
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    public static Post getFakeRequest(User user) {
+<b class="nc"><i>58</i>&nbsp;        Post p = getFakePost(user);</b>
+<b class="nc"><i>59</i>&nbsp;        p.setType(&quot;request&quot;);</b>
+<b class="nc"><i>60</i>&nbsp;        return p;</b>
+<i>61</i>&nbsp;    }
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    @Profile(&quot;debug&quot;)
+<i>64</i>&nbsp;    public void makeFakeDbEntries(int number) {
+<b class="nc"><i>65</i>&nbsp;        UserRelDao userRelDao = new FakeUserRelDaoImpl();</b>
+<b class="nc"><i>66</i>&nbsp;        UserDao userDao = new FakeUserDaoImp();</b>
+<i>67</i>&nbsp;
+<b class="nc"><i>68</i>&nbsp;        User tester = userDao.getUserByMail(&quot;test@test.de&quot;);</b>
+<b class="nc"><i>69</i>&nbsp;        for (int i=0; i&lt;number; i++) {</b>
+<b class="nc"><i>70</i>&nbsp;            User u = getFakeUser();</b>
+<b class="nc"><i>71</i>&nbsp;            userDao.insertUserToDb(u);</b>
+<b class="nc"><i>72</i>&nbsp;            userRelDao.addUser(u);</b>
+<b class="nc"><i>73</i>&nbsp;            if (random.nextBoolean()) {</b>
+<i>74</i>&nbsp;                // a random relationship will be inserted
+<b class="nc"><i>75</i>&nbsp;                int rand = random.nextInt(4);</b>
+<b class="nc"><i>76</i>&nbsp;                if (rand==1)</b>
+<b class="nc"><i>77</i>&nbsp;                    userRelDao.addFriend(u, tester);</b>
+<b class="nc"><i>78</i>&nbsp;                if (rand==2)</b>
+<b class="nc"><i>79</i>&nbsp;                    userRelDao.addRequest(u, tester);</b>
+<b class="nc"><i>80</i>&nbsp;                if (rand==3)</b>
+<b class="nc"><i>81</i>&nbsp;                    userRelDao.addRequest(tester, u);</b>
+<i>82</i>&nbsp;            }
+<i>83</i>&nbsp;        }
+<i>84</i>&nbsp;    }
+<i>85</i>&nbsp;
+<i>86</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2016-12-09 20:22</div>
+    <div style="float:right;">generated on 2017-04-29 14:28</div>
 </div>
 </body>
 </html>

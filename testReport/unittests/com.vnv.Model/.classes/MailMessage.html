@@ -5,7 +5,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html id="htmlId">
 <head>
-  <title>Coverage Report :: MessageService</title>
+  <title>Coverage Report :: MailMessage</title>
   <style type="text/css">
     @import "../../.css/coverage.css";
   </style>
@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Service</a> ]
+    [ <a href="../index.html">com.vnv.Model</a> ]
 </div>
 
-<h1>Coverage Summary for Class: MessageService (com.vnv.Service)</h1>
+<h1>Coverage Summary for Class: MailMessage (com.vnv.Model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,29 +39,29 @@
 </th>
 </tr>
 <tr>
-  <td class="name">MessageService</td>
+  <td class="name">MailMessage</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/ 1)
+    (0/ 1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/ 1)
+    (0/ 2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/ 1)
+    (0/ 2)
   </span>
 </td>
 </tr>
@@ -72,19 +72,21 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Service;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
 <i>2</i>&nbsp;
-<i>3</i>&nbsp;import com.vnv.Dao.MessageDao;
-<i>4</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
-<i>5</i>&nbsp;import org.springframework.stereotype.Service;
-<i>6</i>&nbsp;
-<i>7</i>&nbsp;@Service
-<b class="fc"><i>8</i>&nbsp;public class MessageService {</b>
-<i>9</i>&nbsp;
-<i>10</i>&nbsp;    @Autowired
-<i>11</i>&nbsp;    MessageDao messageDao;
-<i>12</i>&nbsp;
-<i>13</i>&nbsp;}
+<b class="nc"><i>3</i>&nbsp;public class MailMessage {</b>
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;    private final static String gwelcome = &quot;Hi %s,&lt;br&gt;&quot; +
+<i>6</i>&nbsp;            &quot;&lt;br&gt;&quot; +
+<i>7</i>&nbsp;            &quot;willkommen zu vnv. Wir freuen uns, dass du dich mit deinem google Konto bei vnv registriert hast.&lt;br&gt;&quot; +
+<i>8</i>&nbsp;            &quot;&lt;br&gt;&quot; +
+<i>9</i>&nbsp;            &quot;Schoene Gruesse&lt;br&gt;&quot; +
+<i>10</i>&nbsp;            &quot;Dein vnv-team&quot;;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    public static String getGwelcome(String name) {
+<b class="nc"><i>13</i>&nbsp;        return String.format(gwelcome, name);</b>
+<i>14</i>&nbsp;    }
+<i>15</i>&nbsp;}
 </div>
 </div>
 

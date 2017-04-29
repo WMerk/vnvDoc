@@ -1,0 +1,378 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GoogleService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.vnv.Service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GoogleService (com.vnv.Service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GoogleService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    38,5%
+  </span>
+  <span class="absValue">
+    (5/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16,6%
+  </span>
+  <span class="absValue">
+    (26/ 157)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import com.vnv.Dao.UserDao;
+<i>5</i>&nbsp;import com.vnv.Dao.UserRelDao;
+<i>6</i>&nbsp;import com.vnv.Entity.User;
+<i>7</i>&nbsp;import com.vnv.Model.ErrorMessage;
+<i>8</i>&nbsp;import com.vnv.Model.Http;
+<i>9</i>&nbsp;import com.vnv.Model.MailMessage;
+<i>10</i>&nbsp;import org.apache.http.Header;
+<i>11</i>&nbsp;import org.apache.http.NameValuePair;
+<i>12</i>&nbsp;import org.apache.http.message.BasicHeader;
+<i>13</i>&nbsp;import org.apache.http.message.BasicNameValuePair;
+<i>14</i>&nbsp;import org.json.JSONObject;
+<i>15</i>&nbsp;import org.slf4j.Logger;
+<i>16</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>17</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>18</i>&nbsp;import org.springframework.beans.factory.annotation.Value;
+<i>19</i>&nbsp;import org.springframework.context.annotation.Profile;
+<i>20</i>&nbsp;import org.springframework.stereotype.Service;
+<i>21</i>&nbsp;import org.w3c.dom.Document;
+<i>22</i>&nbsp;import org.w3c.dom.Element;
+<i>23</i>&nbsp;import org.w3c.dom.NodeList;
+<i>24</i>&nbsp;import org.xml.sax.InputSource;
+<i>25</i>&nbsp;import org.xml.sax.SAXException;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;import javax.annotation.PostConstruct;
+<i>28</i>&nbsp;import javax.mail.MessagingException;
+<i>29</i>&nbsp;import javax.servlet.http.HttpSession;
+<i>30</i>&nbsp;import javax.xml.parsers.DocumentBuilderFactory;
+<i>31</i>&nbsp;import javax.xml.parsers.ParserConfigurationException;
+<i>32</i>&nbsp;import java.io.IOException;
+<i>33</i>&nbsp;import java.io.StringReader;
+<i>34</i>&nbsp;import java.util.ArrayList;
+<i>35</i>&nbsp;import java.util.Date;
+<i>36</i>&nbsp;import java.util.List;
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;@Service
+<b class="fc"><i>39</i>&nbsp;public class GoogleService extends SocialService {</b>
+<i>40</i>&nbsp;
+<b class="fc"><i>41</i>&nbsp;    private static Logger log = LoggerFactory.getLogger(GoogleService.class);</b>
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    @Autowired
+<i>44</i>&nbsp;    private UserDao userDao;
+<i>45</i>&nbsp;    @Autowired
+<i>46</i>&nbsp;    private UserRelDao userRelDao;
+<i>47</i>&nbsp;    @Autowired
+<i>48</i>&nbsp;    private MailService mailService;
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    @Value(&quot;${social.google.client_id}&quot;)
+<i>51</i>&nbsp;    private String client_id;
+<i>52</i>&nbsp;    @Value(&quot;${social.google.client_secret}&quot;)
+<i>53</i>&nbsp;    private String client_secret;
+<i>54</i>&nbsp;    @Value(&quot;${social.google.configuration_endpoint}&quot;)
+<i>55</i>&nbsp;    private String configuration_endpoint;
+<i>56</i>&nbsp;
+<b class="fc"><i>57</i>&nbsp;    public String redirect_uri = &quot;https://dhbw-projekt.data.kit.edu/gconnect&quot;;</b>
+<b class="fc"><i>58</i>&nbsp;    public String debug_redirect_uri = &quot;http://localhost:8080/&quot;;</b>
+<i>59</i>&nbsp;
+<b class="fc"><i>60</i>&nbsp;    private String grant_type = &quot;authorization_code&quot;;</b>
+<b class="fc"><i>61</i>&nbsp;    public String scope = &quot;openid email profile https://www.googleapis.com/auth/contacts.readonly&quot;;</b>
+<b class="fc"><i>62</i>&nbsp;    public String response_type = &quot;code&quot;;</b>
+<b class="fc"><i>63</i>&nbsp;    public String display = &quot;popup&quot;;</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    public String iss;
+<i>66</i>&nbsp;    public String auth_endpoint;
+<i>67</i>&nbsp;    private String userinfo_endpoint;
+<i>68</i>&nbsp;    private String token_endpoint;
+<b class="fc"><i>69</i>&nbsp;    private String tokeninfo_endpoint = &quot;https://www.googleapis.com/oauth2/v3/tokeninfo&quot;;</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;    @PostConstruct
+<i>72</i>&nbsp;    private void retrieveConfig() throws IOException {
+<b class="fc"><i>73</i>&nbsp;        JSONObject config = new JSONObject(Http.get(configuration_endpoint));</b>
+<b class="fc"><i>74</i>&nbsp;        auth_endpoint = config.getString(&quot;authorization_endpoint&quot;);</b>
+<b class="fc"><i>75</i>&nbsp;        userinfo_endpoint = config.getString(&quot;userinfo_endpoint&quot;);</b>
+<b class="fc"><i>76</i>&nbsp;        token_endpoint = config.getString(&quot;token_endpoint&quot;);</b>
+<b class="fc"><i>77</i>&nbsp;        iss = config.getString(&quot;issuer&quot;);</b>
+<b class="fc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    @Override
+<i>81</i>&nbsp;    public JSONObject getConfig() {
+<b class="fc"><i>82</i>&nbsp;        JSONObject config = new JSONObject();</b>
+<b class="fc"><i>83</i>&nbsp;        config.put(&quot;iss&quot;, iss);</b>
+<b class="fc"><i>84</i>&nbsp;        config.put(&quot;client_id&quot;, client_id);</b>
+<b class="fc"><i>85</i>&nbsp;        config.put(&quot;auth_endpoint&quot;, auth_endpoint);</b>
+<b class="fc"><i>86</i>&nbsp;        config.put(&quot;response_type&quot;, response_type);</b>
+<b class="fc"><i>87</i>&nbsp;        config.put(&quot;scope&quot;, scope);</b>
+<b class="fc"><i>88</i>&nbsp;        config.put(&quot;redirect_uri&quot;, redirect_uri);</b>
+<b class="fc"><i>89</i>&nbsp;        config.put(&quot;display&quot;, display);</b>
+<b class="fc"><i>90</i>&nbsp;        return config;</b>
+<i>91</i>&nbsp;    }
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    @Override
+<i>94</i>&nbsp;    public JSONObject login(String code, String state, String redirect_uri, HttpSession session) {
+<b class="nc"><i>95</i>&nbsp;        log.debug(&quot;State: {}&quot;, state);</b>
+<b class="nc"><i>96</i>&nbsp;        log.debug(&quot;State Session: {}&quot;, session.getId());</b>
+<b class="nc"><i>97</i>&nbsp;        log.debug(&quot;code: {}&quot;, code);</b>
+<b class="nc"><i>98</i>&nbsp;        log.debug(&quot;redirect_uri: {}&quot;, redirect_uri);</b>
+<b class="nc"><i>99</i>&nbsp;        if (!state.equals(session.getAttribute(&quot;state&quot;))) {</b>
+<i>100</i>&nbsp;           // return new JSONObject(ErrorMessage.getError(&quot;states not equal&quot;, 401));
+<i>101</i>&nbsp;        }
+<b class="nc"><i>102</i>&nbsp;        log.debug(&quot;State comparison done&quot;);</b>
+<b class="nc"><i>103</i>&nbsp;        JSONObject tokenJson = getTokens(code, state, redirect_uri);</b>
+<b class="nc"><i>104</i>&nbsp;        if (tokenJson.has(&quot;error&quot;)) {</b>
+<b class="nc"><i>105</i>&nbsp;            log.error(tokenJson.toString());</b>
+<b class="nc"><i>106</i>&nbsp;            return tokenJson;</b>
+<i>107</i>&nbsp;        }
+<b class="nc"><i>108</i>&nbsp;        log.debug(&quot;Token retrieved&quot;);</b>
+<b class="nc"><i>109</i>&nbsp;        String access_token = tokenJson.getString(&quot;access_token&quot;);</b>
+<b class="nc"><i>110</i>&nbsp;        String id_token = tokenJson.getString(&quot;id_token&quot;);</b>
+<b class="nc"><i>111</i>&nbsp;        log.debug(&quot;Access token: {}&quot;,access_token);</b>
+<b class="nc"><i>112</i>&nbsp;        log.debug(&quot;Id token: {}&quot;, id_token);</b>
+<i>113</i>&nbsp;
+<b class="nc"><i>114</i>&nbsp;        if (!validateToken(id_token)) {</b>
+<b class="nc"><i>115</i>&nbsp;            log.debug(&quot;Could not validate token&quot;);</b>
+<b class="nc"><i>116</i>&nbsp;            return new JSONObject(ErrorMessage.DefaultError);</b>
+<i>117</i>&nbsp;        }
+<b class="nc"><i>118</i>&nbsp;        log.debug(&quot;Token validated&quot;);</b>
+<i>119</i>&nbsp;
+<b class="nc"><i>120</i>&nbsp;        User user = getUserInfo(access_token);</b>
+<b class="nc"><i>121</i>&nbsp;        if (user==null)</b>
+<b class="nc"><i>122</i>&nbsp;            return new JSONObject(ErrorMessage.DefaultError);</b>
+<b class="nc"><i>123</i>&nbsp;        User savedUser = userDao.getUserByGoogleId(user.getGoogleId());</b>
+<b class="nc"><i>124</i>&nbsp;        if (savedUser!=null) {</b>
+<i>125</i>&nbsp;            //login
+<b class="nc"><i>126</i>&nbsp;            savedUser.setSessionId(session.getId());</b>
+<b class="nc"><i>127</i>&nbsp;            userDao.updateUser(savedUser);</b>
+<i>128</i>&nbsp;        } else {
+<i>129</i>&nbsp;            //register
+<b class="nc"><i>130</i>&nbsp;            user.setSessionId(session.getId());</b>
+<b class="nc"><i>131</i>&nbsp;            log.debug(&quot;Registering google user {}&quot;, user);</b>
+<b class="nc"><i>132</i>&nbsp;            userDao.insertUserToDb(user);</b>
+<b class="nc"><i>133</i>&nbsp;            user = userDao.getUserByMail(user.getMail());</b>
+<b class="nc"><i>134</i>&nbsp;            if (user==null) {</b>
+<b class="nc"><i>135</i>&nbsp;                return new JSONObject(String.format(ErrorMessage.getError(&quot;could not register user&quot;, 404)));</b>
+<i>136</i>&nbsp;            }
+<b class="nc"><i>137</i>&nbsp;            log.debug(&quot;User {} successfully added to DB&quot;, user);</b>
+<b class="nc"><i>138</i>&nbsp;            log.debug(&quot;Adding user to graphDB&quot;);</b>
+<b class="nc"><i>139</i>&nbsp;            userRelDao.addUser(user);</b>
+<i>140</i>&nbsp;
+<b class="nc"><i>141</i>&nbsp;            JSONObject json = addSocialFriends(user, access_token);</b>
+<i>142</i>&nbsp;
+<b class="nc"><i>143</i>&nbsp;            final User finalUser = user;</b>
+<b class="nc"><i>144</i>&nbsp;            new Thread(() -&gt; {</b>
+<i>145</i>&nbsp;                try {
+<b class="nc"><i>146</i>&nbsp;                mailService.sendEmail(finalUser.getMail(),&quot;Willkommen zu vnv&quot;,MailMessage.getGwelcome(finalUser.getFirstName()));</b>
+<b class="nc"><i>147</i>&nbsp;                } catch (MessagingException e) {</b>
+<b class="nc"><i>148</i>&nbsp;                    log.error(e.getMessage());</b>
+<b class="nc"><i>149</i>&nbsp;                }</b>
+<b class="nc"><i>150</i>&nbsp;            }).start();</b>
+<i>151</i>&nbsp;
+<b class="nc"><i>152</i>&nbsp;            if (json.has(&quot;error&quot;))</b>
+<b class="nc"><i>153</i>&nbsp;                return json;</b>
+<i>154</i>&nbsp;        }
+<i>155</i>&nbsp;
+<b class="nc"><i>156</i>&nbsp;        return user.toJSON();</b>
+<i>157</i>&nbsp;    }
+<i>158</i>&nbsp;
+<i>159</i>&nbsp;
+<i>160</i>&nbsp;
+<i>161</i>&nbsp;    @Override
+<i>162</i>&nbsp;    protected boolean validate(String iss, String aud, long exp) {
+<b class="nc"><i>163</i>&nbsp;            if (new Date().getTime() &lt; exp) {</b>
+<b class="nc"><i>164</i>&nbsp;                log.debug(&quot;Token expired&quot;);</b>
+<b class="nc"><i>165</i>&nbsp;                return false;</b>
+<i>166</i>&nbsp;            }
+<b class="nc"><i>167</i>&nbsp;            if (!client_id.equals(aud)) {</b>
+<b class="nc"><i>168</i>&nbsp;                log.debug(&quot;Token not audienced to vnv&quot;);</b>
+<b class="nc"><i>169</i>&nbsp;                return false;</b>
+<i>170</i>&nbsp;            }
+<b class="nc"><i>171</i>&nbsp;            if (!iss.equals(iss)) {</b>
+<b class="nc"><i>172</i>&nbsp;                log.debug(&quot;Token not issued by google&quot;);</b>
+<b class="nc"><i>173</i>&nbsp;                return false;</b>
+<i>174</i>&nbsp;            }
+<b class="nc"><i>175</i>&nbsp;            return true;</b>
+<i>176</i>&nbsp;    }
+<i>177</i>&nbsp;
+<i>178</i>&nbsp;    @Override
+<i>179</i>&nbsp;    protected JSONObject getTokens(String code, String state, String redirect_uri) {
+<b class="nc"><i>180</i>&nbsp;        List&lt;NameValuePair&gt; params = new ArrayList&lt;&gt;(2);</b>
+<b class="nc"><i>181</i>&nbsp;        params.add(new BasicNameValuePair(&quot;code&quot;, code));</b>
+<b class="nc"><i>182</i>&nbsp;        params.add(new BasicNameValuePair(&quot;client_id&quot;, client_id));</b>
+<b class="nc"><i>183</i>&nbsp;        params.add(new BasicNameValuePair(&quot;client_secret&quot;, client_secret));</b>
+<b class="nc"><i>184</i>&nbsp;        params.add(new BasicNameValuePair(&quot;redirect_uri&quot;, redirect_uri));</b>
+<b class="nc"><i>185</i>&nbsp;        params.add(new BasicNameValuePair(&quot;grant_type&quot;, grant_type));</b>
+<i>186</i>&nbsp;
+<i>187</i>&nbsp;        try {
+<b class="nc"><i>188</i>&nbsp;            JSONObject response = Http.post(token_endpoint, params);</b>
+<b class="nc"><i>189</i>&nbsp;            return response;</b>
+<b class="nc"><i>190</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>191</i>&nbsp;            return new JSONObject(ErrorMessage.DefaultError);</b>
+<i>192</i>&nbsp;        }
+<i>193</i>&nbsp;    }
+<i>194</i>&nbsp;
+<i>195</i>&nbsp;    private boolean validateToken(String id_token) {
+<i>196</i>&nbsp;        try {
+<b class="nc"><i>197</i>&nbsp;            List&lt;NameValuePair&gt; params = new ArrayList&lt;&gt;(2);</b>
+<b class="nc"><i>198</i>&nbsp;            params.add(new BasicNameValuePair(&quot;id_token&quot;, id_token));</b>
+<b class="nc"><i>199</i>&nbsp;            JSONObject response = Http.post(tokeninfo_endpoint, params);</b>
+<b class="nc"><i>200</i>&nbsp;            if (response.has(&quot;error&quot;)) {</b>
+<b class="nc"><i>201</i>&nbsp;                log.error(response.toString());</b>
+<b class="nc"><i>202</i>&nbsp;                return false;</b>
+<i>203</i>&nbsp;            }
+<b class="nc"><i>204</i>&nbsp;            String iss = response.getString(&quot;iss&quot;);</b>
+<b class="nc"><i>205</i>&nbsp;            String aud = response.getString(&quot;aud&quot;);</b>
+<b class="nc"><i>206</i>&nbsp;            long exp = response.getLong(&quot;exp&quot;);</b>
+<b class="nc"><i>207</i>&nbsp;            return validate(iss, aud, exp);</b>
+<b class="nc"><i>208</i>&nbsp;        } catch(IOException e) {</b>
+<b class="nc"><i>209</i>&nbsp;            return false;</b>
+<i>210</i>&nbsp;        }
+<i>211</i>&nbsp;    }
+<i>212</i>&nbsp;
+<i>213</i>&nbsp;    @Override
+<i>214</i>&nbsp;    protected User getUserInfo(String access_token) {
+<b class="nc"><i>215</i>&nbsp;        List&lt;NameValuePair&gt; params = new ArrayList&lt;&gt;(2);</b>
+<b class="nc"><i>216</i>&nbsp;        params.add(new BasicNameValuePair(&quot;access_token&quot;, access_token));</b>
+<i>217</i>&nbsp;        try {
+<i>218</i>&nbsp;            //JSONObject response = Http.post(userinfo_endpoint, params);
+<b class="nc"><i>219</i>&nbsp;            JSONObject response = new JSONObject(Http.get(String.format(&quot;%s?access_token=%s&quot;,userinfo_endpoint,access_token)));</b>
+<b class="nc"><i>220</i>&nbsp;            if (response.has(&quot;error&quot;)) {</b>
+<b class="nc"><i>221</i>&nbsp;                log.error(response.toString());</b>
+<b class="nc"><i>222</i>&nbsp;                return null;</b>
+<i>223</i>&nbsp;            }
+<b class="nc"><i>224</i>&nbsp;            User user = new User();</b>
+<b class="nc"><i>225</i>&nbsp;            user.setGoogleId(response.getString(&quot;sub&quot;));</b>
+<b class="nc"><i>226</i>&nbsp;            user.setMail(response.getString(&quot;email&quot;));</b>
+<b class="nc"><i>227</i>&nbsp;            user.setMailValid(response.getBoolean(&quot;email_verified&quot;));</b>
+<b class="nc"><i>228</i>&nbsp;            user.setName(response.getString(&quot;name&quot;));</b>
+<b class="nc"><i>229</i>&nbsp;            user.setFirstName(response.getString(&quot;given_name&quot;));</b>
+<b class="nc"><i>230</i>&nbsp;            user.setLastName(response.getString(&quot;family_name&quot;));</b>
+<b class="nc"><i>231</i>&nbsp;            if (response.has(&quot;picture&quot;))</b>
+<b class="nc"><i>232</i>&nbsp;                user.setPicPath(response.getString(&quot;picture&quot;));</b>
+<b class="nc"><i>233</i>&nbsp;            if (response.has(&quot;phone_number&quot;))</b>
+<b class="nc"><i>234</i>&nbsp;                user.setPhone(response.getString(&quot;phone_number&quot;));</b>
+<b class="nc"><i>235</i>&nbsp;            if (response.has(&quot;phone_number_verified&quot;))</b>
+<b class="nc"><i>236</i>&nbsp;                user.setPhoneValid(response.getBoolean(&quot;phone_number_verified&quot;));</b>
+<b class="nc"><i>237</i>&nbsp;            log.debug(user.toString());</b>
+<b class="nc"><i>238</i>&nbsp;            return user;</b>
+<b class="nc"><i>239</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>240</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i>241</i>&nbsp;            return null;</b>
+<i>242</i>&nbsp;    }
+<i>243</i>&nbsp;    }
+<i>244</i>&nbsp;
+<i>245</i>&nbsp;    @Override
+<i>246</i>&nbsp;    protected JSONObject addSocialFriends(User user, String access_token) {
+<i>247</i>&nbsp;        try {
+<b class="nc"><i>248</i>&nbsp;            List&lt;User&gt;  gfriends = retrieveFriends(user.getMail(), access_token);</b>
+<b class="nc"><i>249</i>&nbsp;            int i=0;</b>
+<b class="nc"><i>250</i>&nbsp;            for (User gfriend:gfriends) {</b>
+<b class="nc"><i>251</i>&nbsp;                userRelDao.addRequest(user, gfriend);</b>
+<b class="nc"><i>252</i>&nbsp;                i++;</b>
+<b class="nc"><i>253</i>&nbsp;            }</b>
+<b class="nc"><i>254</i>&nbsp;            JSONObject json = new JSONObject();</b>
+<b class="nc"><i>255</i>&nbsp;            json.put(&quot;addedFriends&quot;, i);</b>
+<b class="nc"><i>256</i>&nbsp;            json.put(&quot;googleFriends&quot;, gfriends.size());</b>
+<b class="nc"><i>257</i>&nbsp;            return json;</b>
+<b class="nc"><i>258</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>259</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i>260</i>&nbsp;            return new JSONObject(String.format(ErrorMessage.getError(&quot;error while retrieving friend list&quot;, 500)));</b>
+<b class="nc"><i>261</i>&nbsp;        } catch (ParserConfigurationException | SAXException e) {</b>
+<b class="nc"><i>262</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i>263</i>&nbsp;            return new JSONObject(String.format(ErrorMessage.getError(&quot;error while parsing friend list&quot;, 500)));</b>
+<i>264</i>&nbsp;        }
+<i>265</i>&nbsp;    }
+<i>266</i>&nbsp;
+<i>267</i>&nbsp;    @Override
+<i>268</i>&nbsp;    protected List&lt;User&gt; retrieveFriends(String mail, String access_token) throws IOException, ParserConfigurationException, SAXException {
+<b class="nc"><i>269</i>&nbsp;        Header header = new BasicHeader(&quot;Authorization&quot;, &quot;Bearer &quot;+access_token);</b>
+<b class="nc"><i>270</i>&nbsp;        String url = String.format(&quot;https://www.google.com/m8/feeds/contacts/%s/full&quot;,mail);</b>
+<b class="nc"><i>271</i>&nbsp;        String response = Http.get(url, header);</b>
+<i>272</i>&nbsp;
+<b class="nc"><i>273</i>&nbsp;        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()</b>
+<b class="nc"><i>274</i>&nbsp;                .parse(new InputSource(new StringReader(response)));</b>
+<i>275</i>&nbsp;
+<b class="nc"><i>276</i>&nbsp;        List&lt;User&gt; gfriends = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>277</i>&nbsp;        NodeList mailNodes = doc.getElementsByTagName(&quot;gd:email&quot;);</b>
+<b class="nc"><i>278</i>&nbsp;        for(int i=0; i&lt; mailNodes.getLength(); i++) {</b>
+<b class="nc"><i>279</i>&nbsp;            Element element = (Element) mailNodes.item(i);</b>
+<b class="nc"><i>280</i>&nbsp;            User friend = userDao.getUserByMail(element.getAttribute(&quot;address&quot;));</b>
+<b class="nc"><i>281</i>&nbsp;            if (friend!=null) {</b>
+<b class="nc"><i>282</i>&nbsp;                gfriends.add(friend);</b>
+<i>283</i>&nbsp;            }
+<i>284</i>&nbsp;        }
+<b class="nc"><i>285</i>&nbsp;        return gfriends;</b>
+<i>286</i>&nbsp;    }
+<i>287</i>&nbsp;
+<i>288</i>&nbsp;
+<i>289</i>&nbsp;    @PostConstruct
+<i>290</i>&nbsp;    @Profile(&quot;debug&quot;)
+<i>291</i>&nbsp;    private void changeRedirectUri() {
+<b class="fc"><i>292</i>&nbsp;        redirect_uri = debug_redirect_uri;</b>
+<b class="fc"><i>293</i>&nbsp;    }</b>
+<i>294</i>&nbsp;
+<i>295</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-04-29 14:28</div>
+</div>
+</body>
+</html>
