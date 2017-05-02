@@ -19,6 +19,7 @@ This SRS applies to the entire vnv project. ‘vnv’ is a social platform to le
 - [Blog](https://vnvproject.wordpress.com/)
 - [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
 - [Software Architecture Document](SAD.MD)
+- [Function points](https://github.com/WMerk/vnvDoc/blob/master/doc/FP.pdf)
 - [UC Delete friend](UC_DeleteFriend.MD)
 - [UC Accept friend requests](UC_AcceptFriendRequest.MD)
 - [UC List received friend requests](UC_ListReceivedFriendRequests.MD)
