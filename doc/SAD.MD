@@ -16,6 +16,7 @@ The scope of this SAD is to show the architecture of the vnv project. Affected a
 - [Blog](https://vnvproject.wordpress.com/)
 - [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
 - [Software Requirements Specification](SRS.MD)
+- [Test Plan](TestPlan.MD)
 - [Function points](https://github.com/WMerk/vnvDoc/blob/master/doc/FP.pdf)
 - [UC Delete friend](UC_DeleteFriend.MD)
 - [UC Accept friend requests](UC_AcceptFriendRequest.MD)
