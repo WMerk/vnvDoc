@@ -6,10 +6,10 @@
 The purpose of the Iteration Test Plan is to gather all of the information necessary to plan and control the test effort for a given iteration. 
 It describes the approach to testing the software.
 This Test Plan for vnv supports the following objectives:
-•	Identifies the items that should be targeted by the tests.
-•	Identifies the motivation for and ideas behind the test areas to be covered.
-•	Outlines the testing approach that will be used.
-•	Identifies the required resources and provides an estimate of the test efforts.
+-	Identifies the items that should be targeted by the tests.
+-	Identifies the motivation for and ideas behind the test areas to be covered.
+-	Outlines the testing approach that will be used.
+-	Identifies the required resources and provides an estimate of the test efforts.
 
 ### 1.2	Scope
 This document describes the used tests, as they are unittests and functionality testing.
@@ -62,33 +62,22 @@ Our testing is motivated by
 - functional requirements
 
 ## 3.	Target Test Items
-The listing below identifies those test items, software, hardware, and supporting product elements that have been identified as targets for testing. This list represents what items will be tested. 
+The listing below identifies those test items (software, hardware, and supporting product elements) that have been identified as targets for testing. This list represents what items will be tested. 
 
+Items for Testing:
+- java backend
+- web frontend
+- database operations
 
-[Provide a high level list of the major target test items. This list should include both items produced directly by the project development team, 
-and items that those products rely on; for example, basic processor hardware, peripheral devices, operating systems, 
-third-party products or components, and so forth. Consider grouping the list by category and assigning relative importance to each motivator.]
 ## 4.	Outline of Planned Tests
-[This section provides a high-level outline of the testing that will be performed. The outline in this section represents a high level overview of both the tests that will be performed and those that will not.] 
 ### 4.1	Outline of Test Inclusions
-[Provide a high level outline of the major testing planned for the current iteration. Note what will be included in the plan and record what will explicitly not be included in the section titled Outline of Test Exclusions.]
+Unit testing the Java backend, functional testing of the Web frondend and Database Integrity Testing
 ### 4.2	Outline of Other Candidates for Potential Inclusion
-[Separately outline test areas you suspect might be useful to investigate and evaluate, but that have not been sufficiently researched to know if they are important to pursue.]
-### 4.3	Outline of Test Exclusions
-[Provide a high level outline of the potential tests that might have been conducted but that have been explicitly excluded from this plan. If a type of test will not be implemented and executed, indicate this in a sentence stating the test will not be implemented or executed and stating the justification, such as:
-•	“These tests do not help achieve the evaluation mission.” 
-•	“There are insufficient resources to conduct these tests.” 
-•	“These tests are unnecessary due to the testing conducted by xxxx.”
-As a heuristic, if you think it would be reasonable for one of your audience members to expect a certain aspect of testing to be included that you will not or cannot address, you should note it’s exclusion: If the team agrees the exclusion is obvious, you probably don’t need to list it.]
+Stress testing the application, unit testing the frontend or profile testing the java backend might be potential test cases but these are not in scope of our testing process yet.
+
 ## 5.	Test Approach
-[The Test Approach presents the recommended strategy for designing and implementing the required tests. Sections 3, Target Test Items, and 4, Outline of Planned Tests, identified what items will be tested and what types of tests would be performed. This section describes how the tests will be realized. 
-One aspect to consider for the test approach is the techniques to be used. This should include an outline of how each technique can be implemented, both from a manual and/or an automated perspective, and the criterion for knowing that the technique is useful and successful. For each technique, provide a description of the technique and define why it is an important part of the test approach by briefly outlining how it helps achieve the Evaluation Mission or addresses the Test Motivators.
-Another aspect to discuss in this section is the Fault or Failure models that are applicable and ways to approach evaluating them.
-As you define each aspect of the approach, you should update Section 10, Responsibilities, Staffing, and Training Needs, to document the test environment configuration and other resources that will be needed to implement each aspect.]
-### 5.1	Initial Test-Idea Catalogs and Other Reference Sources
-[Provide a listing of existing resources that will be referenced to stimulate the identification and selection of specific tests to be conducted. An example Test-Ideas Catalog is provided in the examples section of RUP.]
-### 5.2	Testing Techniques and Types
-#### 5.2.1	Data and Database Integrity Testing
+### 5.1	Testing Techniques and Types
+#### 5.1.1	Data and Database Integrity Testing
 [The databases and the database processes should be tested as an independent subsystem. This testing should test the subsystems without the target-of-test’s User Interface as the interface to the data. Additional research into the DataBase Management System (DBMS) needs to be performed to identify the tools and techniques that may exist to support the testing identified in the following table.]
 Technique Objective:	[Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.]
 Technique:	•     [Invoke each database access method and process, seeding each with 	valid and invalid data or requests for data.
@@ -106,13 +95,14 @@ Special Considerations:	•	[Testing may require a DBMS development environment 
 •	Processes should be invoked manually.
 •	Small or minimally sized databases (limited number of records) should be used to increase the visibility of any non-acceptable events.]
 
-#### 5.2.2	Function Testing
+#### 5.1.2	Function Testing
 [Function testing of the target-of-test should focus on any requirements for test that can be traced directly to use cases or business functions and business rules. The goals of these tests are to verify proper data acceptance, processing, and retrieval, and the appropriate implementation of the business rules. This type of testing is based upon black box techniques; that is verifying the application and its internal processes by interacting with the application via the Graphical User Interface (GUI) and analyzing the output or results. The following table identifies an outline of the testing recommended for each application.]
 Technique Objective:	[Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior.]
-Technique:	[Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:
+Technique: Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:
 •	 the expected results occur when valid data is used
-•	 the appropriate error or warning messages are displayed when 	invalid data is used
-•  	each business rule is properly applied]
+•	 the appropriate error or warning messages are displayed when invalid data is used
+•  	 each business rule is properly applied
+
 Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
 Required Tools:	[The technique requires the following tools:
 •	Test Script Automation Tool
@@ -126,60 +116,43 @@ Success Criteria:	[The technique supports the testing of:
 Special Considerations:	[Identify or describe those items or issues (internal or external) that impact the implementation and execution of  function test.]
 
  
-#### 5.2.3	Business Cycle Testing
+#### 5.1.3	Business Cycle Testing
 n/a
 
-#### 5.2.4	User Interface Testing
+#### 5.1.4	User Interface Testing
 n/a
 
-#### 5.2.5	Performance Profiling 
+#### 5.1.5	Performance Profiling 
 n/a
 
-#### 5.2.6	Load Testing
+#### 5.1.6	Load Testing
 n/a
 
-#### 5.2.7	Stress Testing
+#### 5.1.7	Stress Testing
 n/a
  
-#### 5.2.8	Volume Testing
+#### 5.1.8	Volume Testing
 n/a
 
  
-#### 5.2.9	Security and Access Control Testing
+#### 5.1.9	Security and Access Control Testing
 Unittests also cover access control. A given use case might only be performed by a given logged in user.
 
-#### 5.2.10	Failover and Recovery Testing
+#### 5.1.10	Failover and Recovery Testing
 n/a
 
-#### 5.2.11	Configuration Testing
+#### 5.1.11	Configuration Testing
 n/a
 
-#### 5.2.12	Installation Testing
-[Installation testing has two purposes. The first is to ensure that the software can be installed under different conditionssuch as a new installation, an upgrade, and a complete or custom installationunder normal and abnormal conditions. Abnormal conditions include insufficient disk space, lack of privilege to create directories, and so on. The second purpose is to verify that, once installed, the software operates correctly. This usually means running a number of the tests that were developed for Function Testing.]
+#### 5.1.12	Installation Testing
+n/a
 
-Technique Objective:	[Exercise the installation of the target-of-test onto each required hardware configuration under the following conditions to observe and log installation behavior and configuration state changes:
-•	new installation: a new machine, never installed previously with <Project Name>
-•	update: a  machine previously installed <Project Name>, same version
-•	update: a machine previously installed <Project Name>, older version]
-Technique:	•	[Develop automated or manual scripts to validate the condition of the target machine. 
-o	new: never installed
-o	same or older version already installed
-•	Launch or perform installation.
-•	Using a predetermined subset of Function Test scripts, run the transactions.]
-Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
-Required Tools:	[The technique requires the following tools:
-•	base configuration imager and restorer
-•	installation monitoring tools (registry, hard disk, CPU, memory, and so on)]
-Success Criteria:	[The technique supports the testing of the installation of the developed product in one or more installation configurations.]
-Special Considerations:	[What <Project Name> transactions should be selected to comprise a confidence test that <Project Name> application has been successfully installed and no major software components are missing?]
 ## 6.	Entry and Exit Criteria
 ### 6.1	Test Plan
 #### 6.1.1	Test Plan Entry Criteria
-[Specify the criteria that will be used to determine whether the execution of the Test Plan can begin.]
+Building a new version of the software will execute the testprocess.
 #### 6.1.2	Test Plan Exit Criteria
- [Specify the criteria that will be used to determine whether the execution of the Test Plan is complete or that continued execution provides no further benefit.]
-#### 6.1.3	 Suspension and Resumption Criteria
-[Specify the criteria that will be used to determine whether testing should be prematurely suspended or ended before the plan has been completely executed, and under what criteria testing can be resumed.] 
+When all tests pass without throwing an exception .
 ### 6.2	Test Cycles
 #### 6.2.1	Test Cycle Entry Criteria
 [Specify the criteria to be used to determine whether the test effort for the next Test Cycle of this Test Plan can begin.]
