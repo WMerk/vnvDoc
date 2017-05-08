@@ -50,26 +50,24 @@ This document is meant for internal use primarily.
 - [UC Register/Login with Google](UC_RegisterLoginGoogle.MD)
 
 ## 2.	Evaluation Mission and Test Motivation
- [Provide an overview of the mission and motivation for the testing that will be conducted in this iteration.]
 ### 2.1	Background
 [Provide a brief description of the background surrounding why the test effort defined by this Test Plan will be undertaken. Include information such as the key problem being solved, the major benefits of the solution, the planned architecture of the solution, and a brief history of the project. Where this information is defined in other documents, you can include references to those other more detailed documents if appropriate. This section should only be about three to five paragraphs in length.]
 ### 2.2	Evaluation Mission
-[Provide a brief statement that defines the mission for the evaluation effort in the current iteration. This statement might incorporate one or more concerns including:
-•	find as many bugs as possible
-•	find important problems, assess perceived quality risks
-•	advise about perceived project risks
-•	certify to a standard
-•	verify a specification (requirements, design or claims)
-•	advise about product quality, satisfy stakeholders
-•	advise about testing
-•	fulfill process mandates 
-•	and so forth
-Each mission provides a different context to the test effort and alters the way in which testing should be approached.]
+Our motivation in implementing tests came at an early stage to recognize the need for errors and to ensure the functionality and thus the outstanding quality of the software.
 ### 2.3	Test Motivators
-[Provide an outline of the key elements that will motivate the testing effort in this iteration. Testing will be motivated by many thingsquality risks, technical risks, project risks, use cases, functional requirements, non-functional requirements, design elements, suspected failures or faults, change requests, and so forth.]
+Our testing is motivated by 
+- quality risks 
+- technical risks, 
+- use cases 
+- functional requirements
+
 ## 3.	Target Test Items
-The listing below identifies those test itemssoftware, hardware, and supporting product elements that have been identified as targets for testing. This list represents what items will be tested. 
-[Provide a high level list of the major target test items. This list should include both items produced directly by the project development team, and items that those products rely on; for example, basic processor hardware, peripheral devices, operating systems, third-party products or components, and so forth. Consider grouping the list by category and assigning relative importance to each motivator.]
+The listing below identifies those test items, software, hardware, and supporting product elements that have been identified as targets for testing. This list represents what items will be tested. 
+
+
+[Provide a high level list of the major target test items. This list should include both items produced directly by the project development team, 
+and items that those products rely on; for example, basic processor hardware, peripheral devices, operating systems, 
+third-party products or components, and so forth. Consider grouping the list by category and assigning relative importance to each motivator.]
 ## 4.	Outline of Planned Tests
 [This section provides a high-level outline of the testing that will be performed. The outline in this section represents a high level overview of both the tests that will be performed and those that will not.] 
 ### 4.1	Outline of Test Inclusions
