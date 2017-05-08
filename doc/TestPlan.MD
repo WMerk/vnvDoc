@@ -78,44 +78,21 @@ Stress testing the application, unit testing the frontend or profile testing the
 ## 5.	Test Approach
 ### 5.1	Testing Techniques and Types
 #### 5.1.1	Data and Database Integrity Testing
-[The databases and the database processes should be tested as an independent subsystem. This testing should test the subsystems without the target-of-test’s User Interface as the interface to the data. Additional research into the DataBase Management System (DBMS) needs to be performed to identify the tools and techniques that may exist to support the testing identified in the following table.]
-Technique Objective:	[Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.]
-Technique:	•     [Invoke each database access method and process, seeding each with 	valid and invalid data or requests for data.
-•   	 Inspect the database to ensure the data has been populated as 	intended and all database events have occurred properly, or review the 	returned data to ensure that the correct data was retrieved for the 	correct reasons.]
-Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
-Required Tools:	[The technique requires the following tools:
-•	Test Script Automation Tool
-•	base configuration imager and restorer
-•	backup and recovery tools
-•	installation-monitoring tools (registry, hard disk, CPU, memory, and so forth)
-•	database SQL utilities and tools
-•	Data-generation tools]
-Success Criteria:	[The technique supports the testing of all key database access methods and processes.]
-Special Considerations:	•	[Testing may require a DBMS development environment or drivers to enter or modify data directly in the databases.
-•	Processes should be invoked manually.
-•	Small or minimally sized databases (limited number of records) should be used to increase the visibility of any non-acceptable events.]
+|Technique Objective  	| Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior. |
+|----------		|:-------------:|
+|Technique 		|  Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:
+-	 the expected results occur when valid data is used
+-	 the appropriate error or warning messages are displayed when 	invalid data is used
+-  	each business rule is properly applied
+Calabash can simulate all user interactions like clicks, swipes and more. |
+|Oracles 		|  user enter valid data, for example a valid username and a valid password   |
+|Required Tools 	| Selenium + Cucumber	 |
+|Success Criteria	|    successful senarios         |
+|Special Considerations	|     -          |
 
 #### 5.1.2	Function Testing
-[Function testing of the target-of-test should focus on any requirements for test that can be traced directly to use cases or business functions and business rules. The goals of these tests are to verify proper data acceptance, processing, and retrieval, and the appropriate implementation of the business rules. This type of testing is based upon black box techniques; that is verifying the application and its internal processes by interacting with the application via the Graphical User Interface (GUI) and analyzing the output or results. The following table identifies an outline of the testing recommended for each application.]
-Technique Objective:	[Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior.]
-Technique: Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:
-•	 the expected results occur when valid data is used
-•	 the appropriate error or warning messages are displayed when invalid data is used
-•  	 each business rule is properly applied
 
-Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
-Required Tools:	[The technique requires the following tools:
-•	Test Script Automation Tool
-•	base configuration imager and restorer
-•	backup and recovery tools
-•	installation-monitoring tools (registry, hard disk, CPU, memory, and so forth)
-•	Data-generation tools]
-Success Criteria:	[The technique supports the testing of:
-•   	all key use-case scenarios
-•  	all key features]
-Special Considerations:	[Identify or describe those items or issues (internal or external) that impact the implementation and execution of  function test.]
 
- 
 #### 5.1.3	Business Cycle Testing
 n/a
 
@@ -134,7 +111,6 @@ n/a
 #### 5.1.8	Volume Testing
 n/a
 
- 
 #### 5.1.9	Security and Access Control Testing
 Unittests also cover access control. A given use case might only be performed by a given logged in user.
 
