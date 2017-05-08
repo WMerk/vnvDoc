@@ -78,6 +78,8 @@ Stress testing the application, unit testing the frontend or profile testing the
 ## 5.	Test Approach
 ### 5.1	Testing Techniques and Types
 #### 5.1.1	Data and Database Integrity Testing
+|Functional Testing| |
+|---|---|
 |Technique Objective  	| Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior. |
 |Technique 		|  Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that: the expected results occur when valid data is used; the appropriate error or warning messages are displayed when invalid data is used; each business rule is properly applied. Selenium can simulate all user interactions like clicks, swipes and more. |
 |Oracles 		|  user enter valid data, for example a valid username and a valid password   |
