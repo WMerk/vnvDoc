@@ -51,7 +51,7 @@ This document is meant for internal use primarily.
 
 ## 2.	Evaluation Mission and Test Motivation
 ### 2.1	Background
-[Provide a brief description of the background surrounding why the test effort defined by this Test Plan will be undertaken. Include information such as the key problem being solved, the major benefits of the solution, the planned architecture of the solution, and a brief history of the project. Where this information is defined in other documents, you can include references to those other more detailed documents if appropriate. This section should only be about three to five paragraphs in length.]
+By testing our project, we make sure that all changes to the sourcecode do not break the functionality. Also by integrating the test process in our deployment process, we make sure that only working versions of our project getting deployed. So the web application is always available.
 ### 2.2	Evaluation Mission
 Our motivation in implementing tests came at an early stage to recognize the need for errors and to ensure the functionality and thus the outstanding quality of the software.
 ### 2.3	Test Motivators
@@ -223,57 +223,3 @@ n/a
 | Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
 | Iteration ends |  | |  | |
 		
-
-## 12.	Risks, Dependencies, Assumptions, and Constraints
-[List any risks that may affect the successful execution of this Test Plan, and identify mitigation and contingency strategies for each risk. Also indicate a relative ranking for both the likelihood of occurrence and the impact if the risk is realized.] 
-Risk	Mitigation Strategy	Contingency (Risk is realized)
-Prerequisite entry criteria is not met.	<Tester> will define the prerequisites that must be met before Load Testing can start.
-
-<Customer> will endeavor to meet prerequisites indicated by <Tester>.	•	Meet outstanding prerequisites
-•	Consider Load Test Failure
-Test data proves to be inadequate.	<Customer> will ensure a full set of suitable and protected test data is available.
-
-<Tester> will indicate what is required and will verify the suitability of test data.	•	Redefine test data
-•	Review Test Plan and modify
-•	components (that is, scripts)
-•	Consider Load Test Failure
-Database requires refresh.	<System Admin> will endeavor to ensure the Database is regularly refreshed as required by <Tester>.	•	Restore data and restart
-•	Clear Database
-
-[List any dependencies identified during the development of this Test Plan that may affect its successful execution if those dependencies are not honored. Typically these dependencies relate to activities on the critical path that are prerequisites or post-requisites to one or more preceding (or subsequent) activities You should consider responsibilities you are relying on other teams or staff members external to the test effort completing, timing and dependencies of other planned tasks, the reliance on certain work products being produced.] 
-Dependency between	Potential Impact of Dependency	Owners
-		
-		
-		
-
-[List any assumptions made during the development of this Test Plan that may affect its successful execution if those assumptions are proven incorrect. Assumptions might relate to work you assume other teams are doing, expectations that certain aspects of the product or environment are stable, and so forth]. 
-Assumption to be proven	Impact of Assumption being incorrect	Owners
-		
-		
-		
-
-[List any constraints placed on the test effort that have had a negative effect on the way in which this Test Plan has been approached.]
-Constraint on	Impact Constraint has on test effort	Owners
-		
-		
-		
-
-## 13.	Management Process and Procedures
-[Outline what processes and procedures are to be used when issues arise with the Test Plan and its enactment.]
-### 13.1	Measuring and Assessing the Extent of Testing
-[Outline the measurement and assessment process to be used to track the extent of testing.]
-### 13.2	Assessing the Deliverables of this Test Plan
-[Outline the assessment process for reviewing and accepting the deliverables of this Test Plan]
-
-### 13.3	Problem Reporting, Escalation, and Issue Resolution
-[Define how process problems will be reported and escalated, and the process to be followed to achieve resolution.]
-### 13.4	Managing Test Cycles
-[Outline the management control process for a test cycle.]
-### 13.5	Traceability Strategies
-[Consider appropriate traceability strategies for:
-•	Coverage of Testing against Specifications — enables measurement the extent of testing
-•	Motivations for Testing — enables assessment of relevance of tests to help determine whether to maintain or retire tests
-•	Software Design Elements — enables tracking of subsequent design changes that would necessitate rerunning tests or retiring them
-•	Resulting Change Requests — enables the tests that discovered the need for the change to be identified and re-run to verify the change request has been completed successfully]
-### 13.6	Approval and Signoff
-[Outline the approval process and list the job titles (and names of current incumbents) that initially must approve the plan, and sign off on the plans satisfactory execution.]
