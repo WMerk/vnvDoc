@@ -6,10 +6,10 @@
 The purpose of the Iteration Test Plan is to gather all of the information necessary to plan and control the test effort for a given iteration. 
 It describes the approach to testing the software.
 This Test Plan for vnv supports the following objectives:
-•	Identifies the items that should be targeted by the tests.
-•	Identifies the motivation for and ideas behind the test areas to be covered.
-•	Outlines the testing approach that will be used.
-•	Identifies the required resources and provides an estimate of the test efforts.
+-	Identifies the items that should be targeted by the tests.
+-	Identifies the motivation for and ideas behind the test areas to be covered.
+-	Outlines the testing approach that will be used.
+-	Identifies the required resources and provides an estimate of the test efforts.
 
 ### 1.2	Scope
 This document describes the used tests, as they are unittests and functionality testing.
@@ -50,167 +50,111 @@ This document is meant for internal use primarily.
 - [UC Register/Login with Google](UC_RegisterLoginGoogle.MD)
 
 ## 2.	Evaluation Mission and Test Motivation
- [Provide an overview of the mission and motivation for the testing that will be conducted in this iteration.]
 ### 2.1	Background
-[Provide a brief description of the background surrounding why the test effort defined by this Test Plan will be undertaken. Include information such as the key problem being solved, the major benefits of the solution, the planned architecture of the solution, and a brief history of the project. Where this information is defined in other documents, you can include references to those other more detailed documents if appropriate. This section should only be about three to five paragraphs in length.]
+By testing our project, we make sure that all changes to the sourcecode do not break the functionality. Also by integrating the test process in our deployment process, we make sure that only working versions of our project getting deployed. So the web application is always available.
 ### 2.2	Evaluation Mission
-[Provide a brief statement that defines the mission for the evaluation effort in the current iteration. This statement might incorporate one or more concerns including:
-•	find as many bugs as possible
-•	find important problems, assess perceived quality risks
-•	advise about perceived project risks
-•	certify to a standard
-•	verify a specification (requirements, design or claims)
-•	advise about product quality, satisfy stakeholders
-•	advise about testing
-•	fulfill process mandates 
-•	and so forth
-Each mission provides a different context to the test effort and alters the way in which testing should be approached.]
+Our motivation in implementing tests came at an early stage to recognize the need for errors and to ensure the functionality and thus the outstanding quality of the software.
 ### 2.3	Test Motivators
-[Provide an outline of the key elements that will motivate the testing effort in this iteration. Testing will be motivated by many thingsquality risks, technical risks, project risks, use cases, functional requirements, non-functional requirements, design elements, suspected failures or faults, change requests, and so forth.]
+Our testing is motivated by 
+- quality risks 
+- technical risks, 
+- use cases 
+- functional requirements
+
 ## 3.	Target Test Items
-The listing below identifies those test itemssoftware, hardware, and supporting product elements that have been identified as targets for testing. This list represents what items will be tested. 
-[Provide a high level list of the major target test items. This list should include both items produced directly by the project development team, and items that those products rely on; for example, basic processor hardware, peripheral devices, operating systems, third-party products or components, and so forth. Consider grouping the list by category and assigning relative importance to each motivator.]
+The listing below identifies those test items (software, hardware, and supporting product elements) that have been identified as targets for testing. This list represents what items will be tested. 
+
+Items for Testing:
+- java backend
+- web frontend
+- database operations
+
 ## 4.	Outline of Planned Tests
-[This section provides a high-level outline of the testing that will be performed. The outline in this section represents a high level overview of both the tests that will be performed and those that will not.] 
 ### 4.1	Outline of Test Inclusions
-[Provide a high level outline of the major testing planned for the current iteration. Note what will be included in the plan and record what will explicitly not be included in the section titled Outline of Test Exclusions.]
+Unit testing the Java backend, functional testing of the Web frondend and Database Integrity Testing
 ### 4.2	Outline of Other Candidates for Potential Inclusion
-[Separately outline test areas you suspect might be useful to investigate and evaluate, but that have not been sufficiently researched to know if they are important to pursue.]
-### 4.3	Outline of Test Exclusions
-[Provide a high level outline of the potential tests that might have been conducted but that have been explicitly excluded from this plan. If a type of test will not be implemented and executed, indicate this in a sentence stating the test will not be implemented or executed and stating the justification, such as:
-•	“These tests do not help achieve the evaluation mission.” 
-•	“There are insufficient resources to conduct these tests.” 
-•	“These tests are unnecessary due to the testing conducted by xxxx.”
-As a heuristic, if you think it would be reasonable for one of your audience members to expect a certain aspect of testing to be included that you will not or cannot address, you should note it’s exclusion: If the team agrees the exclusion is obvious, you probably don’t need to list it.]
+Stress testing the application, unit testing the frontend or profile testing the java backend might be potential test cases but these are not in scope of our testing process yet.
+
 ## 5.	Test Approach
-[The Test Approach presents the recommended strategy for designing and implementing the required tests. Sections 3, Target Test Items, and 4, Outline of Planned Tests, identified what items will be tested and what types of tests would be performed. This section describes how the tests will be realized. 
-One aspect to consider for the test approach is the techniques to be used. This should include an outline of how each technique can be implemented, both from a manual and/or an automated perspective, and the criterion for knowing that the technique is useful and successful. For each technique, provide a description of the technique and define why it is an important part of the test approach by briefly outlining how it helps achieve the Evaluation Mission or addresses the Test Motivators.
-Another aspect to discuss in this section is the Fault or Failure models that are applicable and ways to approach evaluating them.
-As you define each aspect of the approach, you should update Section 10, Responsibilities, Staffing, and Training Needs, to document the test environment configuration and other resources that will be needed to implement each aspect.]
-### 5.1	Initial Test-Idea Catalogs and Other Reference Sources
-[Provide a listing of existing resources that will be referenced to stimulate the identification and selection of specific tests to be conducted. An example Test-Ideas Catalog is provided in the examples section of RUP.]
-### 5.2	Testing Techniques and Types
-#### 5.2.1	Data and Database Integrity Testing
-[The databases and the database processes should be tested as an independent subsystem. This testing should test the subsystems without the target-of-test’s User Interface as the interface to the data. Additional research into the DataBase Management System (DBMS) needs to be performed to identify the tools and techniques that may exist to support the testing identified in the following table.]
-Technique Objective:	[Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.]
-Technique:	•     [Invoke each database access method and process, seeding each with 	valid and invalid data or requests for data.
-•   	 Inspect the database to ensure the data has been populated as 	intended and all database events have occurred properly, or review the 	returned data to ensure that the correct data was retrieved for the 	correct reasons.]
-Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
-Required Tools:	[The technique requires the following tools:
-•	Test Script Automation Tool
-•	base configuration imager and restorer
-•	backup and recovery tools
-•	installation-monitoring tools (registry, hard disk, CPU, memory, and so forth)
-•	database SQL utilities and tools
-•	Data-generation tools]
-Success Criteria:	[The technique supports the testing of all key database access methods and processes.]
-Special Considerations:	•	[Testing may require a DBMS development environment or drivers to enter or modify data directly in the databases.
-•	Processes should be invoked manually.
-•	Small or minimally sized databases (limited number of records) should be used to increase the visibility of any non-acceptable events.]
+### 5.1	Testing Techniques and Types
+#### 5.1.1	Function and Database Integrity Testing
+|| |
+|---|---|
+|Technique Objective  	| Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior. |
+|Technique 		|  Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that: the expected results occur when valid data is used; the appropriate error or warning messages are displayed when invalid data is used; each business rule is properly applied. Selenium can simulate all user interactions like clicks, swipes and more. |
+|Oracles 		|  user enter valid data, for example a valid username and a valid password   |
+|Required Tools 	| Selenium + Cucumber	 |
+|Success Criteria	|    successful senarios         |
+|Special Considerations	|     -          |
 
-#### 5.2.2	Function Testing
-[Function testing of the target-of-test should focus on any requirements for test that can be traced directly to use cases or business functions and business rules. The goals of these tests are to verify proper data acceptance, processing, and retrieval, and the appropriate implementation of the business rules. This type of testing is based upon black box techniques; that is verifying the application and its internal processes by interacting with the application via the Graphical User Interface (GUI) and analyzing the output or results. The following table identifies an outline of the testing recommended for each application.]
-Technique Objective:	[Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior.]
-Technique:	[Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:
-•	 the expected results occur when valid data is used
-•	 the appropriate error or warning messages are displayed when 	invalid data is used
-•  	each business rule is properly applied]
-Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
-Required Tools:	[The technique requires the following tools:
-•	Test Script Automation Tool
-•	base configuration imager and restorer
-•	backup and recovery tools
-•	installation-monitoring tools (registry, hard disk, CPU, memory, and so forth)
-•	Data-generation tools]
-Success Criteria:	[The technique supports the testing of:
-•   	all key use-case scenarios
-•  	all key features]
-Special Considerations:	[Identify or describe those items or issues (internal or external) that impact the implementation and execution of  function test.]
+#### 5.1.2	Unit Testing
+|| |
+|---|---|
+|Technique Objective  	| Exercise functionality of model functions. Test for right data entry and right data output. |
+|Technique 		|  Execute JUnit Test functions in UserTest.java |
+|Oracles 		|  Each test expect the right value given in the assertequals function |
+|Required Tools 	|  JUnit Test |
+|Success Criteria	|    Testcoverage > 50%      |
+|Special Considerations	|     -          |
 
- 
-#### 5.2.3	Business Cycle Testing
+#### 5.1.3	Business Cycle Testing
 n/a
 
-#### 5.2.4	User Interface Testing
+#### 5.1.4	User Interface Testing
 n/a
 
-#### 5.2.5	Performance Profiling 
+#### 5.1.5	Performance Profiling 
 n/a
 
-#### 5.2.6	Load Testing
+#### 5.1.6	Load Testing
 n/a
 
-#### 5.2.7	Stress Testing
+#### 5.1.7	Stress Testing
 n/a
  
-#### 5.2.8	Volume Testing
+#### 5.1.8	Volume Testing
 n/a
 
- 
-#### 5.2.9	Security and Access Control Testing
+#### 5.1.9	Security and Access Control Testing
 Unittests also cover access control. A given use case might only be performed by a given logged in user.
 
-#### 5.2.10	Failover and Recovery Testing
+#### 5.1.10	Failover and Recovery Testing
 n/a
 
-#### 5.2.11	Configuration Testing
+#### 5.1.11	Configuration Testing
 n/a
 
-#### 5.2.12	Installation Testing
-[Installation testing has two purposes. The first is to ensure that the software can be installed under different conditionssuch as a new installation, an upgrade, and a complete or custom installationunder normal and abnormal conditions. Abnormal conditions include insufficient disk space, lack of privilege to create directories, and so on. The second purpose is to verify that, once installed, the software operates correctly. This usually means running a number of the tests that were developed for Function Testing.]
+#### 5.1.12	Installation Testing
+n/a
 
-Technique Objective:	[Exercise the installation of the target-of-test onto each required hardware configuration under the following conditions to observe and log installation behavior and configuration state changes:
-•	new installation: a new machine, never installed previously with <Project Name>
-•	update: a  machine previously installed <Project Name>, same version
-•	update: a machine previously installed <Project Name>, older version]
-Technique:	•	[Develop automated or manual scripts to validate the condition of the target machine. 
-o	new: never installed
-o	same or older version already installed
-•	Launch or perform installation.
-•	Using a predetermined subset of Function Test scripts, run the transactions.]
-Oracles:	[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]
-Required Tools:	[The technique requires the following tools:
-•	base configuration imager and restorer
-•	installation monitoring tools (registry, hard disk, CPU, memory, and so on)]
-Success Criteria:	[The technique supports the testing of the installation of the developed product in one or more installation configurations.]
-Special Considerations:	[What <Project Name> transactions should be selected to comprise a confidence test that <Project Name> application has been successfully installed and no major software components are missing?]
 ## 6.	Entry and Exit Criteria
 ### 6.1	Test Plan
 #### 6.1.1	Test Plan Entry Criteria
-[Specify the criteria that will be used to determine whether the execution of the Test Plan can begin.]
+Building a new version of the software will execute the testprocess.
 #### 6.1.2	Test Plan Exit Criteria
- [Specify the criteria that will be used to determine whether the execution of the Test Plan is complete or that continued execution provides no further benefit.]
-#### 6.1.3	 Suspension and Resumption Criteria
-[Specify the criteria that will be used to determine whether testing should be prematurely suspended or ended before the plan has been completely executed, and under what criteria testing can be resumed.] 
-### 6.2	Test Cycles
-#### 6.2.1	Test Cycle Entry Criteria
-[Specify the criteria to be used to determine whether the test effort for the next Test Cycle of this Test Plan can begin.]
-#### 6.2.2	Test Cycle Exit Criteria
-[Specify the criteria that will be used to determine whether the test effort for the current Test Cycle of this Test Plan is deemed sufficient.]
-#### 6.2.3	Test Cycle Abnormal Termination
-[Specify the criteria that will be used to determine whether testing should be prematurely suspended or ended for the current test cycle, or whether the intended build candidate to be tested must be altered.] 
+When all tests pass without throwing an exception .
+
 ## 7.	Deliverables
-[In this section, list the various artifacts that will be created by the test effort that are useful deliverables to the various stakeholders of the test effort. Don’t list all work products; only list those that give direct, tangible benefit to a stakeholder and those by which you want the success of the test effort to be measured.]
 ### 7.1	Test Evaluation Summaries
-[Provide a brief outline of both the form and content of the test evaluation summaries, and indicate how frequently they will be produced.]
+n/a
 ### 7.2	Reporting on Test Coverage
-[Provide a brief outline of both the form and content of the reports used to measure the extent of testing, and indicate how frequently they will be produced. Give an indication as to the method and tools used to record, measure, and report on the extent of testing.] 
+n/a
 ### 7.3	Perceived Quality Reports
-[Provide a brief outline of both the form and content of the reports used to measure the perceived quality of the product, and indicate how frequently they will be produced. Give an indication about to the method and tools used to record, measure, and report on the perceived product quality. You might include some analysis of Incidents and Change Request over Test Coverage.]
+n/a
 ### 7.4	Incident Logs and Change Requests
-[Provide a brief outline of both the method and tools used to record, track, and manage test incidents, associated change requests, and their status.]
+n/a
 ### 7.5	Smoke Test Suite and Supporting Test Scripts
-[Provide a brief outline of the test assets that will be delivered to allow ongoing regression testing of subsequent product builds to help detect regressions in the product quality.]  
+n/a
 ### 7.6	Additional Work Products
-[In this section, identify the work products that are optional deliverables or those that should not be used to measure or assess the successful execution of the Test Plan.]
+n/a
 #### 7.6.1	Detailed Test Results
-[This denotes either a collection of Microsoft Excel spreadsheets listing the results determined for each test case, or the repository of both test logs and determined results maintained by a specialized test product.]
+When executing functiontests cucumber will atomaticly generate a HTML test report
 #### 7.6.2	Additional Automated Functional Test Scripts
-[These will be either a collection of the source code files for automated test scripts, or the repository of both source code and compiled executables for test scripts maintained by the test automation product.]
+n/a
 #### 7.6.3	Test Guidelines
-[Test Guidelines cover a broad set of categories, including Test-Idea catalogs, Good Practice Guidance, Test patterns, Fault and Failure Models, Automation Design Standards, and so forth.]
+n/a
 #### 7.6.4	Traceability Matrices
-[Using a tool such as Rational RequisistePro or MS Excel, provide one or more matrices of traceability relationships between traced items.]
+n/a
 ## 8.	Testing Workflow
 At the moment tests are automatically run before deployment on the server. The application is build using maven. Building the application with maven install will run all feature tests and unittest and only build if the tests complete.
 
@@ -220,180 +164,62 @@ For the future this might be included in a continuous deployment circle.
 [This section presents the non-human resources required for the Test Plan.]
 ### 9.1	Base System Hardware
 The following table sets forth the system resources for the test effort presented in this Test Plan.
-[The specific elements of the test system may not be fully understood in early iterations, so expect this section to be completed over time. We recommend that the system simulates the production environment, scaling down the concurrent access and database size, and so forth, if and where appropriate.]
-[Note:  Add or delete items as appropriate.]
 
-System Resources
-Resource	Quantity	Name and Type
-Database Server		
-—Network or Subnet		TBD
-—Server Name		TBD
-—Database Name		TBD
-Client Test PCs		
-—Include special configuration requirements		TBD
-Test Repository		
-—Network or Subnet		TBD
-—Server Name		TBD
-Test Development PCs		TBD
+| Resource | Quantity | Name and Type |
+|---|---|---|
+| Integration Server | 1 | Ubuntu Server |
+| Server Name |  	| <Name> |
+| Development Server	| 1 | <Server>	|
+| Server Name |  | <Name> |
+| Database | 2 | <Name>	|
+| Docker buils Server | 1 | Ubuntu Server |
+| Server Name |  	| <Name> |
+
 ### 9.2	Base Software Elements in the Test Environment
 The following base software elements are required in the test environment for this Test Plan.
-[Note:  Add or delete items as appropriate.]
-Software Element Name	Version	Type and Other Notes
-NT Workstation		Operating System
-Windows 2000		Operating System
-Internet Explorer		Internet Browser
-Netscape Navigator		Internet Browser
-MS Outlook		eMail Client software
-Network Associates McAfee Virus Checker		Virus Detection and Recovery Software
+
+| Software Element Name | Version | Type and Other Notes |
+|---|---|---|
+| Windows | 10 | Operating System |
+| Chrome |  58	| Internet Browser |
+| Chromedriver |  11 | Application |
 
 ### 9.3	Productivity and Support Tools
 The following tools will be employed to support the test process for this Test Plan.
-[Note:  Add or delete items as appropriate.]
-Tool Category or Type	Tool Brand Name	Vendor or In-house	Version
-Test Management			
-Defect Tracking			
-ASQ Tool for functional testing			
-ASQ Tool for performance testing			
-Test Coverage Monitor or Profiler			
-Project Management			
-DBMS tools			
 
-### 9.4	Test Environment Configurations
-The following Test Environment Configurations needs to be provided and supported for this project.
-Configuration Name	Description	Implemented in Physical Configuration
-Average user configuration		
-Minimal configuration supported		
-Visually and mobility challenged		
-International Double Byte OS		
-Network installation (not client)		
+| Tool Category or Type | Tool Brand Name | Vendor or In-house | Version |
+|---|---|---|---|
+| Test Management | Intellij | JetBrains | 17.2 |
+| Project Management | YouTrack | JetBrains |  |
+| DBMS tools |	 | 	 | 	 |
+| Image builder | Docker | Docker | 	 |
+| Image hoster | Docker Hub | Docker | 	 |
 
 ## 10.	Responsibilities, Staffing, and Training Needs
 ### 10.1	People and Roles
 This table shows the staffing assumptions for the test effort.
-[Note:  Add or delete items as appropriate.]
 
 Human Resources
-Role	Minimum Resources Recommended
-(number of full-time roles allocated)	Specific Responsibilities or Comments
-Test Manager		Provides management oversight. 
-Responsibilities include:
-•	planning and logistics
-•	agree mission 
-•	identify motivators
-•	acquire appropriate resources
-•	present management reporting
-•	advocate the interests of test
-•	evaluate effectiveness of test effort
-Test Analyst
-		Identifies and defines the specific tests to be conducted.
-Responsibilities include:
-•	identify test ideas
-•	define test details
-•	determine test results
-•	document change requests
-•	evaluate product quality
-Test Designer
-		Defines the technical approach to the implementation of the test effort.
-Responsibilities include:
-•	define test approach
-•	define test automation architecture
-•	verify test techniques
-•	define testability elements
-•	structure test implementation
-Tester		Implements and executes the tests.
-Responsibilities include:
-•	implement tests and test suites
-•	execute test suites
-•	log results
-•	analyze and recover from test failures
-•	document incidents
-Test System Administrator		Ensures test environment and assets are managed and maintained.
-Responsibilities include:
-•	administer test management system
-•	install and support access to, and recovery of, test environment configurations and test labs
-Database Administrator, Database Manager		Ensures test data (database) environment and assets are managed and maintained.
-Responsibilities include:
-•	support the administration of test data and test beds (database).
-Designer		Identifies and defines the operations, attributes, and associations of the test classes.
-Responsibilities include:
-•	defines the test classes required to support testability requirements as defined by the test team
-Implementer		Implements and unit tests the test classes and test packages.
-Responsibilities include:
-•	creates the test components required to support testability requirements as defined by the designer
+
+
+| Role | Minimum Resources Recommended (number of full-time roles allocated) |	Specific Responsibilities or Comments |
+|---|---|---|
+| Test Manager | 1 | Provides management oversight. <br> Responsibilities include: <br> planning and logistics <br> agree mission <br> identify motivators<br> acquire appropriate resources<br> present management reporting<br> advocate the interests of test<br>evaluate effectiveness of test effort |
+| Test Designer | 1 | Defines the technical approach to the implementation of the test effort. <br> Responsibilities include:<br> define test approach<br> define test automation architecture<br> verify test techniques<br> define testability elements<br> structure test implementation|
+| Tester | 1 |	Implements and executes the tests.<br> Responsibilities include:<br> implement tests and test suites<br> execute test suites<br> log results<br> analyze and recover from test failures<br> document incidents|
+| Test System Administrator | 1 | Ensures test environment and assets are managed and maintained.<br> Responsibilities include:<br> 	administer test management system<br> install and support access to, and recovery of, test environment configurations and test labs | 
+| Database Administrator, Database Manager | 1 | Ensures test data (database) environment and assets are managed and maintained.<br> Responsibilities include:<br> support the administration of test data and test beds (database). |
+| Implementer | 3| Implements and unit tests the test classes and test packages.<br> Responsibilities include:<br> creates the test components required to support testability requirements as defined by the designer |
 
 ### 10.2	Staffing and Training Needs
 n/a
 ## 11.	Iteration Milestones
-[Identify the key schedule milestones that set the context for the Testing effort. Avoid repeating too much detail that is documented elsewhere in plans that address the entire project.]
 
-Milestone	Planned      Start Date	Actual         Start Date	Planned        End Date	Actual           End Date
-Iteration Plan agreed				
-Iteration starts				
-Requirements baselined				
-Architecture baselined				
-User Interface baselined				
-First Build delivered to test				
-First Build accepted into test				
-First Build test cycle finishes				
-[Build Two will not be tested]				
-Third Build delivered to test				
-Third Build accepted into test				
-Third Build test cycle finishes				
-Fourth Build delivered to test				
-Fourth Build accepted into test				
-Iteration Assessment review				
-Iteration ends				
-
-## 12.	Risks, Dependencies, Assumptions, and Constraints
-[List any risks that may affect the successful execution of this Test Plan, and identify mitigation and contingency strategies for each risk. Also indicate a relative ranking for both the likelihood of occurrence and the impact if the risk is realized.] 
-Risk	Mitigation Strategy	Contingency (Risk is realized)
-Prerequisite entry criteria is not met.	<Tester> will define the prerequisites that must be met before Load Testing can start.
-
-<Customer> will endeavor to meet prerequisites indicated by <Tester>.	•	Meet outstanding prerequisites
-•	Consider Load Test Failure
-Test data proves to be inadequate.	<Customer> will ensure a full set of suitable and protected test data is available.
-
-<Tester> will indicate what is required and will verify the suitability of test data.	•	Redefine test data
-•	Review Test Plan and modify
-•	components (that is, scripts)
-•	Consider Load Test Failure
-Database requires refresh.	<System Admin> will endeavor to ensure the Database is regularly refreshed as required by <Tester>.	•	Restore data and restart
-•	Clear Database
-
-[List any dependencies identified during the development of this Test Plan that may affect its successful execution if those dependencies are not honored. Typically these dependencies relate to activities on the critical path that are prerequisites or post-requisites to one or more preceding (or subsequent) activities You should consider responsibilities you are relying on other teams or staff members external to the test effort completing, timing and dependencies of other planned tasks, the reliance on certain work products being produced.] 
-Dependency between	Potential Impact of Dependency	Owners
+| Milestone | Planned Start Date | Actual Start Date | Planned End Date | Actual End Date |
+|---|---|---|---|---|
+| Have Unit Tests | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
+| Have Integration Tests | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
+| > 70% Test Coverage | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
+| Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
+| Iteration ends |  | |  | |
 		
-		
-		
-
-[List any assumptions made during the development of this Test Plan that may affect its successful execution if those assumptions are proven incorrect. Assumptions might relate to work you assume other teams are doing, expectations that certain aspects of the product or environment are stable, and so forth]. 
-Assumption to be proven	Impact of Assumption being incorrect	Owners
-		
-		
-		
-
-[List any constraints placed on the test effort that have had a negative effect on the way in which this Test Plan has been approached.]
-Constraint on	Impact Constraint has on test effort	Owners
-		
-		
-		
-
-## 13.	Management Process and Procedures
-[Outline what processes and procedures are to be used when issues arise with the Test Plan and its enactment.]
-### 13.1	Measuring and Assessing the Extent of Testing
-[Outline the measurement and assessment process to be used to track the extent of testing.]
-### 13.2	Assessing the Deliverables of this Test Plan
-[Outline the assessment process for reviewing and accepting the deliverables of this Test Plan]
-
-### 13.3	Problem Reporting, Escalation, and Issue Resolution
-[Define how process problems will be reported and escalated, and the process to be followed to achieve resolution.]
-### 13.4	Managing Test Cycles
-[Outline the management control process for a test cycle.]
-### 13.5	Traceability Strategies
-[Consider appropriate traceability strategies for:
-•	Coverage of Testing against Specifications — enables measurement the extent of testing
-•	Motivations for Testing — enables assessment of relevance of tests to help determine whether to maintain or retire tests
-•	Software Design Elements — enables tracking of subsequent design changes that would necessitate rerunning tests or retiring them
-•	Resulting Change Requests — enables the tests that discovered the need for the change to be identified and re-run to verify the change request has been completed successfully]
-### 13.6	Approval and Signoff
-[Outline the approval process and list the job titles (and names of current incumbents) that initially must approve the plan, and sign off on the plans satisfactory execution.]
