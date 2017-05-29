@@ -1,0 +1,33 @@
+Lines of code metrics;Mo; 29 Mai 2017 17:50:43 MESZ
+Package;LOC;LOC(rec);LOCp;LOCp(rec);LOCt;LOCt(rec)
+"";36;4.782;36;3.350;0;1.432
+"Configuration";76;76;0;0;76;76
+"com";n/a;4.670;n/a;3.314;n/a;1.356
+"com.vnv";44;4.670;44;3.314;0;1.356
+"com.vnv.ZCucumber";821;821;0;0;821;821
+"com.vnv.controller";432;432;432;432;0;0
+"com.vnv.dao";136;997;136;997;0;0
+"com.vnv.dao.fake";444;444;444;444;0;0
+"com.vnv.dao.impl";417;417;417;417;0;0
+"com.vnv.entity";557;557;557;557;0;0
+"com.vnv.model";406;406;378;378;28;28
+"com.vnv.service";1.413;1.413;906;906;507;507
+
+Module;L(CSS);L(Groovy);L(HTML);L(J);L(JS);L(JSP);L(KT);L(XML);LOC;LOCp;LOCt;NCLOC;NCLOCp;NCLOCt
+"dhbwMVC";1.162;0;1.286;4.746;4.395;0;0;397;12.287;3.350;1.432;11.731;3.173;1.173
+
+FileType;LOC;NCLOC
+"Cascading style sheet";1.162;1.149
+"Cucumber scenario";244;243
+"Git file";11;11
+"HTML";1.286;1.231
+"Java";4.746;4.331
+"JavaScript";4.395;4.344
+"Markdown";6;6
+"Properties";36;15
+"XML";397;397
+"YAML";4;4
+
+Project;L(CSS);L(Groovy);L(HTML);L(J);L(JS);L(JSP);L(KT);L(XML);LOC;LOCp;LOCt;NCLOC;NCLOCp;NCLOCt
+"project";1.162;0;1.286;4.746;4.395;0;0;397;12.287;3.350;1.432;11.731;3.173;1.173
+
