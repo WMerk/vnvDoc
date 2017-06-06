@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Model</a> ]
+    [ <a href="../index.html">com.vnv.model</a> ]
 </div>
 
-<h1>Coverage Summary for Class: Profiles (com.vnv.Model)</h1>
+<h1>Coverage Summary for Class: Profiles (com.vnv.model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -72,7 +72,7 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.model;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import com.vnv.Main;
 <i>4</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
@@ -88,7 +88,7 @@
 <i>14</i>&nbsp;    @Autowired
 <i>15</i>&nbsp;    Environment environment;
 <i>16</i>&nbsp;
-<b class="nc"><i>17</i>&nbsp;    public static String[] profiles = Main.profiles;</b>
+<b class="nc"><i>17</i>&nbsp;    private static String[] profiles = Main.getProfiles();</b>
 <i>18</i>&nbsp;
 <i>19</i>&nbsp;    @PostConstruct
 <i>20</i>&nbsp;    public void init() {
@@ -119,7 +119,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>

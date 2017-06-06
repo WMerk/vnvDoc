@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Model</a> ]
+    [ <a href="../index.html">com.vnv.model</a> ]
 </div>
 
-<h1>Coverage Summary for Class: Database (com.vnv.Model)</h1>
+<h1>Coverage Summary for Class: Database (com.vnv.model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 12)
+    (0/ 13)
   </span>
 </td>
 </tr>
@@ -72,7 +72,7 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.model;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 <i>4</i>&nbsp;import org.neo4j.driver.v1.AuthTokens;
@@ -97,8 +97,8 @@
 <i>23</i>&nbsp;
 <b class="nc"><i>24</i>&nbsp;    public static Session neo4j = null;</b>
 <i>25</i>&nbsp;
-<i>26</i>&nbsp;    private static final String host = &quot;dhbw-projekt.data.kit.edu&quot;;
-<i>27</i>&nbsp;    private static final int redisPort = 6379;
+<i>26</i>&nbsp;    private static final String HOST = &quot;dhbw-projekt.data.kit.edu&quot;;
+<i>27</i>&nbsp;    private static final int RedisPort = 6379;
 <i>28</i>&nbsp;
 <i>29</i>&nbsp;    @Value(&quot;${database.redis.password}&quot;)
 <i>30</i>&nbsp;    private String redisPassword;
@@ -116,24 +116,25 @@
 <i>42</i>&nbsp;
 <i>43</i>&nbsp;    private void initRedis() {
 <b class="nc"><i>44</i>&nbsp;        log.debug(&quot;init Redis&quot;);</b>
-<b class="nc"><i>45</i>&nbsp;        JedisPool jedisPool = new JedisPool(new GenericObjectPoolConfig(), host, redisPort,</b>
+<b class="nc"><i>45</i>&nbsp;        JedisPool jedisPool = new JedisPool(new GenericObjectPoolConfig(), HOST, RedisPort,</b>
 <i>46</i>&nbsp;                redis.clients.jedis.Protocol.DEFAULT_TIMEOUT, redisPassword);
 <b class="nc"><i>47</i>&nbsp;        JOhm.setPool(jedisPool);</b>
 <i>48</i>&nbsp;    }
 <i>49</i>&nbsp;
 <i>50</i>&nbsp;    private void initNeo4j() {
 <b class="nc"><i>51</i>&nbsp;        log.debug(&quot;init Neo4j&quot;);</b>
-<b class="nc"><i>52</i>&nbsp;        Driver driver = GraphDatabase.driver( &quot;bolt://&quot;+host, AuthTokens.basic( neo4jUser, neo4jPassword ) );</b>
+<b class="nc"><i>52</i>&nbsp;        Driver driver = GraphDatabase.driver( &quot;bolt://&quot;+HOST, AuthTokens.basic( neo4jUser, neo4jPassword ) );</b>
 <b class="nc"><i>53</i>&nbsp;        neo4j = driver.session();</b>
-<i>54</i>&nbsp;    }
-<i>55</i>&nbsp;}
-<i>56</i>&nbsp;
+<b class="nc"><i>54</i>&nbsp;        driver.close();</b>
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;}
+<i>57</i>&nbsp;
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>

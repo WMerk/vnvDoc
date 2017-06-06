@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Service</a> ]
+    [ <a href="../index.html">com.vnv.service</a> ]
 </div>
 
-<h1>Coverage Summary for Class: UserService (com.vnv.Service)</h1>
+<h1>Coverage Summary for Class: UserService (com.vnv.service)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -72,13 +72,13 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Service;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.service;
 <i>2</i>&nbsp;
-<i>3</i>&nbsp;import com.vnv.Dao.UserDao;
-<i>4</i>&nbsp;import com.vnv.Dao.UserRelDao;
-<i>5</i>&nbsp;import com.vnv.Entity.User;
-<i>6</i>&nbsp;import com.vnv.Model.ErrorMessage;
-<i>7</i>&nbsp;import com.vnv.Model.Password;
+<i>3</i>&nbsp;import com.vnv.dao.UserDao;
+<i>4</i>&nbsp;import com.vnv.dao.UserRelDao;
+<i>5</i>&nbsp;import com.vnv.entity.User;
+<i>6</i>&nbsp;import com.vnv.model.ErrorMessage;
+<i>7</i>&nbsp;import com.vnv.model.Password;
 <i>8</i>&nbsp;import org.json.JSONArray;
 <i>9</i>&nbsp;import org.json.JSONObject;
 <i>10</i>&nbsp;import org.slf4j.Logger;
@@ -109,7 +109,7 @@
 <i>35</i>&nbsp;    public JSONObject getReceivedFriendRequest(long uid, String sessionId) {
 <b class="nc"><i>36</i>&nbsp;        log.debug(&quot;Getting Received friend requests&quot;);</b>
 <i>37</i>&nbsp;
-<b class="nc"><i>38</i>&nbsp;        if (userDao.getUserBySessionId(sessionId)==null)</b>
+<b class="nc"><i>38</i>&nbsp;        if (userDao.getUserBySessionId(sessionId) == null)</b>
 <b class="nc"><i>39</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="nc"><i>40</i>&nbsp;        if (!checkLogin(sessionId, uid))</b>
 <b class="nc"><i>41</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
@@ -117,7 +117,7 @@
 <b class="nc"><i>43</i>&nbsp;        User user = userDao.getUserById(uid);</b>
 <b class="nc"><i>44</i>&nbsp;        Collection&lt;User&gt; requestsRec = userRelDao.getRequestsRecv(user);</b>
 <b class="nc"><i>45</i>&nbsp;        JSONArray jsonArray = new JSONArray();</b>
-<b class="nc"><i>46</i>&nbsp;        if (requestsRec!=null) {</b>
+<b class="nc"><i>46</i>&nbsp;        if (requestsRec != null) {</b>
 <b class="nc"><i>47</i>&nbsp;            for (User u : requestsRec) {</b>
 <b class="nc"><i>48</i>&nbsp;                jsonArray.put(u.toJSON());</b>
 <b class="nc"><i>49</i>&nbsp;            }</b>
@@ -134,7 +134,7 @@
 <i>60</i>&nbsp;    public JSONObject getSentFriendRequest(long uid, String sessionId) {
 <b class="nc"><i>61</i>&nbsp;        log.debug(&quot;Getting Sent friend requests&quot;);</b>
 <i>62</i>&nbsp;
-<b class="nc"><i>63</i>&nbsp;        if (userDao.getUserBySessionId(sessionId)==null)</b>
+<b class="nc"><i>63</i>&nbsp;        if (userDao.getUserBySessionId(sessionId) == null)</b>
 <b class="nc"><i>64</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="nc"><i>65</i>&nbsp;        if (!checkLogin(sessionId, uid))</b>
 <b class="nc"><i>66</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
@@ -142,7 +142,7 @@
 <b class="nc"><i>68</i>&nbsp;        User user = userDao.getUserById(uid);</b>
 <b class="nc"><i>69</i>&nbsp;        Collection&lt;User&gt; requestsSent = userRelDao.getRequestsSent(user);</b>
 <b class="nc"><i>70</i>&nbsp;        JSONArray jsonArray = new JSONArray();</b>
-<b class="nc"><i>71</i>&nbsp;        if (requestsSent!=null) {</b>
+<b class="nc"><i>71</i>&nbsp;        if (requestsSent != null) {</b>
 <b class="nc"><i>72</i>&nbsp;            for (User u : requestsSent) {</b>
 <b class="nc"><i>73</i>&nbsp;                jsonArray.put(u.toJSON());</b>
 <b class="nc"><i>74</i>&nbsp;            }</b>
@@ -159,7 +159,7 @@
 <i>85</i>&nbsp;    public JSONObject getFriends(long uid, String sessionId) {
 <b class="nc"><i>86</i>&nbsp;        log.debug(&quot;Getting friends&quot;);</b>
 <i>87</i>&nbsp;
-<b class="nc"><i>88</i>&nbsp;        if (userDao.getUserBySessionId(sessionId)==null)</b>
+<b class="nc"><i>88</i>&nbsp;        if (userDao.getUserBySessionId(sessionId) == null)</b>
 <b class="nc"><i>89</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="nc"><i>90</i>&nbsp;        if (!checkLogin(sessionId, uid))</b>
 <b class="nc"><i>91</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
@@ -167,7 +167,7 @@
 <b class="nc"><i>93</i>&nbsp;        User user = userDao.getUserById(uid);</b>
 <b class="nc"><i>94</i>&nbsp;        Collection&lt;User&gt; friends = userRelDao.getFriends(user);</b>
 <b class="nc"><i>95</i>&nbsp;        JSONArray jsonArray = new JSONArray();</b>
-<b class="nc"><i>96</i>&nbsp;        if (friends!=null) {</b>
+<b class="nc"><i>96</i>&nbsp;        if (friends != null) {</b>
 <b class="nc"><i>97</i>&nbsp;            for (User u : friends) {</b>
 <b class="nc"><i>98</i>&nbsp;                jsonArray.put(u.toJSON());</b>
 <b class="nc"><i>99</i>&nbsp;            }</b>
@@ -181,10 +181,10 @@
 <b class="nc"><i>107</i>&nbsp;        return json;</b>
 <i>108</i>&nbsp;    }
 <i>109</i>&nbsp;
-<i>110</i>&nbsp;    public JSONObject getAllUser(long uid, String sessionId){
+<i>110</i>&nbsp;    public JSONObject getAllUser(long uid, String sessionId) {
 <b class="fc"><i>111</i>&nbsp;        log.debug(&quot;getting all users&quot;);</b>
 <i>112</i>&nbsp;
-<b class="fc"><i>113</i>&nbsp;        if (userDao.getUserBySessionId(sessionId)==null)</b>
+<b class="fc"><i>113</i>&nbsp;        if (userDao.getUserBySessionId(sessionId) == null)</b>
 <b class="nc"><i>114</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="fc"><i>115</i>&nbsp;        if (!checkLogin(sessionId, uid))</b>
 <b class="nc"><i>116</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
@@ -196,8 +196,8 @@
 <b class="fc"><i>122</i>&nbsp;        Collection&lt;User&gt; rest = userRelDao.getNonRelatedUsers(user);</b>
 <i>123</i>&nbsp;
 <b class="fc"><i>124</i>&nbsp;        JSONArray array = new JSONArray();</b>
-<b class="fc"><i>125</i>&nbsp;        if (friendsC!=null)</b>
-<b class="nc"><i>126</i>&nbsp;            for (User u:friendsC) {</b>
+<b class="fc"><i>125</i>&nbsp;        if (friendsC != null)</b>
+<b class="nc"><i>126</i>&nbsp;            for (User u : friendsC) {</b>
 <i>127</i>&nbsp;                //System.out.println(u);
 <b class="nc"><i>128</i>&nbsp;                JSONObject data = u.toJSON();</b>
 <b class="nc"><i>129</i>&nbsp;                JSONObject json = new JSONObject();</b>
@@ -205,8 +205,8 @@
 <b class="nc"><i>131</i>&nbsp;                json.put(&quot;request&quot;, &quot;accepted&quot;);</b>
 <b class="nc"><i>132</i>&nbsp;                array.put(json);</b>
 <b class="nc"><i>133</i>&nbsp;            }</b>
-<b class="fc"><i>134</i>&nbsp;        if (requestsSentC!=null)</b>
-<b class="nc"><i>135</i>&nbsp;            for (User u:requestsSentC) {</b>
+<b class="fc"><i>134</i>&nbsp;        if (requestsSentC != null)</b>
+<b class="nc"><i>135</i>&nbsp;            for (User u : requestsSentC) {</b>
 <i>136</i>&nbsp;                //System.out.println(u);
 <b class="nc"><i>137</i>&nbsp;                JSONObject data = u.toJSON();</b>
 <b class="nc"><i>138</i>&nbsp;                JSONObject json = new JSONObject();</b>
@@ -214,8 +214,8 @@
 <b class="nc"><i>140</i>&nbsp;                json.put(&quot;request&quot;, &quot;sent&quot;);</b>
 <b class="nc"><i>141</i>&nbsp;                array.put(json);</b>
 <b class="nc"><i>142</i>&nbsp;            }</b>
-<b class="fc"><i>143</i>&nbsp;        if (requestsRecC!=null)</b>
-<b class="nc"><i>144</i>&nbsp;            for (User u:requestsRecC) {</b>
+<b class="fc"><i>143</i>&nbsp;        if (requestsRecC != null)</b>
+<b class="nc"><i>144</i>&nbsp;            for (User u : requestsRecC) {</b>
 <i>145</i>&nbsp;                //System.out.println(u);
 <b class="nc"><i>146</i>&nbsp;                JSONObject data = u.toJSON();</b>
 <b class="nc"><i>147</i>&nbsp;                JSONObject json = new JSONObject();</b>
@@ -223,9 +223,9 @@
 <b class="nc"><i>149</i>&nbsp;                json.put(&quot;request&quot;, &quot;received&quot;);</b>
 <b class="nc"><i>150</i>&nbsp;                array.put(json);</b>
 <b class="nc"><i>151</i>&nbsp;            }</b>
-<b class="fc"><i>152</i>&nbsp;        if(rest!=null)</b>
-<b class="fc"><i>153</i>&nbsp;            for (User u:rest) {</b>
-<b class="fc"><i>154</i>&nbsp;                if (u.getUid()!= uid) {</b>
+<b class="fc"><i>152</i>&nbsp;        if (rest != null)</b>
+<b class="fc"><i>153</i>&nbsp;            for (User u : rest) {</b>
+<b class="fc"><i>154</i>&nbsp;                if (u.getUid() != uid) {</b>
 <i>155</i>&nbsp;                    //System.out.println(u);
 <b class="fc"><i>156</i>&nbsp;                    JSONObject data = u.toJSON();</b>
 <b class="fc"><i>157</i>&nbsp;                    JSONObject json = new JSONObject();</b>
@@ -237,7 +237,7 @@
 <b class="fc"><i>163</i>&nbsp;        return new JSONObject().put(&quot;users&quot;, array);</b>
 <i>164</i>&nbsp;    }
 <i>165</i>&nbsp;
-<i>166</i>&nbsp;    private User getUserById(long id){
+<i>166</i>&nbsp;    private User getUserById(long id) {
 <i>167</i>&nbsp;        //A exists check should be implemented
 <i>168</i>&nbsp;        // and a errormessage on failor
 <b class="nc"><i>169</i>&nbsp;        log.debug(&quot;getting user by id {}&quot;, id);</b>
@@ -253,7 +253,7 @@
 <b class="fc"><i>179</i>&nbsp;            if (!returnType.equals(void.class) &amp;&amp; methodName.startsWith(&quot;get&quot;)) {</b>
 <i>180</i>&nbsp;                //System.out.println(method.getName());
 <b class="fc"><i>181</i>&nbsp;                Object response = method.invoke(updatedUser);</b>
-<b class="fc"><i>182</i>&nbsp;                if (response!= null) {</b>
+<b class="fc"><i>182</i>&nbsp;                if (response != null) {</b>
 <i>183</i>&nbsp;                    try {
 <b class="fc"><i>184</i>&nbsp;                        Method setMethod = storedUser.getClass().getMethod(methodName.replace(&quot;get&quot;, &quot;set&quot;), returnType);</b>
 <b class="fc"><i>185</i>&nbsp;                        setMethod.invoke(storedUser, response);</b>
@@ -306,7 +306,7 @@
 <i>232</i>&nbsp;
 <b class="fc"><i>233</i>&nbsp;        this.insertUser(user);</b>
 <b class="fc"><i>234</i>&nbsp;        user = userDao.getUserByMail(user.getMail());</b>
-<b class="fc"><i>235</i>&nbsp;        if (user==null) {</b>
+<b class="fc"><i>235</i>&nbsp;        if (user == null) {</b>
 <b class="nc"><i>236</i>&nbsp;            return new JSONObject(String.format(ErrorMessage.getError(&quot;could not register user&quot;, 404)));</b>
 <i>237</i>&nbsp;        }
 <b class="fc"><i>238</i>&nbsp;        log.debug(&quot;User {} successfully added to DB&quot;, user);</b>
@@ -339,13 +339,13 @@
 <i>265</i>&nbsp;    public JSONObject loginUser(String mail, String pw, String sessionId) {
 <b class="fc"><i>266</i>&nbsp;        log.debug(&quot;Log in for user with mail {}&quot;, mail);</b>
 <b class="fc"><i>267</i>&nbsp;        User user = userDao.getUserByMail(mail);</b>
-<b class="fc"><i>268</i>&nbsp;        if (user==null) {</b>
+<b class="fc"><i>268</i>&nbsp;        if (user == null) {</b>
 <i>269</i>&nbsp;            //mail not found
 <b class="fc"><i>270</i>&nbsp;            return new JSONObject(ErrorMessage.WrongMailPassword);</b>
 <i>271</i>&nbsp;        }
 <b class="fc"><i>272</i>&nbsp;        if (Password.checkPassword(pw, user.getSalt(), user.getHashedPw())) {</b>
 <b class="fc"><i>273</i>&nbsp;            User sameSessionId = userDao.getUserBySessionId(sessionId);</b>
-<b class="fc"><i>274</i>&nbsp;            if (sameSessionId!=null) {</b>
+<b class="fc"><i>274</i>&nbsp;            if (sameSessionId != null) {</b>
 <b class="fc"><i>275</i>&nbsp;                logoutUser(sessionId);</b>
 <i>276</i>&nbsp;            }
 <b class="fc"><i>277</i>&nbsp;            user.setSessionId(sessionId);</b>
@@ -358,7 +358,7 @@
 <i>284</i>&nbsp;    public boolean checkLogin(String sessionId, long uid) {
 <b class="fc"><i>285</i>&nbsp;        log.debug(&quot;Checking if user with uid {} and sessionId {} is logged in&quot;, uid, sessionId);</b>
 <b class="fc"><i>286</i>&nbsp;        User user = userDao.getUserBySessionId(sessionId);</b>
-<b class="fc"><i>287</i>&nbsp;        if (user!=null &amp;&amp; user.getUid().longValue()==uid) {</b>
+<b class="fc"><i>287</i>&nbsp;        if (user != null &amp;&amp; user.getUid().longValue() == uid) {</b>
 <b class="fc"><i>288</i>&nbsp;            return true;</b>
 <i>289</i>&nbsp;        }
 <b class="fc"><i>290</i>&nbsp;        return false;</b>
@@ -367,7 +367,7 @@
 <i>293</i>&nbsp;    public JSONObject logoutUser(String sessionId) {
 <b class="fc"><i>294</i>&nbsp;        log.debug(&quot;Log out for sessionId {}&quot;, sessionId);</b>
 <b class="fc"><i>295</i>&nbsp;        User user = userDao.getUserBySessionId(sessionId);</b>
-<b class="fc"><i>296</i>&nbsp;        if (user==null) {</b>
+<b class="fc"><i>296</i>&nbsp;        if (user == null) {</b>
 <b class="fc"><i>297</i>&nbsp;            return new JSONObject(ErrorMessage.AlreadyLoggedOut);</b>
 <i>298</i>&nbsp;        }
 <b class="fc"><i>299</i>&nbsp;        user.setSessionId(null);</b>
@@ -401,7 +401,7 @@
 <i>327</i>&nbsp;        }
 <b class="fc"><i>328</i>&nbsp;        if (checkLogin(sessionId, user.getUid())) {</b>
 <b class="fc"><i>329</i>&nbsp;            userRelDao.addRequest(user, friend);</b>
-<b class="fc"><i>330</i>&nbsp;            JSONObject jsonFriend = userDao.getUserById(friend.getUid()).toJSON();</b>
+<b class="fc"><i>330</i>&nbsp;            JSONObject jsonFriend = friend.toJSON();</b>
 <b class="fc"><i>331</i>&nbsp;            JSONObject res = new JSONObject();</b>
 <b class="fc"><i>332</i>&nbsp;            res.put(&quot;data&quot;, jsonFriend);</b>
 <b class="fc"><i>333</i>&nbsp;            res.put(&quot;request&quot;, &quot;sent&quot;);</b>
@@ -415,13 +415,13 @@
 <b class="fc"><i>341</i>&nbsp;        if (user.getUid() == null)</b>
 <b class="nc"><i>342</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="fc"><i>343</i>&nbsp;        if (checkLogin(sessionId, user.getUid())) {</b>
-<b class="fc"><i>344</i>&nbsp;                            Collection received = userRelDao.getRequestsRecv(user);</b>
-<b class="fc"><i>345</i>&nbsp;            if (received==null||!received.contains(friend)) {</b>
+<b class="fc"><i>344</i>&nbsp;            Collection received = userRelDao.getRequestsRecv(user);</b>
+<b class="fc"><i>345</i>&nbsp;            if (received == null || !received.contains(friend)) {</b>
 <b class="fc"><i>346</i>&nbsp;                return new JSONObject(ErrorMessage.NoFriendRequestReceived);</b>
 <i>347</i>&nbsp;            }
 <b class="fc"><i>348</i>&nbsp;            userRelDao.addFriend(user, friend);</b>
 <b class="fc"><i>349</i>&nbsp;            userRelDao.removeRequest(friend, user);</b>
-<b class="fc"><i>350</i>&nbsp;            JSONObject jsonFriend = userDao.getUserById(friend.getUid()).toJSON();</b>
+<b class="fc"><i>350</i>&nbsp;            JSONObject jsonFriend = friend.toJSON();</b>
 <b class="fc"><i>351</i>&nbsp;            JSONObject res = new JSONObject();</b>
 <b class="fc"><i>352</i>&nbsp;            res.put(&quot;data&quot;, jsonFriend);</b>
 <b class="fc"><i>353</i>&nbsp;            res.put(&quot;request&quot;, &quot;accepted&quot;);</b>
@@ -436,11 +436,11 @@
 <b class="nc"><i>362</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="fc"><i>363</i>&nbsp;        if (checkLogin(sessionId, user.getUid())) {</b>
 <b class="fc"><i>364</i>&nbsp;            Collection received = userRelDao.getRequestsRecv(user);</b>
-<b class="fc"><i>365</i>&nbsp;            if (received==null||!received.contains(friend)) {</b>
+<b class="fc"><i>365</i>&nbsp;            if (received == null || !received.contains(friend)) {</b>
 <b class="fc"><i>366</i>&nbsp;                return new JSONObject(ErrorMessage.NoFriendRequestReceived);</b>
 <i>367</i>&nbsp;            }
 <b class="fc"><i>368</i>&nbsp;            userRelDao.removeRequest(friend, user);</b>
-<b class="fc"><i>369</i>&nbsp;            JSONObject jsonFriend = userDao.getUserById(friend.getUid()).toJSON();</b>
+<b class="fc"><i>369</i>&nbsp;            JSONObject jsonFriend = friend.toJSON();</b>
 <b class="fc"><i>370</i>&nbsp;            JSONObject res = new JSONObject();</b>
 <b class="fc"><i>371</i>&nbsp;            res.put(&quot;data&quot;, jsonFriend);</b>
 <b class="fc"><i>372</i>&nbsp;            res.put(&quot;request&quot;, &quot;declined&quot;);</b>
@@ -455,11 +455,11 @@
 <b class="nc"><i>381</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="fc"><i>382</i>&nbsp;        if (checkLogin(sessionId, user.getUid())) {</b>
 <b class="fc"><i>383</i>&nbsp;            Collection sent = userRelDao.getRequestsSent(user);</b>
-<b class="fc"><i>384</i>&nbsp;            if (sent==null||!sent.contains(friend)) {</b>
+<b class="fc"><i>384</i>&nbsp;            if (sent == null || !sent.contains(friend)) {</b>
 <b class="fc"><i>385</i>&nbsp;                return new JSONObject(ErrorMessage.NoFriendRequestSent);</b>
 <i>386</i>&nbsp;            }
 <b class="fc"><i>387</i>&nbsp;            userRelDao.removeRequest(user, friend);</b>
-<b class="fc"><i>388</i>&nbsp;            JSONObject jsonFriend = userDao.getUserById(friend.getUid()).toJSON();</b>
+<b class="fc"><i>388</i>&nbsp;            JSONObject jsonFriend = friend.toJSON();</b>
 <b class="fc"><i>389</i>&nbsp;            JSONObject res = new JSONObject();</b>
 <b class="fc"><i>390</i>&nbsp;            res.put(&quot;data&quot;, jsonFriend);</b>
 <b class="fc"><i>391</i>&nbsp;            res.put(&quot;request&quot;, &quot;deleted&quot;);</b>
@@ -474,11 +474,11 @@
 <b class="nc"><i>400</i>&nbsp;            return new JSONObject(ErrorMessage.NotLoggedIn);</b>
 <b class="fc"><i>401</i>&nbsp;        if (checkLogin(sessionId, user.getUid())) {</b>
 <b class="fc"><i>402</i>&nbsp;            Collection friends = userRelDao.getFriends(user);</b>
-<b class="fc"><i>403</i>&nbsp;            if (friends==null||!friends.contains(friend)) {</b>
+<b class="fc"><i>403</i>&nbsp;            if (friends == null || !friends.contains(friend)) {</b>
 <b class="fc"><i>404</i>&nbsp;                return new JSONObject(ErrorMessage.NotFriendly);</b>
 <i>405</i>&nbsp;            }
 <b class="fc"><i>406</i>&nbsp;            userRelDao.removeFriend(user, friend);</b>
-<b class="fc"><i>407</i>&nbsp;            JSONObject jsonFriend = userDao.getUserById(friend.getUid()).toJSON();</b>
+<b class="fc"><i>407</i>&nbsp;            JSONObject jsonFriend = friend.toJSON();</b>
 <b class="fc"><i>408</i>&nbsp;            JSONObject res = new JSONObject();</b>
 <b class="fc"><i>409</i>&nbsp;            res.put(&quot;data&quot;, jsonFriend);</b>
 <b class="fc"><i>410</i>&nbsp;            res.put(&quot;request&quot;, &quot;terminated&quot;);</b>
@@ -488,14 +488,13 @@
 <i>414</i>&nbsp;    }
 <i>415</i>&nbsp;
 <i>416</i>&nbsp;
-<i>417</i>&nbsp;
-<i>418</i>&nbsp;}
+<i>417</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>

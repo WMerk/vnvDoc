@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Service</a> ]
+    [ <a href="../index.html">com.vnv.service</a> ]
 </div>
 
-<h1>Coverage Summary for Class: GoogleService (com.vnv.Service)</h1>
+<h1>Coverage Summary for Class: GoogleService (com.vnv.service)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -72,15 +72,15 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Service;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.service;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;
-<i>4</i>&nbsp;import com.vnv.Dao.UserDao;
-<i>5</i>&nbsp;import com.vnv.Dao.UserRelDao;
-<i>6</i>&nbsp;import com.vnv.Entity.User;
-<i>7</i>&nbsp;import com.vnv.Model.ErrorMessage;
-<i>8</i>&nbsp;import com.vnv.Model.Http;
-<i>9</i>&nbsp;import com.vnv.Model.MailMessage;
+<i>4</i>&nbsp;import com.vnv.dao.UserDao;
+<i>5</i>&nbsp;import com.vnv.dao.UserRelDao;
+<i>6</i>&nbsp;import com.vnv.entity.User;
+<i>7</i>&nbsp;import com.vnv.model.ErrorMessage;
+<i>8</i>&nbsp;import com.vnv.model.Http;
+<i>9</i>&nbsp;import com.vnv.model.MailMessage;
 <i>10</i>&nbsp;import org.apache.http.Header;
 <i>11</i>&nbsp;import org.apache.http.NameValuePair;
 <i>12</i>&nbsp;import org.apache.http.message.BasicHeader;
@@ -122,7 +122,7 @@
 <i>48</i>&nbsp;    private MailService mailService;
 <i>49</i>&nbsp;
 <i>50</i>&nbsp;    @Value(&quot;${social.google.client_id}&quot;)
-<i>51</i>&nbsp;    private String client_id;
+<i>51</i>&nbsp;    private String clientId;
 <i>52</i>&nbsp;    @Value(&quot;${social.google.client_secret}&quot;)
 <i>53</i>&nbsp;    private String client_secret;
 <i>54</i>&nbsp;    @Value(&quot;${social.google.configuration_endpoint}&quot;)
@@ -155,7 +155,7 @@
 <i>81</i>&nbsp;    public JSONObject getConfig() {
 <b class="fc"><i>82</i>&nbsp;        JSONObject config = new JSONObject();</b>
 <b class="fc"><i>83</i>&nbsp;        config.put(&quot;iss&quot;, iss);</b>
-<b class="fc"><i>84</i>&nbsp;        config.put(&quot;client_id&quot;, client_id);</b>
+<b class="fc"><i>84</i>&nbsp;        config.put(&quot;clientId&quot;, clientId);</b>
 <b class="fc"><i>85</i>&nbsp;        config.put(&quot;auth_endpoint&quot;, auth_endpoint);</b>
 <b class="fc"><i>86</i>&nbsp;        config.put(&quot;response_type&quot;, response_type);</b>
 <b class="fc"><i>87</i>&nbsp;        config.put(&quot;scope&quot;, scope);</b>
@@ -238,11 +238,11 @@
 <b class="nc"><i>164</i>&nbsp;                log.debug(&quot;Token expired&quot;);</b>
 <b class="nc"><i>165</i>&nbsp;                return false;</b>
 <i>166</i>&nbsp;            }
-<b class="nc"><i>167</i>&nbsp;            if (!client_id.equals(aud)) {</b>
+<b class="nc"><i>167</i>&nbsp;            if (!clientId.equals(aud)) {</b>
 <b class="nc"><i>168</i>&nbsp;                log.debug(&quot;Token not audienced to vnv&quot;);</b>
 <b class="nc"><i>169</i>&nbsp;                return false;</b>
 <i>170</i>&nbsp;            }
-<b class="nc"><i>171</i>&nbsp;            if (!iss.equals(iss)) {</b>
+<b class="nc"><i>171</i>&nbsp;            if (!this.iss.equals(iss)) {</b>
 <b class="nc"><i>172</i>&nbsp;                log.debug(&quot;Token not issued by google&quot;);</b>
 <b class="nc"><i>173</i>&nbsp;                return false;</b>
 <i>174</i>&nbsp;            }
@@ -253,7 +253,7 @@
 <i>179</i>&nbsp;    protected JSONObject getTokens(String code, String state, String redirect_uri) {
 <b class="nc"><i>180</i>&nbsp;        List&lt;NameValuePair&gt; params = new ArrayList&lt;&gt;(2);</b>
 <b class="nc"><i>181</i>&nbsp;        params.add(new BasicNameValuePair(&quot;code&quot;, code));</b>
-<b class="nc"><i>182</i>&nbsp;        params.add(new BasicNameValuePair(&quot;client_id&quot;, client_id));</b>
+<b class="nc"><i>182</i>&nbsp;        params.add(new BasicNameValuePair(&quot;clientId&quot;, clientId));</b>
 <b class="nc"><i>183</i>&nbsp;        params.add(new BasicNameValuePair(&quot;client_secret&quot;, client_secret));</b>
 <b class="nc"><i>184</i>&nbsp;        params.add(new BasicNameValuePair(&quot;redirect_uri&quot;, redirect_uri));</b>
 <b class="nc"><i>185</i>&nbsp;        params.add(new BasicNameValuePair(&quot;grant_type&quot;, grant_type));</b>
@@ -372,7 +372,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>

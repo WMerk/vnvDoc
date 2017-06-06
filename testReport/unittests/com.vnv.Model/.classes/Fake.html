@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Model</a> ]
+    [ <a href="../index.html">com.vnv.model</a> ]
 </div>
 
-<h1>Coverage Summary for Class: Fake (com.vnv.Model)</h1>
+<h1>Coverage Summary for Class: Fake (com.vnv.model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -53,7 +53,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 7)
+    (0/ 8)
   </span>
 </td>
 <td class="coverageStat">
@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 43)
+    (0/ 57)
   </span>
 </td>
 </tr>
@@ -72,98 +72,121 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.model;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import com.github.javafaker.Faker;
-<i>4</i>&nbsp;import com.vnv.Dao.FakeImpl.FakeUserDaoImp;
-<i>5</i>&nbsp;import com.vnv.Dao.FakeImpl.FakeUserRelDaoImpl;
-<i>6</i>&nbsp;import com.vnv.Dao.UserDao;
-<i>7</i>&nbsp;import com.vnv.Dao.UserRelDao;
-<i>8</i>&nbsp;import com.vnv.Entity.Category;
-<i>9</i>&nbsp;import com.vnv.Entity.Post;
-<i>10</i>&nbsp;import com.vnv.Entity.User;
-<i>11</i>&nbsp;import org.springframework.context.annotation.Profile;
-<i>12</i>&nbsp;
-<i>13</i>&nbsp;import java.util.Locale;
-<i>14</i>&nbsp;import java.util.Random;
-<i>15</i>&nbsp;
-<b class="nc"><i>16</i>&nbsp;public class Fake {</b>
-<i>17</i>&nbsp;
-<b class="nc"><i>18</i>&nbsp;    public static Faker faker = new Faker(new Locale(&quot;de&quot;));</b>
-<i>19</i>&nbsp;
-<b class="nc"><i>20</i>&nbsp;    private static String[] flavours = {&quot;verschenken&quot;, &quot;Dienstleistung&quot;, &quot;verleihen&quot;};</b>
-<b class="nc"><i>21</i>&nbsp;    private static Random random = new Random();</b>
-<i>22</i>&nbsp;
+<i>4</i>&nbsp;import com.vnv.dao.fake.FakePostDaoImpl;
+<i>5</i>&nbsp;import com.vnv.dao.fake.FakeUserDaoImp;
+<i>6</i>&nbsp;import com.vnv.dao.fake.FakeUserRelDaoImpl;
+<i>7</i>&nbsp;import com.vnv.dao.PostDao;
+<i>8</i>&nbsp;import com.vnv.dao.UserDao;
+<i>9</i>&nbsp;import com.vnv.dao.UserRelDao;
+<i>10</i>&nbsp;import com.vnv.entity.Category;
+<i>11</i>&nbsp;import com.vnv.entity.Post;
+<i>12</i>&nbsp;import com.vnv.entity.User;
+<i>13</i>&nbsp;import org.springframework.context.annotation.Profile;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;import java.text.DateFormat;
+<i>16</i>&nbsp;import java.text.SimpleDateFormat;
+<i>17</i>&nbsp;import java.util.Date;
+<i>18</i>&nbsp;import java.util.Locale;
+<i>19</i>&nbsp;import java.util.Random;
+<i>20</i>&nbsp;import java.util.concurrent.TimeUnit;
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;public class Fake {</b>
 <i>23</i>&nbsp;
-<i>24</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;    private static final Faker FAKER = new Faker(new Locale(&quot;de&quot;));</b>
 <i>25</i>&nbsp;
-<i>26</i>&nbsp;
-<i>27</i>&nbsp;    public static User getFakeUser() {
-<b class="nc"><i>28</i>&nbsp;        User u = new User();</b>
-<b class="nc"><i>29</i>&nbsp;        u.setLastName(faker.name().lastName());</b>
-<b class="nc"><i>30</i>&nbsp;        u.setFirstName(faker.name().firstName());</b>
-<b class="nc"><i>31</i>&nbsp;        u.setName(u.getFirstName()+&quot; &quot;+u.getLastName());</b>
-<b class="nc"><i>32</i>&nbsp;        u.setPassword(faker.internet().password());</b>
-<b class="nc"><i>33</i>&nbsp;        u.setSessionId(faker.internet().password(25,26,true,true));</b>
-<b class="nc"><i>34</i>&nbsp;        u.setMail(faker.internet().emailAddress(u.getFirstName()+&quot;.&quot;+u.getLastName()));</b>
-<b class="nc"><i>35</i>&nbsp;        u.setPhone(faker.phoneNumber().cellPhone());</b>
-<b class="nc"><i>36</i>&nbsp;        return u;</b>
-<i>37</i>&nbsp;    }
-<i>38</i>&nbsp;
-<i>39</i>&nbsp;    private static Post getFakePost(User user) {
-<b class="nc"><i>40</i>&nbsp;        Post p = new Post();</b>
-<b class="nc"><i>41</i>&nbsp;        p.setUser(user);</b>
-<b class="nc"><i>42</i>&nbsp;        p.setFlavour(flavours[random.nextInt(3)]);</b>
-<b class="nc"><i>43</i>&nbsp;        Category c = new Category();</b>
-<b class="nc"><i>44</i>&nbsp;        c.setId(0L);c.setName(&quot;TestCategory&quot;);</b>
-<b class="nc"><i>45</i>&nbsp;        p.setCategory(c);</b>
-<b class="nc"><i>46</i>&nbsp;        p.setDescription(faker.lorem().paragraph());</b>
-<b class="nc"><i>47</i>&nbsp;        p.setPostName(faker.lorem().word());</b>
-<b class="nc"><i>48</i>&nbsp;        return p;</b>
-<i>49</i>&nbsp;    }
-<i>50</i>&nbsp;
-<i>51</i>&nbsp;    public static Post getFakeOffer(User user) {
-<b class="nc"><i>52</i>&nbsp;        Post p = getFakePost(user);</b>
-<b class="nc"><i>53</i>&nbsp;        p.setType(&quot;offer&quot;);</b>
-<b class="nc"><i>54</i>&nbsp;        return p;</b>
-<i>55</i>&nbsp;    }
-<i>56</i>&nbsp;
-<i>57</i>&nbsp;    public static Post getFakeRequest(User user) {
-<b class="nc"><i>58</i>&nbsp;        Post p = getFakePost(user);</b>
-<b class="nc"><i>59</i>&nbsp;        p.setType(&quot;request&quot;);</b>
-<b class="nc"><i>60</i>&nbsp;        return p;</b>
-<i>61</i>&nbsp;    }
-<i>62</i>&nbsp;
-<i>63</i>&nbsp;    @Profile(&quot;debug&quot;)
-<i>64</i>&nbsp;    public void makeFakeDbEntries(int number) {
-<b class="nc"><i>65</i>&nbsp;        UserRelDao userRelDao = new FakeUserRelDaoImpl();</b>
-<b class="nc"><i>66</i>&nbsp;        UserDao userDao = new FakeUserDaoImp();</b>
-<i>67</i>&nbsp;
-<b class="nc"><i>68</i>&nbsp;        User tester = userDao.getUserByMail(&quot;test@test.de&quot;);</b>
-<b class="nc"><i>69</i>&nbsp;        for (int i=0; i&lt;number; i++) {</b>
-<b class="nc"><i>70</i>&nbsp;            User u = getFakeUser();</b>
-<b class="nc"><i>71</i>&nbsp;            userDao.insertUserToDb(u);</b>
-<b class="nc"><i>72</i>&nbsp;            userRelDao.addUser(u);</b>
-<b class="nc"><i>73</i>&nbsp;            if (random.nextBoolean()) {</b>
-<i>74</i>&nbsp;                // a random relationship will be inserted
-<b class="nc"><i>75</i>&nbsp;                int rand = random.nextInt(4);</b>
-<b class="nc"><i>76</i>&nbsp;                if (rand==1)</b>
-<b class="nc"><i>77</i>&nbsp;                    userRelDao.addFriend(u, tester);</b>
-<b class="nc"><i>78</i>&nbsp;                if (rand==2)</b>
-<b class="nc"><i>79</i>&nbsp;                    userRelDao.addRequest(u, tester);</b>
-<b class="nc"><i>80</i>&nbsp;                if (rand==3)</b>
-<b class="nc"><i>81</i>&nbsp;                    userRelDao.addRequest(tester, u);</b>
-<i>82</i>&nbsp;            }
-<i>83</i>&nbsp;        }
-<i>84</i>&nbsp;    }
-<i>85</i>&nbsp;
-<i>86</i>&nbsp;}
+<b class="nc"><i>26</i>&nbsp;    private static String[] flavours = {&quot;verschenken&quot;, &quot;Dienstleistung&quot;, &quot;verleihen&quot;};</b>
+<b class="nc"><i>27</i>&nbsp;    private static String[] status = {&quot;Verfügbar&quot;, &quot;Reserviert&quot;, &quot;Beendet&quot;};</b>
+<b class="nc"><i>28</i>&nbsp;    private static Random random = new Random();</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public static Faker getFAKER() {
+<b class="nc"><i>31</i>&nbsp;        return FAKER;</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public static User getFakeUser() {
+<b class="nc"><i>37</i>&nbsp;        User u = new User();</b>
+<b class="nc"><i>38</i>&nbsp;        u.setLastName(FAKER.name().lastName());</b>
+<b class="nc"><i>39</i>&nbsp;        u.setFirstName(FAKER.name().firstName());</b>
+<b class="nc"><i>40</i>&nbsp;        u.setName(u.getFirstName()+&quot; &quot;+u.getLastName());</b>
+<b class="nc"><i>41</i>&nbsp;        u.setPassword(FAKER.internet().password());</b>
+<b class="nc"><i>42</i>&nbsp;        u.setSessionId(FAKER.internet().password(25,26,true,true));</b>
+<b class="nc"><i>43</i>&nbsp;        u.setMail(FAKER.internet().emailAddress(u.getFirstName()+&quot;.&quot;+u.getLastName()));</b>
+<b class="nc"><i>44</i>&nbsp;        u.setPhone(FAKER.phoneNumber().cellPhone());</b>
+<b class="nc"><i>45</i>&nbsp;        return u;</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<b class="nc"><i>48</i>&nbsp;    private static DateFormat outputDF = new SimpleDateFormat(&quot;d.MM.yyyy&quot;);</b>
+<i>49</i>&nbsp;    private static Post getFakePost(User user) {
+<b class="nc"><i>50</i>&nbsp;        Post p = new Post();</b>
+<b class="nc"><i>51</i>&nbsp;        p.setUser(user);</b>
+<b class="nc"><i>52</i>&nbsp;        p.setFlavour(flavours[random.nextInt(3)]);</b>
+<b class="nc"><i>53</i>&nbsp;        Category c = new Category();</b>
+<b class="nc"><i>54</i>&nbsp;        c.setId(0L);c.setName(&quot;TestCategory&quot;);</b>
+<b class="nc"><i>55</i>&nbsp;        p.setCategory(c);</b>
+<b class="nc"><i>56</i>&nbsp;        p.setDescription(FAKER.lorem().paragraph());</b>
+<b class="nc"><i>57</i>&nbsp;        p.setPostName(FAKER.lorem().word());</b>
+<b class="nc"><i>58</i>&nbsp;        p.setType(random.nextBoolean() ? &quot;offer&quot; : &quot;request&quot;);</b>
+<b class="nc"><i>59</i>&nbsp;        p.setStatus(status[random.nextInt(3)]);</b>
+<b class="nc"><i>60</i>&nbsp;        p.setPeriod(outputDF.format(FAKER.date().future(Math.abs(random.nextInt()), TimeUnit.SECONDS, new Date())));</b>
+<b class="nc"><i>61</i>&nbsp;        return p;</b>
+<i>62</i>&nbsp;    }
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;    public static Post getFakeOffer(User user) {
+<b class="nc"><i>65</i>&nbsp;        Post p = getFakePost(user);</b>
+<b class="nc"><i>66</i>&nbsp;        p.setType(&quot;offer&quot;);</b>
+<b class="nc"><i>67</i>&nbsp;        return p;</b>
+<i>68</i>&nbsp;    }
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;    public static Post getFakeRequest(User user) {
+<b class="nc"><i>71</i>&nbsp;        Post p = getFakePost(user);</b>
+<b class="nc"><i>72</i>&nbsp;        p.setType(&quot;request&quot;);</b>
+<b class="nc"><i>73</i>&nbsp;        return p;</b>
+<i>74</i>&nbsp;    }
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;    @Profile(&quot;debug&quot;)
+<i>77</i>&nbsp;    public void makeFakeDbEntries(int number) {
+<b class="nc"><i>78</i>&nbsp;        UserRelDao userRelDao = new FakeUserRelDaoImpl();</b>
+<b class="nc"><i>79</i>&nbsp;        UserDao userDao = new FakeUserDaoImp();</b>
+<b class="nc"><i>80</i>&nbsp;        PostDao postDao = new FakePostDaoImpl();</b>
+<i>81</i>&nbsp;
+<b class="nc"><i>82</i>&nbsp;        User tester = userDao.getUserByMail(&quot;test@test.de&quot;);</b>
+<b class="nc"><i>83</i>&nbsp;        for (int j=0; j&lt;5; j++) {</b>
+<b class="nc"><i>84</i>&nbsp;            Post post = Fake.getFakePost(tester);</b>
+<b class="nc"><i>85</i>&nbsp;            postDao.insertPost(post);</b>
+<i>86</i>&nbsp;        }
+<b class="nc"><i>87</i>&nbsp;        for (int i=0; i&lt;number; i++) {</b>
+<b class="nc"><i>88</i>&nbsp;            User u = getFakeUser();</b>
+<b class="nc"><i>89</i>&nbsp;            userDao.insertUserToDb(u);</b>
+<b class="nc"><i>90</i>&nbsp;            userRelDao.addUser(u);</b>
+<b class="nc"><i>91</i>&nbsp;            if (random.nextBoolean()) {</b>
+<i>92</i>&nbsp;                // a random relationship will be inserted
+<b class="nc"><i>93</i>&nbsp;                int rand = random.nextInt(4);</b>
+<b class="nc"><i>94</i>&nbsp;                if (rand==1)</b>
+<b class="nc"><i>95</i>&nbsp;                    userRelDao.addFriend(u, tester);</b>
+<b class="nc"><i>96</i>&nbsp;                if (rand==2)</b>
+<b class="nc"><i>97</i>&nbsp;                    userRelDao.addRequest(u, tester);</b>
+<b class="nc"><i>98</i>&nbsp;                if (rand==3)</b>
+<b class="nc"><i>99</i>&nbsp;                    userRelDao.addRequest(tester, u);</b>
+<i>100</i>&nbsp;            }
+<b class="nc"><i>101</i>&nbsp;            u = userDao.getUserByMail(u.getMail());</b>
+<b class="nc"><i>102</i>&nbsp;            for (int j=0; j&lt;3; j++) {</b>
+<b class="nc"><i>103</i>&nbsp;                Post post = Fake.getFakePost(u);</b>
+<b class="nc"><i>104</i>&nbsp;                postDao.insertPost(post);</b>
+<i>105</i>&nbsp;            }
+<i>106</i>&nbsp;        }
+<i>107</i>&nbsp;    }
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>

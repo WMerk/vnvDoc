@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Model</a> ]
+    [ <a href="../index.html">com.vnv.model</a> ]
 </div>
 
-<h1>Coverage Summary for Class: ErrorMessage (com.vnv.Model)</h1>
+<h1>Coverage Summary for Class: ErrorMessage (com.vnv.model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 15)
+    (0/ 14)
   </span>
 </td>
 </tr>
@@ -72,38 +72,40 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.model;
 <i>2</i>&nbsp;
-<b class="nc"><i>3</i>&nbsp;public class ErrorMessage {</b>
+<i>3</i>&nbsp;public class ErrorMessage {
 <i>4</i>&nbsp;
-<b class="nc"><i>5</i>&nbsp;    private static String Error = &quot;{\&quot;error\&quot;:\&quot;%s\&quot;,\&quot;status\&quot;:\&quot;%d\&quot;}&quot;;</b>
+<b class="nc"><i>5</i>&nbsp;    private ErrorMessage() {}</b>
 <i>6</i>&nbsp;
-<b class="nc"><i>7</i>&nbsp;    public static String DefaultError = String.format(Error, &quot;an error occurred&quot;, 500);</b>
+<i>7</i>&nbsp;    private static final String Error = &quot;{\&quot;error\&quot;:\&quot;%s\&quot;,\&quot;status\&quot;:\&quot;%d\&quot;}&quot;;
 <i>8</i>&nbsp;
-<b class="nc"><i>9</i>&nbsp;    public static String NotLoggedIn = String.format(Error, &quot;not logged in&quot;, 401);</b>
-<b class="nc"><i>10</i>&nbsp;    public static String AlreadyLoggedOut = String.format(Error, &quot;already logged out&quot;, 200);</b>
-<b class="nc"><i>11</i>&nbsp;    public static String WrongMailPassword = String.format(Error, &quot;wrong mail or password&quot;, 401);</b>
-<b class="nc"><i>12</i>&nbsp;    public static String WrongPassword = String.format(Error, &quot;wrong password&quot;, 401);</b>
-<b class="nc"><i>13</i>&nbsp;    public static String AlreadyRegistered = String.format(Error, &quot;mail already registered&quot;, 409);</b>
-<b class="nc"><i>14</i>&nbsp;    public static String NoFriendRequestReceived = String.format(Error, &quot;no friend request received for this user&quot;, 404);</b>
-<b class="nc"><i>15</i>&nbsp;    public static String NoFriendRequestSent = String.format(Error, &quot;no friend request sent for this user&quot;, 404);</b>
-<b class="nc"><i>16</i>&nbsp;    public static String NotFriendly = String.format(Error, &quot;no friendship found between users&quot;, 404);</b>
-<i>17</i>&nbsp;
-<b class="nc"><i>18</i>&nbsp;    public static String NotImplemented = String.format(Error, &quot;not implemented&quot;, 500);</b>
+<b class="nc"><i>9</i>&nbsp;    public static final String DefaultError = String.format(Error, &quot;an error occurred&quot;, 500);</b>
+<i>10</i>&nbsp;
+<b class="nc"><i>11</i>&nbsp;    public static final String NotLoggedIn = String.format(Error, &quot;not logged in&quot;, 401);</b>
+<b class="nc"><i>12</i>&nbsp;    public static final String AlreadyLoggedOut = String.format(Error, &quot;already logged out&quot;, 200);</b>
+<b class="nc"><i>13</i>&nbsp;    public static final String WrongMailPassword = String.format(Error, &quot;wrong mail or password&quot;, 401);</b>
+<b class="nc"><i>14</i>&nbsp;    public static final String WrongPassword = String.format(Error, &quot;wrong password&quot;, 401);</b>
+<b class="nc"><i>15</i>&nbsp;    public static final String AlreadyRegistered = String.format(Error, &quot;mail already registered&quot;, 409);</b>
+<b class="nc"><i>16</i>&nbsp;    public static final String NoFriendRequestReceived = String.format(Error, &quot;no friend request received for this user&quot;, 404);</b>
+<b class="nc"><i>17</i>&nbsp;    public static final String NoFriendRequestSent = String.format(Error, &quot;no friend request sent for this user&quot;, 404);</b>
+<b class="nc"><i>18</i>&nbsp;    public static final String NotFriendly = String.format(Error, &quot;no friendship found between users&quot;, 404);</b>
 <i>19</i>&nbsp;
-<b class="nc"><i>20</i>&nbsp;    public static String NoCategoriesAvailable = String.format(Error, &quot;no categories available&quot;, 404);</b>
-<b class="nc"><i>21</i>&nbsp;    public static String NoCategory = String.format(Error, &quot;the given category is not a category&quot;, 400);</b>
-<i>22</i>&nbsp;
-<i>23</i>&nbsp;    public static String getError(String error, int status) {
-<b class="nc"><i>24</i>&nbsp;        return String.format(Error, error, status);</b>
-<i>25</i>&nbsp;    }
-<i>26</i>&nbsp;}
+<b class="nc"><i>20</i>&nbsp;    public static final String NotImplemented = String.format(Error, &quot;not implemented&quot;, 500);</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;    public static final String NoCategoriesAvailable = String.format(Error, &quot;no categories available&quot;, 404);</b>
+<b class="nc"><i>23</i>&nbsp;    public static final String NoCategory = String.format(Error, &quot;the given category is not a category&quot;, 400);</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public static String getError(String error, int status) {
+<b class="nc"><i>26</i>&nbsp;        return String.format(Error, error, status);</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>

@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">com.vnv.Model</a> ]
+    [ <a href="../index.html">com.vnv.model</a> ]
 </div>
 
-<h1>Coverage Summary for Class: MailMessage (com.vnv.Model)</h1>
+<h1>Coverage Summary for Class: MailMessage (com.vnv.model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -72,27 +72,29 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.Model;
+<div class="sourceCode"><i>1</i>&nbsp;package com.vnv.model;
 <i>2</i>&nbsp;
-<b class="nc"><i>3</i>&nbsp;public class MailMessage {</b>
+<i>3</i>&nbsp;public class MailMessage {
 <i>4</i>&nbsp;
-<i>5</i>&nbsp;    private final static String gwelcome = &quot;Hi %s,&lt;br&gt;&quot; +
-<i>6</i>&nbsp;            &quot;&lt;br&gt;&quot; +
-<i>7</i>&nbsp;            &quot;willkommen zu vnv. Wir freuen uns, dass du dich mit deinem google Konto bei vnv registriert hast.&lt;br&gt;&quot; +
+<b class="nc"><i>5</i>&nbsp;    private MailMessage() {}</b>
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;    private static final String GWELCOME = &quot;Hi %s,&lt;br&gt;&quot; +
 <i>8</i>&nbsp;            &quot;&lt;br&gt;&quot; +
-<i>9</i>&nbsp;            &quot;Schoene Gruesse&lt;br&gt;&quot; +
-<i>10</i>&nbsp;            &quot;Dein vnv-team&quot;;
-<i>11</i>&nbsp;
-<i>12</i>&nbsp;    public static String getGwelcome(String name) {
-<b class="nc"><i>13</i>&nbsp;        return String.format(gwelcome, name);</b>
-<i>14</i>&nbsp;    }
-<i>15</i>&nbsp;}
+<i>9</i>&nbsp;            &quot;willkommen zu vnv. Wir freuen uns, dass du dich mit deinem google Konto bei vnv registriert hast.&lt;br&gt;&quot; +
+<i>10</i>&nbsp;            &quot;&lt;br&gt;&quot; +
+<i>11</i>&nbsp;            &quot;Schoene Gruesse&lt;br&gt;&quot; +
+<i>12</i>&nbsp;            &quot;Dein vnv-team&quot;;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    public static String getGwelcome(String name) {
+<b class="nc"><i>15</i>&nbsp;        return String.format(GWELCOME, name);</b>
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-04-29 14:28</div>
+    <div style="float:right;">generated on 2017-05-29 20:41</div>
 </div>
 </body>
 </html>
