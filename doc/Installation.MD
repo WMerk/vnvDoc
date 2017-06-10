@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Installation guide
 
 ## Requirements
@@ -98,3 +98,6 @@ This can take some time.
 ```
 $ java -Dserver.address=127.0.0.1 -Dserver.port=8080 -jar target/vnv-project-<version>.war
 ```
+
+
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

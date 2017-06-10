@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Test plan
 
 ## 1.	Introduction
@@ -223,3 +223,9 @@ n/a
 | Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
 | Iteration ends |  | |  | |
 		
+
+		
+		
+		
+		
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

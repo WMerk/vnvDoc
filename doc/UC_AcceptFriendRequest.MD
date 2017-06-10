@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: Accept friend request
 
 
@@ -39,3 +39,4 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20accept%20friend%20request.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/AcceptFriendRequests/Mockup_AcceptFriendRequests.png "Mock-Up"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

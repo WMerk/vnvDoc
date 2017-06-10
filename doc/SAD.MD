@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Software Architecture Document
 
 
@@ -83,3 +83,4 @@ tbd
 [MVVM]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/mvvm.png "MVVM Diagram"
 [Architecture]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/ArchitectureDiagramm.png "Architecture"
 [Overview]:  https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/UML/classdiagram_dep_marked.png "Class Overview"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

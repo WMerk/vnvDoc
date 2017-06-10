@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: Login
 
 
@@ -45,3 +45,4 @@ n/a
 [UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20login.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVDoc/master/doc/mockups/Login/Mockup_Login.png "Mock-Up"
 [feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/login.PNG "Feature file"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

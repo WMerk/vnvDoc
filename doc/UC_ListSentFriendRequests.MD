@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: List sent friend requests
 
 
@@ -36,3 +36,4 @@ n/a
 <!-- picture links -->
 [UML]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/use%20cases/UML%20-%20display%20list%20of%20sent%20friend%20request.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/SentFriendRequests/Mockup_SentFriendRequests.png "Mock-Up"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

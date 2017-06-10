@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: Create new request
 
 
@@ -49,3 +49,4 @@ n/a
 [Mock1]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewRequest/Mockup_Verleihen.png "Mock-Up"
 [Mock2]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewRequest/Mockup_Verschenken.png "Mock-Up"
 [Mock3]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/CreateNewRequest/Mockup_Dienstleistung.png "Mock-Up"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

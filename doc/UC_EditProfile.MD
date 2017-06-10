@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: Edit Profile
 
 
@@ -43,3 +43,4 @@ n/a
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20edit%20profile.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/EditProfile/Mockup_Profil_editieren.png "Mock-Up"
 [feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/editProfile.PNG "Feature file"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

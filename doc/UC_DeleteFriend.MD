@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: delete friend
 
 
@@ -45,3 +45,4 @@ n/a
 [UML]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/UML%20-%20delete%20friend.png "UML Diagram"
 [Mock]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/mockups/DeleteFriend/Mockup_DeleteFriend.png "Mock-Up"
 [feature]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/deleteFriend.PNG "Feature file"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Software Requirements Specification 
 ## 1.	Introduction
 ### 1.1	Purpose
@@ -176,3 +176,4 @@ n/a
 
 <!-- Picture-Links: -->
 [UCD]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/use%20cases/SRS.png "Overall Use Case Diagram"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"

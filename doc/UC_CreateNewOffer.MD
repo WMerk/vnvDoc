@@ -1,4 +1,4 @@
-# vnv – Verleihen, Dienstleistungen, verschenken
+![vnv][]
 # Use-Case Specification: Create new offer
 
 
@@ -62,3 +62,4 @@ n/a
 [feature1]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/offerVerleihen.PNG "Feature file"
 [feature2]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/offerVerschenken.PNG "Feature file"
 [feature3]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/doc/feature/offerDienstleistung.PNG "Feature file"
+[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"
