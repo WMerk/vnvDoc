@@ -96,5 +96,5 @@ This can take some time.
 ## Run it
 
 ```
-$ java -Dserver.address=127.0.0.1 -Dserver.port=8080 -jar vnv-project-<version>.war
+$ java -Dserver.address=127.0.0.1 -Dserver.port=8080 -jar target/vnv-project-<version>.war
 ```
