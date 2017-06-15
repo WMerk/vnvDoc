@@ -12,6 +12,7 @@ Add the line ```deb http://httpredir.debian.org/debian jessie-backports main``` 
 ```
 $ echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list
 $ sudo apt-get update
+$ sudo apt-get install -t jessie-backports  openjdk-8-jre-headless ca-certificates-java
 $ sudo apt-get install openjdk-8-jdk
 ```
 
@@ -25,7 +26,7 @@ $ sudo apt-get install oracle-java8-installer
 ```
 Once installed, see the section called “Dealing with multiple installed Java versions”.
 
-#### Dealing with multiple installed Java versions
+##### Dealing with multiple installed Java versions
 
 It is important that you configure your default Java version to point to Java 8. Do so with the update-java-alternatives command.
 
@@ -96,7 +97,7 @@ This can take some time.
 ## Run it
 
 ```
-$ java -Dserver.address=127.0.0.1 -Dserver.port=8080 -jar target/vnv-project-<version>.war
+$ java -Dserver.address=127.0.0.1 -Dserver.port=8080 -jar target/vnv-project-<version>.jar
 ```
 
 
