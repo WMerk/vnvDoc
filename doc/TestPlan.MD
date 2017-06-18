@@ -125,7 +125,7 @@ n/a
 n/a
 
 #### 5.1.12	Installation Testing
-n/a
+An installation test was successfully done by [Mathinator](https://vnvproject.wordpress.com/2017/06/12/continuous-integration/).
 
 ## 6.	Entry and Exit Criteria
 ### 6.1	Test Plan
@@ -136,9 +136,9 @@ When all tests pass without throwing an exception .
 
 ## 7.	Deliverables
 ### 7.1	Test Evaluation Summaries
-n/a
+https://sonarcloud.io/component_measures/domain/Coverage?id=de.dhbw.ka.vnv%3Avnvproject
 ### 7.2	Reporting on Test Coverage
-n/a
+https://sonarcloud.io/component_measures/metric/coverage/tree?id=de.dhbw.ka.vnv%3Avnvproject
 ### 7.3	Perceived Quality Reports
 n/a
 ### 7.4	Incident Logs and Change Requests
@@ -148,7 +148,8 @@ n/a
 ### 7.6	Additional Work Products
 n/a
 #### 7.6.1	Detailed Test Results
-When executing functiontests cucumber will atomaticly generate a HTML test report
+When executing functiontests cucumber will atomaticly generate a [HTML test report](https://cdn.rawgit.com/WMerk/vnv/master/src/test/features/Reports/cucumber-htmlreport/index.html).
+for Unittest testreports see section 7.2.
 #### 7.6.2	Additional Automated Functional Test Scripts
 n/a
 #### 7.6.3	Test Guidelines
@@ -156,9 +157,7 @@ n/a
 #### 7.6.4	Traceability Matrices
 n/a
 ## 8.	Testing Workflow
-At the moment tests are automatically run before deployment on the server. The application is build using maven. Building the application with maven install will run all feature tests and unittest and only build if the tests complete.
-
-For the future this might be included in a continuous deployment circle.
+At the moment tests are automatically ran before deployment on the server. The application is build using maven. Building the application with maven install will run all (feature tests and) unittest and only build if the tests complete. This can be triggered by a commit to github.
 
 ## 9.	Environmental Needs
 [This section presents the non-human resources required for the Test Plan.]
@@ -167,13 +166,13 @@ The following table sets forth the system resources for the test effort presente
 
 | Resource | Quantity | Name and Type |
 |---|---|---|
-| Integration Server | 1 | Ubuntu Server |
-| Server Name |  	| <Name> |
+| Integration Server | 1 | Debian Server |
+| Server Name |  	| dhbw-projekt.data.kit.edu |
 | Development Server	| 1 | <Server>	|
-| Server Name |  | <Name> |
+| Server Name |  | localhost |
 | Database | 2 | <Name>	|
-| Docker buils Server | 1 | Ubuntu Server |
-| Server Name |  	| <Name> |
+| Docker builds Server | 1 | Debian Server |
+| Server Name |  	| dhbw-projekt.data.kit.edu |
 
 ### 9.2	Base Software Elements in the Test Environment
 The following base software elements are required in the test environment for this Test Plan.
@@ -219,7 +218,7 @@ n/a
 |---|---|---|---|---|
 | Have Unit Tests | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
 | Have Integration Tests | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
-| > 70% Test Coverage | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
+| > 20% Test Coverage | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
 | Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
 | Iteration ends |  | |  | |
 		
