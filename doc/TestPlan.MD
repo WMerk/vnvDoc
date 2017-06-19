@@ -216,10 +216,10 @@ n/a
 
 | Milestone | Planned Start Date | Actual Start Date | Planned End Date | Actual End Date |
 |---|---|---|---|---|
-| Have Unit Tests | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
-| Have Integration Tests | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
-| > 20% Test Coverage | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
-| Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | |
+| Have Unit Tests | 01.11.2016 | 03.11.2016 | 14.11.2016 | 14.11.2016 |
+| Have Integration Tests | 01.11.2016 | 010.11.2016 | 14.11.2016 | 14.11.2016 |
+| > 20% Test Coverage | 14.11.2016 | 14.11.2016 | 20.11.2016 | 20.11.2016 |
+| Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | 12.06.2017 |
 | Iteration ends |  | |  | |
 		
 
