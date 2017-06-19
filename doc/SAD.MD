@@ -77,7 +77,7 @@ You can find our Entities [here](https://github.com/WMerk/vnv/tree/master/src/ma
 tbd
 
 ## 11. Quality
-tbd
+To ensure a high quality code we write and run tests.More detailed information on our testing can be find our [Test Plan](TestPlan.MD). However, the tests are automatically executed before a new version is deployed to the server. Our code is also aautomatically nalyzed and we can see from the metrics on [Sonarqube](https://sonarcloud.io/dashboard?id=de.dhbw.ka.vnv%3Avnvproject) how well our code is written and were we might want to improve the code quality. 
 
 <!-- picture links -->
 [MVVM]: https://raw.githubusercontent.com/WMerk/VnVProject/master/doc/SAD/mvvm.png "MVVM Diagram"
